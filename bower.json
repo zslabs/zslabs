@@ -1,0 +1,10 @@
+{
+  "name": "zslabs",
+  "version": "0.0.1",
+  "private": "true",
+  "dependencies": {
+    "uikit": "uikit/uikit#2.16.2",
+    "fastclick": "1.*",
+    "svg4everybody": "*"
+  }
+}

@@ -1,0 +1,15 @@
+# Permalinks
+permalink:        articles/:title
+relative_permalinks: true
+
+# Setup
+exclude:          ['bower_components', 'node_modules']
+title:            ZS Labs
+tagline:          Personal blog of Zach Schnackel
+url:              http://zslabs.com
+paginate:         1
+baseurl:          /
+author:
+  name:           Zach Schnackel
+  url:            https://twitter.com/zslabs
+  email:          info@zslabs.com

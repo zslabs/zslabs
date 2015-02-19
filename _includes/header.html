@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{% if page.title == "Home" %}{{ site.title }}{% else %}{{ site.title }} - {{ page.title }}{% endif %}</title>
+		<link rel="stylesheet" href="/assets/css/build/app.css">
+	</head>
+	<body class="{{ page.title | slugify }}">
+		<section class="bt-hero">
+			<div class="bt-container">
+				<header class="bt-hero__top uk-flex uk-flex-space-between uk-flex-middle">
+					<a href="/" class="bt-hero__logo">
+						<i class="bt-icon" data-bt-icon="logo"></i>
+					</a>
+					<nav class="uk-flex-right">
+						<ul>
+							{% if page.title != "About" %}
+								<li><a href="/about/">About &#43; Projects</a></li>
+							{% else %}
+								<li class="bt-back-articles"><a href="/"><i class="bt-icon bt-icon--small" data-bt-icon="arrow-left"></i> Back to Articles</a></li>
+							{% endif %}
+						</ul>
+					</nav>
+				</header>
+			</div>
+			{% if page.title != "About" %}
+				<section class="bt-hero__title-wrapper">
+					{% if page.title == "Home" %}
+						<div class="bt-hero__title">I Make Things Look Good On</div>
+						<div class="bt-hero__devices uk-flex uk-flex-space-between uk-flex-middle">
+							<i class="bt-icon" data-bt-icon="desktop"></i>
+							<i class="bt-icon" data-bt-icon="tablet"></i>
+							<i class="bt-icon" data-bt-icon="mobile"></i>
+						</div>
+					{% else %}
+						<div class="bt-hero__title">{{ page.title }}</div>
+						<div class="bt-hero__meta">{{ page.date | date: '%B %d, %Y' }}</div>
+					{% endif %}
+				</section>
+				<i class="bt-icon bt-show-the-way" data-scroll href="#bt-content" data-bt-icon="arrow-down"></i>
+			{% endif %}
+		</section>
+		<section class="bt-content" data-bt-content>
+			<div class="bt-container">
