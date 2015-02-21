@@ -3,7 +3,7 @@ layout: article
 title: Upgraded Yeti
 ---
 
-In my [previous article](articles/versioned-dependencies-with-compass), I went over how Foundation 3 and 4 could co-exist in your development setup, making for a happier, healthier you. While there are certainly situations where you'll need to keep "legacy" projects around, my use-case was more targeted on my own setup -- just being lazy about upgrading my current site.
+In my [previous article]({% post_url 2013-03-31-versioned-dependencies-with-compass %}), I went over how Foundation 3 and 4 could co-exist in your development setup, making for a happier, healthier you. While there are certainly situations where you'll need to keep "legacy" projects around, my use-case was more targeted on my own setup -- just being lazy about upgrading my current site.
 
 Not anymore though, I'm happy to announce I am now running on Foundation's latest and greatest and couldn't be happier with the decision. Overall, the process was pretty simple. Zurb has created a handy [migration guide](http://foundation.zurb.com/migration.php) that made the subtle HTML changes a breeze. The most challenging part of the transition was rethinking how my CSS was structured. Zurb went mobile-first, which means, you're really designing for your phone outta the box instead of the desktop. So, when nesting my media queries in SASS, I was changing how my site would react to larger devices (weird huh?)
 

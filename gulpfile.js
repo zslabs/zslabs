@@ -26,7 +26,7 @@ var gulp         = require("gulp"),
 
 var paths =  {
       "scripts": {
-        "src": "assets/js/src/**/*.js",
+        "src": "assets/js/src/**/*.coffee",
         "build": "assets/js/build/",
         "vendor": "!assets/js/src/vendor/**/*.js"
       },
@@ -35,7 +35,7 @@ var paths =  {
         "build": "assets/css/build/"
       },
       "media": {
-        "src": "assets/media/src/*",
+        "src": "assets/media/src/**/*",
         "build": "assets/media/build/"
       },
       "svg": {
@@ -80,7 +80,11 @@ gulp.task("coffee", function() {
     ])
     .pipe(changed(paths.scripts.build))
     .pipe(plumber())
-      .pipe(coffeelint())
+      .pipe(coffeelint({
+        "max_line_length": {
+          "level": "ignore"
+        }
+      }))
       .pipe(coffeelint.reporter())
       .pipe(sourcemaps.init())
         .pipe(concat("app.min.coffee"))
@@ -183,7 +187,7 @@ gulp.task("watch", ['browser-sync'], function () {
   gulp.watch(paths.media.src, ["media"]);
   gulp.watch(paths.svg.src, ["svg", "svg-sprite"]);
 
-  gulp.watch(["index.html", "_layouts/*.html", "_includes/*.html", "_posts/*"], ["jekyll-rebuild"]);
+  gulp.watch(["**/*.html", "_posts/*", paths.scripts.src, paths.styles.src], ["jekyll-rebuild"]);
 });
 
 // Default task

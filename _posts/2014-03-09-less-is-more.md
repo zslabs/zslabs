@@ -3,16 +3,16 @@ layout: article
 title: Less is More
 ---
 
-In my [previous article](articles/new-guts), I talked about some of the backend tools that went into my site rebuild; without touching any of the design elements. Being the "creative-type", I ended up feeling like the current design just wasn't up to par with my current taste. What you see now is a good two-weekends of work that I'm pretty happy with.
+In my [previous article]({% post_url 2014-01-20-new-guts %}), I talked about some of the backend tools that went into my site rebuild; without touching any of the design elements. Being the "creative-type", I ended up feeling like the current design just wasn't up to par with my current taste. What you see now is a good two-weekends of work that I'm pretty happy with.
 
 <div class="uk-flex uk-text-center">
     <div>
         <h3>Old</h3>
-        <img src="/assets/media/build/posts/zslabs-old.jpg">
+        ![ZS Labs: Old](/assets/media/build/posts/zslabs-old.jpg)
     </div>
     <div class="uk-margin-left">
         <h3>New</h3>
-        <img src="/assets/media/build/posts/zslabs-new.jpg">
+        ![ZS Labs: New](/assets/media/build/posts/zslabs-new.jpg)
     </div>
 </div>
 

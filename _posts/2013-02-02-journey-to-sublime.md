@@ -3,7 +3,7 @@ layout: article
 title: Journey to Sublime
 ---
 
-<img src="/assets/media/build/posts/sublime-screen.png" alt="">
+![Sublime Text Screen](/assets/media/build/posts/sublime-screen.png)
 
 Everyone has a set of tools they stand-by - the things that help them do their job better, easier and faster; and my toolkit is no different than any other. For graphics I have Photoshop and Sketch, for version control I have Tower, but my most-used and important tool in my arsenal is, Sublime Text (aka Sublime Text 2).
 

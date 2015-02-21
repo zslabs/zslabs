@@ -18,7 +18,7 @@ The WordPress admin has been through several iterations from its conception and 
 
 As much as I swore not to bring up this comparison, one thing Joomla got right was adopting a CSS/JS framework for it's admin. While I don't particularly care for its implementation, choosing [Twitter Bootstrap](http://twitter.github.com/bootstrap/) has allowed Joomla developers to create consistent admin styles/experiences and allowed the core team to focus on making their platform even better.
 
-<img src="/assets/media/build/posts/foundation-4.png">
+![Foundation 4](/assets/media/build/posts/foundation-4.png)
 
 I strongly believe that [Foundation](http://foundation.zurb.com/) is the answer for WordPress. With its recent 4.0 release, Foundation has switched to a "mobile-first" approach and has further strengthened its core values of extensibility and customization. Being built with the latest and greatest HTML5, [SASS](http://sass-lang.com/) and jQuery, Foundation comes with a [plethora of options](http://foundation.zurb.com/docs/sass.html) that would make customizing WordPress that much easier. Being a community-driven project, Foundation is used by thousand and continuously updated (just like WordPress)!
 

@@ -3,7 +3,7 @@ layout: article
 title: Separating Form and Function
 ---
 
-In my previous article, [Extendable Switch Statements](articles/extendable-switch-statements), I talked about separating the inner-workings of the WordPress loop to more maintainable output functions. The purpose of this article, is to take a step back and create smarter wrappers for our themes.
+In my previous article, [Extendable Switch Statements]({% post_url 2013-02-09-extendable-switch-statements %}), I talked about separating the inner-workings of the WordPress loop to more maintainable output functions. The purpose of this article, is to take a step back and create smarter wrappers for our themes.
 
 As I continue to further perfect my process as a developer, code organization has become a must - yet WordPress' template system can feel like anything but a well-oiled machine. Templating in itself isn't an exact science, which is why there are so many different types of engines (or logics for that matter) to produce our markup. Since I use WordPress as my main application environment, I sought after a solution that utilized the core API so I didn't go too far off the beaten path.
 
