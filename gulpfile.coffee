@@ -44,6 +44,11 @@ gulp.task "clean:dep", (cp) ->
 
 # Dependencies
 gulp.task "dep", ["clean:dep"], ->
+  revAll = new $.revAll(
+    dontGlobal: [".map"]
+    fileNameManifest: "dep-manifest.json"
+  )
+
   gulp.src([
     "bower_components/fastclick/lib/fastclick.js"
     "bower_components/svg4everybody/svg4everybody.js"
@@ -56,14 +61,9 @@ gulp.task "dep", ["clean:dep"], ->
   .pipe($.sourcemaps.write("../sourcemaps"))
   .pipe($.filesize(title: "Dependencies:"))
   .pipe($.duration("building dependency files"))
-  .pipe($.revAll(
-      ignore: [".map"]
-      quiet: true
-  ))
+  .pipe(revAll.revision())
   .pipe(gulp.dest(paths.scripts.build))
-  .pipe($.revAll.manifest(
-    fileName:  "dep-manifest.json"
-  ))
+  .pipe(revAll.manifestFile())
   .pipe(gulp.dest("_data"))
   .pipe($.notify
     message: "dep task complete"
@@ -76,6 +76,11 @@ gulp.task "clean:app", (cp) ->
 
 # Coffee
 gulp.task "app", ["clean:app"], ->
+  revAll = new $.revAll(
+    dontGlobal: [".map"]
+    fileNameManifest: "app-manifest.json"
+  )
+
   gulp.src([ "assets/js/src/init.coffee" ])
   .pipe($.changed(paths.scripts.build))
   .pipe($.plumber())
@@ -92,14 +97,9 @@ gulp.task "app", ["clean:app"], ->
   .pipe($.filesize(title: "App:"))
   .pipe($.plumber.stop())
   .pipe($.duration("building coffee files"))
-  .pipe($.revAll(
-      ignore: [".map"]
-      quiet: true
-    ))
+  .pipe(revAll.revision())
   .pipe(gulp.dest(paths.scripts.build))
-  .pipe($.revAll.manifest(
-    fileName: "app-manifest.json"
-  ))
+  .pipe(revAll.manifestFile())
   .pipe(gulp.dest("_data"))
   .pipe($.notify
     message: "coffee task complete"
@@ -112,6 +112,11 @@ gulp.task "clean:styles", (cp) ->
 
 # Styles
 gulp.task "styles", [ "clean:styles" ], ->
+  revAll = new $.revAll(
+    dontGlobal: [".png", ".jpg", ".gif", ".eot", ".woff", "ttf", ".woff2"]
+    fileNameManifest: "styles-manifest.json"
+  )
+
   gulp.src("assets/css/src/app.less")
   .pipe($.changed(paths.styles.build))
   .pipe($.plumber())
@@ -121,14 +126,9 @@ gulp.task "styles", [ "clean:styles" ], ->
   .pipe($.plumber.stop())
   .pipe($.duration("building style files"))
   .pipe($.filesize(title: "Styles:"))
-  .pipe($.revAll(
-    quiet: true
-    ignore: [".png", ".jpg", ".gif", ".eot", ".woff", "ttf", ".woff2"]
-  ))
+  .pipe(revAll.revision())
   .pipe(gulp.dest(paths.styles.build))
-  .pipe($.revAll.manifest(
-      fileName: "styles-manifest.json"
-  ))
+  .pipe(revAll.manifestFile())
   .pipe(gulp.dest("_data"))
   .pipe(reload(stream: true))
   .pipe $.notify(
