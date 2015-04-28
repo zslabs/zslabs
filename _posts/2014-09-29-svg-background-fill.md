@@ -47,15 +47,26 @@ Within the function, we are:
 
 You can use this in your styles like the following:
 
-    .icon-pacman {
+    .icon-picasa__replace-fill {
         width: 40px;
         height: 40px;
-        .icon-replace-fill("../../media/pacman.svg", "#000000", "#FF0000");
+        .icon-replace-fill("../../svg/build/picasa.svg", "#2A91A8", "#00FFFF");
         display: inline-block;
         background-repeat: no-repeat;
         background-position: center center;
         background-size: contain;
     }
+
+<div class="uk-flex uk-flex-center uk-text-center">
+  <div class="uk-margin-right">
+    <h4>Original</h4>
+    <i class="icon-picasa__default"></i>
+  </div>
+  <div>
+    <h4>With Mixin</h4>
+    <i class="icon-picasa__replace-fill"></i>
+  </div>
+</div>
 
 Now we have control over SVG fills when referenced as backgrounds using a technique that will work all the way back to IE9, BAM! This is for replacing a single fill.
 
@@ -84,15 +95,26 @@ Within the function, we are:
 
 You can use this in your styles like the following:
 
-    .icon-pacman {
+    .icon-twitter {
         width: 40px;
         height: 40px;
-        .icon-add-fill("../../media/pacman.svg", "#FF0000");
+        .icon-add-fill("../../svg/build/twitter.svg", "#55acee");
         display: inline-block;
         background-repeat: no-repeat;
         background-position: center center;
         background-size: contain;
     }
+
+<div class="uk-flex uk-flex-center uk-text-center">
+  <div class="uk-margin-right">
+    <h4>Original</h4>
+    <i class="icon-twitter__default"></i>
+  </div>
+  <div>
+    <h4>With Mixin</h4>
+    <i class="icon-twitter__add-fill"></i>
+  </div>
+</div>
 
 ### Update 2
 
@@ -117,14 +139,25 @@ Within the function, we are:
 
 You can use this in your styles like the following:
 
-    .icon-multicolor {
+    .icon-picasa__fill {
         width: 40px;
         height: 40px;
-        .icon-fill("../../media/multicolor.svg", "#FF0000");
+        .icon-fill("../../svg/build/picasa.svg", "#dd4b39");
         display: inline-block;
         background-repeat: no-repeat;
         background-position: center center;
         background-size: contain;
     }
+
+<div class="uk-flex uk-flex-center uk-text-center">
+  <div class="uk-margin-right">
+    <h4>Original</h4>
+    <i class="icon-picasa__default"></i>
+  </div>
+  <div>
+    <h4>With Mixin</h4>
+    <i class="icon-picasa__fill"></i>
+  </div>
+</div>
 
 The only part I'd like to clean-up is not being able to combine both `escape()` and `replace()`, so I'll continue to dig into that.

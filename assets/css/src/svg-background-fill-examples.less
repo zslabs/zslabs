@@ -1,0 +1,34 @@
+// Replace fill
+[class^="icon-picasa__"] {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+.icon-picasa__default {
+  background-image: url('../../svg/build/picasa.svg');
+}
+.icon-picasa__replace-fill {
+  .icon-replace-fill("../../svg/build/picasa.svg", "#2A91A8", "#00FFFF");
+}
+.icon-picasa__fill {
+  .icon-fill("../../svg/build/picasa.svg", "#dd4b39");
+}
+
+// Add fill
+[class^="icon-twitter__"] {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+.icon-twitter__default {
+  background-image: url('../../svg/build/twitter.svg');
+}
+.icon-twitter__add-fill {
+  .icon-add-fill("../../svg/build/twitter.svg", "#55acee");
+}
