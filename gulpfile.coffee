@@ -50,7 +50,6 @@ gulp.task "dep", ["clean:dep"], ->
   )
 
   gulp.src([
-    "bower_components/fastclick/lib/fastclick.js"
     "bower_components/svg4everybody/svg4everybody.js"
     "assets/js/src/vendor/highlight.pack.js"
   ])
