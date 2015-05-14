@@ -5,6 +5,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>{% if page.title == "Home" %}{{ site.title }}{% else %}{{ site.title }} - {{ page.title }}{% endif %}</title>
 		<link rel="stylesheet" href="/assets/css/build/{{ site.data.styles-manifest["app.css"] }}">
+		<script src="//use.typekit.net/rfj4hkn.js"></script>
+		<script>try{Typekit.load();}catch(e){}</script>
 	</head>
 	<body class="{{ page.title | slugify }}">
 		<section class="bt-hero">
