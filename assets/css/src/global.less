@@ -27,8 +27,6 @@
 //
 .bt-hero {
 	color: fade(@global-contrast-color, 75%);
-	background: linear-gradient(to right bottom, #58488a, #6299c9);
-	background-attachment: fixed;
 	position: relative;
 	box-shadow: inset 0 -1px 0 fade(#000, 15%);
 	text-shadow: 0 1px 0 fade(#000, 15%);
@@ -48,22 +46,6 @@
 
 	.bt-container {
 		z-index: 10;
-	}
-
-	@media (min-width: @breakpoint-medium) {
-		&:after {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			background: url('../../media/build/signals.png');
-			background-size: cover;
-			background-attachment: fixed;
-			opacity: 0.20;
-			z-index: 5;
-		}
 	}
 }
 @keyframes bt-show-the-way {
@@ -255,6 +237,12 @@
 	animation-delay: 1s;
 }
 
+.bt-viewport {
+	position: relative;
+	z-index: 10;
+	min-height: 100vh;
+	background: @global-background;
+}
 .bt-content {
 	padding: (@global-margin * 2) 0;
 
@@ -269,8 +257,8 @@
 		.uk-flex;
 		.uk-flex-space-between;
 		.uk-flex-wrap;
-		margin-left: -1.75%;
-		margin-top: -1.75%;
+		margin-left: -@global-margin;
+		margin-top: -@global-margin;
 	}
 }
 .bt-article__teaser {
@@ -284,12 +272,12 @@
 
 	@media (min-width: @breakpoint-medium) {
 		padding: @global-margin;
-		width: 48.25%;
-		margin-left: 1.75%;
-		margin-top: 1.75%;
+		width: ~"calc(50% - 15px)";
+		margin-left: @global-margin;
+		margin-top: @global-margin;
 
 		+ .bt-article__teaser {
-			margin-top: 1.75%;
+			margin-top: @global-margin;
 		}
 	}
 
@@ -360,7 +348,7 @@
 		margin-left: -@global-margin;
 
 		> aside {
-			width: 50%;
+			width: ~"calc(50% - 15px)";
 			margin-left: @global-margin;
 		}
 	}
