@@ -8,7 +8,7 @@ cp          = require "child_process"
 
 paths =
   "scripts":
-    "src": "assets/js/src/**/*.coffee"
+    "src": "assets/js/src/**/*.js"
     "build": "assets/js/build/"
   "styles":
     "src": "assets/css/src/**/*.less"
@@ -37,72 +37,36 @@ gulp.task "jekyll-rebuild", [ "jekyll-build" ], ->
   browserSync.reload()
   return
 
-# Clean old dep files
-gulp.task "clean:dep", (cp) ->
-  del [ "assets/js/build/dep*" ], cp
-  return
-
-# Dependencies
-gulp.task "dep", ["clean:dep"], ->
-  revAll = new $.revAll(
-    dontGlobal: [".map"]
-    fileNameManifest: "dep-manifest.json"
-  )
-
-  gulp.src([
-    "bower_components/svg4everybody/svg4everybody.js"
-    "assets/js/src/vendor/highlight.pack.js"
-  ])
-  .pipe($.changed(paths.scripts.build))
-  .pipe($.sourcemaps.init())
-    .pipe($.concat("dep.min.js"))
-    .pipe($.uglify())
-  .pipe($.sourcemaps.write("../sourcemaps"))
-  .pipe($.filesize(title: "Dependencies:"))
-  .pipe($.duration("building dependency files"))
-  .pipe(revAll.revision())
-  .pipe(gulp.dest(paths.scripts.build))
-  .pipe(revAll.manifestFile())
-  .pipe(gulp.dest("_data"))
-  .pipe($.notify
-    message: "dep task complete"
-  )
-
 # Clean old app files
 gulp.task "clean:app", (cp) ->
   del [ "assets/js/build/app*" ],  cp
   return
 
-# Coffee
+# App
 gulp.task "app", ["clean:app"], ->
   revAll = new $.revAll(
     dontGlobal: [".map"]
     fileNameManifest: "app-manifest.json"
   )
 
-  gulp.src([ "assets/js/src/init.coffee" ])
+  gulp.src([
+    "bower_components/boomsvgloader/dist/js/boomsvgloader.js"
+    "assets/js/src/vendor/highlight.pack.js"
+    "assets/js/src/init.js"
+  ])
   .pipe($.changed(paths.scripts.build))
-  .pipe($.plumber())
-    .pipe($.coffeelint(
-      "max_line_length":
-        "level": "ignore"
-    ))
-    .pipe($.coffeelint.reporter())
-    .pipe($.sourcemaps.init())
-      .pipe($.concat("app.min.coffee"))
-      .pipe($.coffee())
-      .pipe($.uglify())
-    .pipe($.sourcemaps.write("../sourcemaps"))
-  .pipe($.filesize(title: "App:"))
-  .pipe($.plumber.stop())
-  .pipe($.duration("building coffee files"))
+  .pipe($.sourcemaps.init())
+    .pipe($.concat("app.min.js"))
+    .pipe($.uglify())
+  .pipe($.sourcemaps.write("../sourcemaps"))
+  .pipe($.size(
+    showFiles: true
+    title: 'App JS:'))
+  .pipe($.duration("building app js files"))
   .pipe(revAll.revision())
   .pipe(gulp.dest(paths.scripts.build))
   .pipe(revAll.manifestFile())
   .pipe(gulp.dest("_data"))
-  .pipe($.notify
-    message: "coffee task complete"
-  )
 
 # Clean old app files
 gulp.task "clean:styles", (cp) ->
@@ -119,44 +83,42 @@ gulp.task "styles", [ "clean:styles" ], ->
   gulp.src("assets/css/src/app.less")
   .pipe($.changed(paths.styles.build))
   .pipe($.plumber())
-    .pipe($.less())
-    .pipe($.autoprefixer(browsers: [ "last 2 versions" ]))
-    .pipe($.csso())
+    .pipe($.sourcemaps.init())
+      .pipe($.less())
+      .pipe($.autoprefixer(browsers: ['last 2 versions']))
+      .pipe($.minifyCss(
+        'advanced': false
+      ))
+    .pipe($.sourcemaps.write('../sourcemaps'))
   .pipe($.plumber.stop())
   .pipe($.duration("building style files"))
-  .pipe($.filesize(title: "Styles:"))
+  .pipe($.size(title: "Styles:"))
   .pipe(revAll.revision())
   .pipe(gulp.dest(paths.styles.build))
   .pipe(revAll.manifestFile())
   .pipe(gulp.dest("_data"))
   .pipe(reload(stream: true))
-  .pipe $.notify(
-    message: "styles task complete"
-  )
 
 # Media
 gulp.task "media", ->
   gulp.src(paths.media.src)
   .pipe($.changed(paths.media.build))
   .pipe($.imagemin())
-  .pipe($.filesize(title: "Media:"))
+  .pipe($.size(
+    showFiles: true
+    title: 'Styles:'))
   .pipe(gulp.dest(paths.media.build))
   .pipe($.duration("compressing media"))
-  .pipe $.notify(
-    message: "meda task complete"
-  )
 
 # SVG
 gulp.task "svg", ->
   gulp.src(paths.svg.src)
-  .pipe($.replace("#000000", "#000001"))
   .pipe($.imagemin())
   .pipe gulp.dest(paths.svg.build)
 
 # SVG Sprite
 gulp.task "svg-sprite", ->
   gulp.src(paths.svg.src)
-  .pipe($.replace("#000000", "#000001"))
   .pipe($.svgSprite(
     "svg":
       "xmlDeclaration": false
@@ -185,7 +147,6 @@ gulp.task "watch", [ "browser-sync" ], ->
 
 # Default task
 gulp.task "default", [
-  "dep"
   "app"
   "styles"
   "media"

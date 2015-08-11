@@ -1,37 +1,37 @@
 {% include header.html %}
-	<article class="bt-article">
-		<div class="bt-article__content">
-			{{content}}
-		</div>
-		<section class="bt-article__comments">
-			<div id="disqus_thread"></div>
-			<script type="text/javascript">
-			  var disqus_shortname  = 'zslabs';
-			  var disqus_title      = '{{ page.title }}';
-			  var disqus_identifier = '{{ page.url }}';
-			  var disqus_url        = 'http://zslabs.com{{ page.url }}';
+  <article class="bt-article">
+    <div class="bt-article__content">
+      {{content}}
+    </div>
+    <section class="bt-article__comments">
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+        var disqus_shortname  = 'zslabs';
+        var disqus_title      = '{{ page.title }}';
+        var disqus_identifier = '{{ page.url }}';
+        var disqus_url        = 'http://zslabs.com{{ page.url }}';
 
-			  (function() {
-			    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-			    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-			    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-			  })();
-			</script>
-			<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-		</section>
-		{% if page.previous or page.next %}
-			<div class="uk-clearfix uk-margin-top">
-				{% if page.previous %}
-					<div class="uk-float-left">
-						<a class="uk-link-muted bt-article__nav--prev" href="{{ page.previous.url }}"><i class="bt-icon bt-icon--small" data-bt-icon="arrow-left"></i> {{ page.previous.title }}</a>
-					</div>
-				{% endif %}
-				{% if page.next %}
-					<div class="uk-float-right">
-						<a class="uk-link-muted bt-article__nav--next" href="{{ page.next.url }}">{{ page.next.title }} <i class="bt-icon bt-icon--small" data-bt-icon="arrow-right"></i></a>
-					</div>
-				{% endif %}
-			</div>
-		{% endif %}
-	</article>
+        (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </section>
+    {% if page.previous or page.next %}
+      <div class="uk-clearfix uk-margin-top">
+        {% if page.previous %}
+          <div class="uk-float-left">
+            <a class="uk-link-muted bt-article__nav--prev" href="{{ page.previous.url }}"><svg class="bt-icon bt-icon--small"><use xlink:href="#arrow-left" /></svg> {{ page.previous.title }}</a>
+          </div>
+        {% endif %}
+        {% if page.next %}
+          <div class="uk-float-right">
+            <a class="uk-link-muted bt-article__nav--next" href="{{ page.next.url }}">{{ page.next.title }} <svg class="bt-icon bt-icon--small"><use xlink:href="#arrow-right" /></svg></a>
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+  </article>
 {% include footer.html %}
