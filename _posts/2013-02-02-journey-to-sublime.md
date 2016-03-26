@@ -1,6 +1,7 @@
 ---
 layout: article
 title: Journey to Sublime
+permalink: journey-to-sublime
 ---
 
 ![Sublime Text Screen](/assets/media/build/posts/sublime-screen.png)

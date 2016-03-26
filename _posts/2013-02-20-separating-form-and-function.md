@@ -1,6 +1,7 @@
 ---
 layout: article
 title: Separating Form and Function
+permalink: separating-form-and-function
 ---
 
 In my previous article, [Extendable Switch Statements]({% post_url 2013-02-09-extendable-switch-statements %}), I talked about separating the inner-workings of the WordPress loop to more maintainable output functions. The purpose of this article, is to take a step back and create smarter wrappers for our themes.

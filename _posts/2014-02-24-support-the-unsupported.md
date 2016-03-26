@@ -1,6 +1,7 @@
 ---
 layout: article
 title: Support the Unsupported
+permalink: support-the-unsupported
 ---
 
 As new technlogies and trends arise in front-end devlopment, we always take a catious approach to ensuring compatability with older browsers. What we've come to realize is that global usage stats are not realistic measures for every client; more that it's dependant on their current userbase and how a drastic change may affect them. Let's look at a few examples and how we can get around these common cruxes:

@@ -1,6 +1,7 @@
 ---
 layout: article
 title: Upgraded Yeti
+permalink: upgraded-yeti
 ---
 
 In my [previous article]({% post_url 2013-03-31-versioned-dependencies-with-compass %}), I went over how Foundation 3 and 4 could co-exist in your development setup, making for a happier, healthier you. While there are certainly situations where you'll need to keep "legacy" projects around, my use-case was more targeted on my own setup -- just being lazy about upgrading my current site.

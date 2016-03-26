@@ -1,6 +1,7 @@
 ---
 layout: article
 title: Reference SVGs Like the Cool Kids
+permalink: svg-cool-kids
 ---
 
 As mentioned in my [SVG background fill article](/articles/svg-background-fill), I use [gulp-svg-sprites](https://www.npmjs.org/package/gulp-svg-sprites) to build my icon sets. This makes it incredibly simple to access specific symbols like so:

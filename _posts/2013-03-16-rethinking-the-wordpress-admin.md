@@ -1,6 +1,7 @@
 ---
 layout: article
 title: Rethinking the WordPress Admin
+permalink: rethinking-the-wordpress-admin
 ---
 
 As WordPress has matured further into (dare I say) an application framework, the needs of those taking full-advantage of it have progressed as well. WordPress's API has become a solid platform for building SAAS products and many have based their entire business around building themes and plugins for it.

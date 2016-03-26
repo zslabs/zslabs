@@ -1,6 +1,7 @@
 ---
 layout: article
 title: Modifying SVG Background Fills
+permalink: svg-background-fill
 ---
 
 Don't get me wrong - I love [IcoMoon](http://icomoon.io), but I've become pretty annoyed with loading up the app whenever I need to add-in a new icon, generate the .zip file, copy/paste it into my project and port over the icon mappings.

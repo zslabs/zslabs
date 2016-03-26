@@ -1,6 +1,7 @@
 ---
 layout: article
 title: Less is More
+permalink: less-is-more
 ---
 
 In my [previous article]({% post_url 2014-01-20-new-guts %}), I talked about some of the backend tools that went into my site rebuild; without touching any of the design elements. Being the "creative-type", I ended up feeling like the current design just wasn't up to par with my current taste. What you see now is a good two-weekends of work that I'm pretty happy with.
