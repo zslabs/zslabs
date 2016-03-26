@@ -1,10 +1,6 @@
 # Permalinks
 permalink: "/articles/:title/"
 
-# Server
-url: "https://zslabs.com"
-encoding: UTF-8
-
 # Setup
 exclude:          
   - bower_components
