@@ -1,7 +1,7 @@
 # Permalinks
 baseurl: ""
 url: "zslabs.com"
-permalink: /articles/:title
+permalink: "/articles/:title"
 relative_permalinks: true
 
 # Setup
