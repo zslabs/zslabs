@@ -1,9 +1,11 @@
 title: ZS Labs
 
+baseurl: articles/
+
 tagline: Personal blog and portfolio of developer Zach Schnackel.
 
 # Permalinks
-permalink: "/articles/:title/
+permalink: /:title/
 
 # Setup
 exclude:          
