@@ -1,12 +1,13 @@
 # Permalinks
-permalink:        articles/:title
+baseurl: ""
+url: "zslabs.com"
+permalink: /articles/:title
 relative_permalinks: true
 
 # Setup
 exclude:          ['bower_components', 'node_modules']
 title:            ZS Labs
 tagline:          Personal blog of Zach Schnackel
-url:              https://zslabs.com
 paginate:         1
 baseurl:          /
 author:
