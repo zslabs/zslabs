@@ -6,7 +6,7 @@ relative_permalinks: true
 exclude:          ['bower_components', 'node_modules']
 title:            ZS Labs
 tagline:          Personal blog of Zach Schnackel
-url:              http://zslabs.com
+url:              https://zslabs.com
 paginate:         1
 baseurl:          /
 author:
