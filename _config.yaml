@@ -5,7 +5,6 @@ permalink: "/articles/:title/"
 exclude:          ['bower_components', 'node_modules']
 title:            ZS Labs
 tagline:          "Personal blog of Zach Schnackel"
-paginate:         1
 author:
   name:           "Zach Schnackel"
   url:            "https://twitter.com/zslabs"
