@@ -1,6 +1,10 @@
 # Permalinks
 permalink: pretty
 
+# Server
+url:              https://zslabs.com
+encoding:         UTF-8
+
 # Setup
 exclude:          ['bower_components', 'node_modules']
 title:            ZS Labs
