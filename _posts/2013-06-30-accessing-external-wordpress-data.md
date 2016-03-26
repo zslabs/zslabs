@@ -1,7 +1,7 @@
 ---
 layout: article
 title: Accessing External WordPress Data
-permalink: accessing-external-wordpress-data
+permalink: articles/accessing-external-wordpress-data
 ---
 
 As much as I love treating WordPress as a true application framework; bringing simplicity into the vast craziness that is the web, it can still be a bit of a heavy hammer for an entire site. If all you want is a blog and the rest of your site has no need to be controlled via an admin, or more importantly, the complexity of your page layouts seem counter-intuitive to separate into a CMS file -- that you then still have to hook up to a page in the admin anyway, then it's possible that a "fusion" site might be better in your case.

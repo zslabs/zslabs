@@ -1,7 +1,7 @@
 ---
 layout: article
 title: Default Views for Plugins
-permalink: default-views-for-plugins
+permalink: articles/default-views-for-plugins
 ---
 
 Today, plugins are not just performing simple manipulations to our beloved CMS - they're creating new editing experiences, managing SEO, connecting to social networks, etc. And for all the complexities behind these plugins, developers continue to bridge the gap between the awesomesauce they create and the end-user experience.

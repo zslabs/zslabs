@@ -7,10 +7,10 @@ url: https://zslabs.com
 tagline: Personal blog and portfolio of developer Zach Schnackel.
 
 # Permalinks
-permalink: articles/:title/
+permalink: :title/
 
 # Setup
-exclude:          
+exclude:
   - bower_components
   - node_modules
 

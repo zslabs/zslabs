@@ -1,7 +1,7 @@
 ---
 layout: article
 title: Hello Kirby
-permalink: hello-kirby
+permalink: articles/hello-kirby
 ---
 
 I like WordPress - hell I love it. I've spent the past few years making a living off of it and can talk for hours about why it gives me that warm feeling inside. But the most important thing I've learned, is to always use the right tool for the job. For most of the client-work I do, WordPress fits the bill. With a bustling community, a slew of quality plugins and an extensible and well-documented API, developing/working with WordPress is a joy. Clients love it for its simplicity - I love it for what it represents: open source at its best.

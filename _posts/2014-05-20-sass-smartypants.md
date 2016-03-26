@@ -1,7 +1,7 @@
 ---
 layout: article
 title: Sass tips for the wise and extremely good-looking
-permalink: sass-smartypants
+permalink: articles/sass-smartypants
 ---
 
 Let's face it: web development has become A LOT more involved than it used to be. Can't we all just go back to using `<table>` and `<font>` for everything? No matter how much some people may cringe at all the options available today, its those options that have made my line of work that much more enjoyable and challenging. I'm able to quickly protype and build experiences that would have taken me much longer, all while learning new technologies that push you to think differently.

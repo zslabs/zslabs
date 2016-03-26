@@ -1,7 +1,7 @@
 ---
 layout: article
 title: Grunt All The Things
-permalink: grunt-all-the-things
+permalink: articles/grunt-all-the-things
 ---
 
 As I mentioned in my [previous article](/articles/basey) about Basey; a WordPress boilerplate theme I created, I use several modern dev tools to tackle handling some of the magic and more monotonous tasks that go into building a website. One such tool, is called [GruntJS](http://gruntjs.com).

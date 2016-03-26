@@ -1,7 +1,7 @@
 ---
 layout: article
 title: Extendable Switch Statements
-permalink: extendable-switch-statements
+permalink: articles/extendable-switch-statements
 ---
 
 Throughout my base parent-theme, [Basey](http://baseytheme.com), I was hell-bent on creating a DRY logic that was intuitive enough to handle the most complex setups, while not being too convoluted for the average user to get up and running. Inspired by [Scribu's article on theme wrappers](http://scribu.net/wordpress/theme-wrappers.html), I found several areas in my theme that <s>should be</s> needed to be pluggable.

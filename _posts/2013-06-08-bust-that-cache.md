@@ -1,7 +1,7 @@
 ---
 layout: article
 title: Bust That Cache
-permalink: bust-that-cache
+permalink: articles/bust-that-cache
 ---
 
 Let's setup a typical development scenario. You're being good lad/lass and developing locally. You're using a preprocessor like [SASS](http://sass-lang.com) or [LESS](http://lesscss.org) and [Codekit](http://incident57.com/codekit/) or [Guard](https://github.com/guard/guard) to compile your assets. You're even using version control and deploying to a staging server. First, _virtual high-five_. Having a development process like this is extremely helpful for making changes quickly and having an audit trail as your product/project matures.

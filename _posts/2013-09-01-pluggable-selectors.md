@@ -1,7 +1,7 @@
 ---
 layout: article
 title: Pluggable Selectors - SASS vs LESS
-permalink: pluggable-selectors
+permalink: articles/pluggable-selectors
 ---
 
 There's been enough to comparison articles about SASS vs LESS, so... I figured one more couldn't hurt. This article isn't going to give you a side-by-side comparison of every feature we're all aware of, but a closer look at an inheritance difference I've seen with each.

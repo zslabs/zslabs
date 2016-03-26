@@ -1,7 +1,7 @@
 ---
 layout: article
 title: Do More With Less
-permalink: do-more-with-less
+permalink: articles/do-more-with-less
 ---
 
 Wow it's been a while! A lot has happened over the past few months. I joined the team over at [BoomTown](http://boomtownroi.com); a super-talented group that provides end-to-end solutions for real estate firms. The transition from agency to product work was something I had always been interested in; and I can honestly say this has been the best decision I could have made for my career.

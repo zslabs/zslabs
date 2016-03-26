@@ -1,7 +1,7 @@
 ---
 layout: article
 title: Fury & Sassy
-permalink: fury-sassy
+permalink: articles/fury-sassy
 ---
 
 While fads come and go, one that I personally have stuck with since it's inception is [Foundation](http://foundation.zurb.com) by [Zurb](http://zurb.com). Foundation is a front-end CSS/JS framework that makes it crazy easy to prototype and develop sites/apps. It's amazing to look back at what Foundation once was and what it has become - and for me, it's an integral part of my day to day workflow.

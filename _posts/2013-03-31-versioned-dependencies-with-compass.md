@@ -1,7 +1,7 @@
 ---
 layout: article
 title: Versioned Dependencies with Compass
-permalink: versioned-dependencies-with-compass
+permalink: articles/versioned-dependencies-with-compass
 ---
 
 When [Foundation](http://foundation.zurb.com/) released version 4 of their popular CSS/JS framework, they decided to go with a "mobile-first" approach. What does this mean? As Zurb mentioned in their [release post](http://www.zurb.com/article/1173/foundation-4-is-here-the-smartest-foundat):
