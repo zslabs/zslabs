@@ -1,5 +1,5 @@
 # Permalinks
-permalink: articles/:title/
+permalink: pretty
 
 # Setup
 exclude:          ['bower_components', 'node_modules']
