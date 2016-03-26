@@ -2,10 +2,12 @@ title: ZS Labs
 
 baseurl: ''
 
+url: https://zslabs.com
+
 tagline: Personal blog and portfolio of developer Zach Schnackel.
 
 # Permalinks
-permalink: /articles/:title/
+permalink: articles/:title/
 
 # Setup
 exclude:          
@@ -16,5 +18,3 @@ author:
   name: Zach Schnackel
   url: https://twitter.com/zslabs
   email: info@zslabs.com
-
-url: https://zslabs.com
