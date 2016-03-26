@@ -1,13 +1,18 @@
+title: ZS Labs
+
+tagline: Personal blog and portfolio of developer Zach Schnackel.
+
 # Permalinks
-permalink: "/articles/:title/"
+permalink: "/articles/:title/
 
 # Setup
 exclude:          
   - bower_components
   - node_modules
-title: ZS Labs
-tagline: "Personal blog of Zach Schnackel"
+
 author:
-  name: "Zach Schnackel"
-  url: "https://twitter.com/zslabs"
-  email: "info@zslabs.com"
+  name: Zach Schnackel
+  url: https://twitter.com/zslabs
+  email: info@zslabs.com
+
+url: http://zslabs.com/
