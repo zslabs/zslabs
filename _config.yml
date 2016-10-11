@@ -18,3 +18,7 @@ author:
   name: Zach Schnackel
   url: https://twitter.com/zslabs
   email: info@zslabs.com
+  
+# Gems
+gems:
+  - jekyll-feed
