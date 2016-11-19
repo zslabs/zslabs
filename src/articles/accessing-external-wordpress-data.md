@@ -31,7 +31,7 @@ if ( !isset($wp_did_header) ) {
 }
 ```
 
-This file loads the WordPress environment (aka what we want). The reason we wouldn't want to load just the elluring `wp-load.php` is because `wp-blog-header.php` also runs the `wp()` function, which actually sets up the global query. The `template-loader.php` file is in essense ignored since there is a check to see if `WP_USE_THEMES` has been defined or not.
+This file loads the WordPress environment (aka what we want). The reason we wouldn't want to load just the alluring `wp-load.php` is because `wp-blog-header.php` also runs the `wp()` function, which actually sets up the global query. The `template-loader.php` file is in essense ignored since there is a check to see if `WP_USE_THEMES` has been defined or not.
 
 So, we're loading the WordPress environment on a static PHP without loading a theme wrapper. Great, so now what? Now what not now what?! _Just as an appendage, I know that last sentence made no sense._
 

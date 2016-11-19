@@ -6,7 +6,7 @@ excerpt: "A task-runner that really brings the heat!"
 
 As I mentioned in my [previous article](/articles/basey) about Basey; a WordPress boilerplate theme I created, I use several modern dev tools to tackle handling some of the magic and more monotonous tasks that go into building a website. One such tool, is called [GruntJS](http://gruntjs.com).
 
-Grunt is a JavaScript task-runner, which can do everything from finding/replacing strings and placing copyright banners on compiled files, to running deployment tasks and rsyncing into a Vagrant instanse; pretty powerful stuff. What I thought I'd do is run through some of the Grunt plugins I use on a daily basis and why you should think about doing the same.
+Grunt is a JavaScript task-runner, which can do everything from finding/replacing strings and placing copyright banners on compiled files, to running deployment tasks and r-syncing into a Vagrant instance; pretty powerful stuff. What I thought I'd do is run through some of the Grunt plugins I use on a daily basis and why you should think about doing the same.
 
 **[grunt-contrib-copy](https://github.com/gruntjs/grunt-contrib-copy)** - Copies folders/files. Seems pretty simple, but when you're updating Bower components or creating separate `/src` and `/dist` directories for your project, it's a little tidbit that just makes sense. And since you can use wildcard attributes for src items, it makes selecting exactly what you want that much easier.
 
@@ -26,7 +26,7 @@ copy: {
 }
 ```
 
-**[grunt-contrib-concat](https://github.com/gruntjs/grunt-contrib-concat)** - You guessed it, combines files. Most of us might be used to creating a large `plugins.js` file and pasting numerous libararies into there, but why not keep those src files separate and combine them on during a build? It makes updating, locating and re-positioning files that much easier.
+**[grunt-contrib-concat](https://github.com/gruntjs/grunt-contrib-concat)** - You guessed it, combines files. Most of us might be used to creating a large `plugins.js` file and pasting numerous libraries into there, but why not keep those src files separate and combine them on during a build? It makes updating, locating and re-positioning files that much easier.
 
     concat: {
         ie: {
@@ -103,7 +103,7 @@ sass: {
 }
 ```
 
-**[grunt-pixrem](https://github.com/robwierzbowski/grunt-pixrem)** - I'll go ahead and say it, I think the whole _px_ vs _em_ vs _rem_ argument is moot. Certainly there's use-cases for usability on specific setups, but with all of the different facets that make up an interactive user experience, it's something that has caused more headaches than problem solving; _px_ is straight-forward and always works, everywhere. That being said, I've developed with both and had a recent project that needed to support IE8 (sucks, ammiright?) that was using REMs throughout (with Foundation 5). This plugin fit the bill nicely. Config takes a root _px_ value and can either replace all of your current stylesheet, or create an entirely new one that is _px_ based. For many projects, I simply convert all _rem_ references to _px_.
+**[grunt-pixrem](https://github.com/robwierzbowski/grunt-pixrem)** - I'll go ahead and say it, I think the whole _px_ vs _em_ vs _rem_ argument is moot. Certainly there's use-cases for usability on specific setups, but with all of the different facets that make up an interactive user experience, it's something that has caused more headaches than problem solving; _px_ is straight-forward and always works, everywhere. That being said, I've developed with both and had a recent project that needed to support IE8 (sucks, amiright?) that was using REMs throughout (with Foundation 5). This plugin fit the bill nicely. Config takes a root _px_ value and can either replace all of your current stylesheet, or create an entirely new one that is _px_ based. For many projects, I simply convert all _rem_ references to _px_.
 
 ```js
 pixrem: {

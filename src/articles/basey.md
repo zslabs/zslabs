@@ -6,7 +6,7 @@ excerpt: "A developer-first WordPress theme"
 
 Among the numerous technologies I use, [WordPress](http://wordpress.org) has proven to be flexible enough for simple blogs to advanced applications. Coupled with the amazing plugin ecosystem, theming is just as enjoyable; and extensible.
 
-[Basey](http://github.com/zslabs/basey-theme) is a pet-project of mine that started about one-and-a-half years ago and has become our go-to for theme development here. The primary goal of Basey was to be all enclusive, without becoming bloated like a lot of the "all-in-one" themes you'll see out there are; focused yet still wide-open.
+[Basey](http://github.com/zslabs/basey-theme) is a pet-project of mine that started about one-and-a-half years ago and has become our go-to for theme development here. The primary goal of Basey was to be all inclusive, without becoming bloated like a lot of the "all-in-one" themes you'll see out there are; focused yet still wide-open.
 
 If you look inside [`index.php`](https://github.com/zslabs/basey-theme/blob/master/index.php), you'll notice there's not a lot of markup going on:
 

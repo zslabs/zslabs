@@ -4,7 +4,7 @@ date: 2013-03-09
 excerpt: "Provide default templates for your WordPress plugins"
 ---
 
-Today, plugins are not just performing simple manipulations to our beloved CMS - they're creating new editing experiences, managing SEO, connecting to social networks, etc. And for all the complexities behind these plugins, developers continue to bridge the gap between the awesomesauce they create and the end-user experience.
+Today, plugins are not just performing simple manipulations to our beloved CMS - they're creating new editing experiences, managing SEO, connecting to social networks, etc. And for all the complexities behind these plugins, developers continue to bridge the gap between the awesome-sauce they create and the end-user experience.
 
 One such example are Custom Post Types. WordPress makes it pretty easy to [register a custom post type](http://codex.wordpress.org/Function_Reference/register_post_type), but aside from the interface built to handle them in the backend, frontend viewing is normally kept pretty minimal (if at all). I felt uneasy about creating my plugin and then asking the end-user to take the reigns and build their own frontend. Sure - it's not entirely difficult to do, but based on the scope of your plugin, without some sort of starting point, would render it moot.
 
