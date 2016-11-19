@@ -1,3 +1,0 @@
-# ZS Labs
-
-Personal site
