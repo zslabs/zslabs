@@ -109,6 +109,14 @@
   }
 
   &-title {
+    @media (min-width: $global-viewport--medium) {
+      font-size: ($base-h1-font-size * 1.25);
+    }
+  }
+}
+
+@supports (-webkit-background-clip: text) {
+  .Article-title {
     position: relative;
     z-index: 2;
     background: url('../media/pattern.png') 85% 35% no-repeat;
@@ -116,9 +124,5 @@
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     text-shadow: 0 1px 1px rgba($global-dark, 0.1);
-
-    @media (min-width: $global-viewport--medium) {
-      font-size: ($base-h1-font-size * 1.25);
-    }
   }
 }
