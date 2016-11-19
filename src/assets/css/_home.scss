@@ -17,6 +17,10 @@
 
   &-wrapper {
     width: 100%;
+  }
+
+  &-textContent {
+    width: 100%;
 
     @media (max-width: $global-viewport--small-max) {
       text-align: center;
