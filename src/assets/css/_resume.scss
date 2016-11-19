@@ -1,0 +1,87 @@
+.Resume {
+  &-header {
+    @media (min-width: $global-viewport--medium) {
+      display: flex;
+      align-items: center;
+      width: 100%;
+
+      &Right {
+        margin-left: auto;
+      }
+    }
+
+    @media (max-width: $global-viewport--small-max) {
+      &Right {
+        margin-top: $global-whitespace--large;
+      }
+    }
+
+    &Right {
+      font-family: $base-code-font-family;
+
+      @media (min-width: $global-viewport--medium) {
+        margin-left: auto;
+      }
+
+      @media (max-width: $global-viewport--small-max) {
+        margin-top: $global-whitespace--large;
+      }
+    }
+  }
+
+  &-intro {
+    &Container {
+      @media (min-width: $global-viewport--medium) {
+        display: flex;
+        align-items: center;
+        width: 100%;
+      }
+
+      @media (max-width: $global-viewport--small-max) {
+        text-align: center;
+      }
+    }
+
+    &Media {
+      size: 100px;
+
+      img {
+        border-radius: 50%;
+      }
+
+      @media (min-width: $global-viewport--medium) {
+        flex-shrink: 0;
+        margin-right: $global-whitespace--large;
+      }
+
+      @media (max-width: $global-viewport--small-max) {
+        margin: 0 auto $global-whitespace--large;
+      }
+    }
+  }
+
+  &-title {
+    &Sub {
+      text-transform: uppercase;
+      position: relative;
+      line-height: 2;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: $global-border;
+      }
+    }
+  }
+
+  &-projectLink {
+    text-transform: uppercase;
+    font-weight: $global-font-weight-bold;
+    font-size: $global-font-size-xsmall;
+    word-wrap: break-word;
+  }
+}

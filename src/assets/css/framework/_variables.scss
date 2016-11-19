@@ -1,0 +1,26 @@
+$global-muted: rgba($global-font-color, 0.5);
+
+$build-path: '../../../../dist/assets/';
+
+$components: (
+  'badge',
+  'button',
+  'container',
+  'flex',
+  'grid',
+  'icon',
+  'inline',
+  'misc-utility',
+  'modal',
+  'prism',
+  'section',
+  'text',
+  'visibility',
+  'whitespace'
+);
+
+//
+// Custom
+//
+
+$header-height: 100px;

@@ -1,0 +1,35 @@
+---
+title: Homepage
+scripts: ['home']
+---
+
+<div class="Intro">
+  <div class="Intro-wrapper">
+    <div class="Intro-media">
+      <svg fill="url(#pattern)" class="Icon-logo">
+        <use xlink:href="#logo"></use>
+      </svg>
+    </div>
+    <div class="Intro-text">
+      <h1 class="Intro-header u-mb--remove">Zach Schnackel</h1>
+      <div class="Intro-sub">
+        <span class="u-textMuted u-mr--small">UI/Motion Developer at</span>
+        {% include '../../../dist/assets/media/do-logo.svg' %}
+      </div>
+    </div>
+  </div>
+  <div class="u-mt--xlarge">
+    <div class="Row Row-largeGutter Nav-list">
+      <div class="Column-6--medium u-textRight--medium">
+        <button type="button" class="Button Button--articles" data-js="articleTrigger">
+          <span>Articles</span>
+        </button>
+      </div>
+      <div class="Column-6--medium">
+        <a href="/resume/" class="Button Button--resume">
+          <span>Resume</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
