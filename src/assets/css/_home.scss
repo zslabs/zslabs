@@ -20,8 +20,6 @@
   }
 
   &-textContent {
-    width: 100%;
-
     @media (max-width: $global-viewport--small-max) {
       text-align: center;
     }
@@ -31,6 +29,7 @@
       align-items: center;
       flex-direction: row;
       justify-content: center;
+      width: 100%;
     }
   }
 
