@@ -114,7 +114,7 @@ if ( !isset($wp_did_header) ) {
   require_once( ABSPATH . WPINC . &#39;/template-loader.php&#39; );
 }
 </code></pre>
-<p>This file loads the WordPress environment (aka what we want). The reason we wouldn&#39;t want to load just the elluring <code>wp-load.php</code> is because <code>wp-blog-header.php</code> also runs the <code>wp()</code> function, which actually sets up the global query. The <code>template-loader.php</code> file is in essense ignored since there is a check to see if <code>WP_USE_THEMES</code> has been defined or not.</p>
+<p>This file loads the WordPress environment (aka what we want). The reason we wouldn&#39;t want to load just the alluring <code>wp-load.php</code> is because <code>wp-blog-header.php</code> also runs the <code>wp()</code> function, which actually sets up the global query. The <code>template-loader.php</code> file is in essense ignored since there is a check to see if <code>WP_USE_THEMES</code> has been defined or not.</p>
 <p>So, we&#39;re loading the WordPress environment on a static PHP without loading a theme wrapper. Great, so now what? Now what not now what?! <em>Just as an appendage, I know that last sentence made no sense.</em></p>
 <p>We can now run WordPress functions as we see fit. Here&#39;s one to grab the latest 3 posts:</p>
 <pre><code class="language-php">$args =  array(

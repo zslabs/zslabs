@@ -96,7 +96,7 @@
       <h1 class="Article-title">Grunt All The Things</h1>
       <div class="u-textMuted u-mb--large">Apr 21st, 2014</div>
       <p>As I mentioned in my <a href="/articles/basey">previous article</a> about Basey; a WordPress boilerplate theme I created, I use several modern dev tools to tackle handling some of the magic and more monotonous tasks that go into building a website. One such tool, is called <a href="http://gruntjs.com">GruntJS</a>.</p>
-<p>Grunt is a JavaScript task-runner, which can do everything from finding/replacing strings and placing copyright banners on compiled files, to running deployment tasks and rsyncing into a Vagrant instanse; pretty powerful stuff. What I thought I&#39;d do is run through some of the Grunt plugins I use on a daily basis and why you should think about doing the same.</p>
+<p>Grunt is a JavaScript task-runner, which can do everything from finding/replacing strings and placing copyright banners on compiled files, to running deployment tasks and r-syncing into a Vagrant instance; pretty powerful stuff. What I thought I&#39;d do is run through some of the Grunt plugins I use on a daily basis and why you should think about doing the same.</p>
 <p><strong><a href="https://github.com/gruntjs/grunt-contrib-copy">grunt-contrib-copy</a></strong> - Copies folders/files. Seems pretty simple, but when you&#39;re updating Bower components or creating separate <code>/src</code> and <code>/dist</code> directories for your project, it&#39;s a little tidbit that just makes sense. And since you can use wildcard attributes for src items, it makes selecting exactly what you want that much easier.</p>
 <pre><code class="language-js">copy: {
   main: {
@@ -112,7 +112,7 @@
   }
 }
 </code></pre>
-<p><strong><a href="https://github.com/gruntjs/grunt-contrib-concat">grunt-contrib-concat</a></strong> - You guessed it, combines files. Most of us might be used to creating a large <code>plugins.js</code> file and pasting numerous libararies into there, but why not keep those src files separate and combine them on during a build? It makes updating, locating and re-positioning files that much easier.</p>
+<p><strong><a href="https://github.com/gruntjs/grunt-contrib-concat">grunt-contrib-concat</a></strong> - You guessed it, combines files. Most of us might be used to creating a large <code>plugins.js</code> file and pasting numerous libraries into there, but why not keep those src files separate and combine them on during a build? It makes updating, locating and re-positioning files that much easier.</p>
 <pre><code>concat: {
     ie: {
         options: {
@@ -174,7 +174,7 @@
   }
 }
 </code></pre>
-<p><strong><a href="https://github.com/robwierzbowski/grunt-pixrem">grunt-pixrem</a></strong> - I&#39;ll go ahead and say it, I think the whole <em>px</em> vs <em>em</em> vs <em>rem</em> argument is moot. Certainly there&#39;s use-cases for usability on specific setups, but with all of the different facets that make up an interactive user experience, it&#39;s something that has caused more headaches than problem solving; <em>px</em> is straight-forward and always works, everywhere. That being said, I&#39;ve developed with both and had a recent project that needed to support IE8 (sucks, ammiright?) that was using REMs throughout (with Foundation 5). This plugin fit the bill nicely. Config takes a root <em>px</em> value and can either replace all of your current stylesheet, or create an entirely new one that is <em>px</em> based. For many projects, I simply convert all <em>rem</em> references to <em>px</em>.</p>
+<p><strong><a href="https://github.com/robwierzbowski/grunt-pixrem">grunt-pixrem</a></strong> - I&#39;ll go ahead and say it, I think the whole <em>px</em> vs <em>em</em> vs <em>rem</em> argument is moot. Certainly there&#39;s use-cases for usability on specific setups, but with all of the different facets that make up an interactive user experience, it&#39;s something that has caused more headaches than problem solving; <em>px</em> is straight-forward and always works, everywhere. That being said, I&#39;ve developed with both and had a recent project that needed to support IE8 (sucks, amiright?) that was using REMs throughout (with Foundation 5). This plugin fit the bill nicely. Config takes a root <em>px</em> value and can either replace all of your current stylesheet, or create an entirely new one that is <em>px</em> based. For many projects, I simply convert all <em>rem</em> references to <em>px</em>.</p>
 <pre><code class="language-js">pixrem: {
   options: {
     rootvalue: &#39;16px&#39;,
