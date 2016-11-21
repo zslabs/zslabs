@@ -29,7 +29,15 @@ Some benefits of our library are:
 
 Registering, removing and refreshing components is incredibly simple thanks to a dead-simple API that still has tons of room for flexibility based on your project's setup.
 
-<p data-height="406" data-theme-id="0" data-slug-hash="ZYGxBV" data-default-tab="result" data-user="mcraiganthony" class='codepen'>See the Pen <a href='http://codepen.io/mcraiganthony/pen/ZYGxBV/'>Element Queries - Using BoomQueries</a> by Craig Anthony (<a href='http://codepen.io/mcraiganthony'>@mcraiganthony</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+It's as simple as passing your component into a new BoomQueries instance:
+
+```js
+const $component = document.createElement('div');
+
+boomQueries.add($component, [
+  [480, 'component--md'],
+  [600, 'component--lg']
+]);
+```
 
 Huge props to [Mark Funk](https://twitter.com/markfunk) and [Jason Benesch](https://twitter.com/jbenesch) for helping clean everything up and getting it ready for the masses.
