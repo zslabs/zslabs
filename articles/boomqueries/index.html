@@ -117,9 +117,14 @@
 <li>Control over sizing classes added for more granular control</li>
 </ol>
 <p>Registering, removing and refreshing components is incredibly simple thanks to a dead-simple API that still has tons of room for flexibility based on your project&#39;s setup.</p>
-<p><p data-height="406" data-theme-id="0" data-slug-hash="ZYGxBV" data-default-tab="result" data-user="mcraiganthony" class='codepen'>See the Pen <a href='http://codepen.io/mcraiganthony/pen/ZYGxBV/'>Element Queries - Using BoomQueries</a> by Craig Anthony (<a href='http://codepen.io/mcraiganthony'>@mcraiganthony</a>) on <a href='http://codepen.io'>CodePen</a>.</p></p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+<p>It&#39;s as simple as passing your component into a new BoomQueries instance:</p>
+<pre><code class="language-js">const $component = document.createElement(&#39;div&#39;);
 
+boomQueries.add($component, [
+  [480, &#39;component--md&#39;],
+  [600, &#39;component--lg&#39;]
+]);
+</code></pre>
 <p>Huge props to <a href="https://twitter.com/markfunk">Mark Funk</a> and <a href="https://twitter.com/jbenesch">Jason Benesch</a> for helping clean everything up and getting it ready for the masses.</p>
 
       <hr class="u-mv--large">
