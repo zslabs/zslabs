@@ -1,3 +1,5 @@
+import fs from 'fs';
+import util from 'util';
 import metalsmith from 'metalsmith';
 import feed from 'metalsmith-feed';
 import moveUp from 'metalsmith-move-up';
@@ -13,6 +15,11 @@ import filemetadata from 'metalsmith-filemetadata';
 import browserSync from 'browser-sync';
 
 const reload = browserSync.reload;
+const built = {};
+const builtFiles = [
+  './dist/assets/css/site.css',
+  './dist/assets/js/entry.js'
+];
 
 /**
  * Middleman data output
@@ -33,6 +40,36 @@ const reload = browserSync.reload;
     done();
   };
 }*/
+
+/**
+ * Get built file modification times
+ * @return {object}
+ */
+function fileModTimes() {
+  builtFiles.forEach((value) => {
+    // Create key based off of filename
+    const parts = value.split('/');
+    const key = parts.pop();
+
+    built[key] = '';
+
+    // Attempt to read file
+    fs.readFile(value, 'utf8', (err) => {
+      // If we find the file
+      if (!err) {
+        fs.stat(value, (err, stats) => {
+          // Get modification time of file
+          const mtime = new Date(util.inspect(stats.mtime));
+
+          built[key] = Date.parse(mtime);
+        });
+      }
+    });
+
+  });
+
+  return built;
+}
 
 module.exports = () => {
   return () => {
@@ -83,6 +120,12 @@ module.exports = () => {
           'layout': 'default.html'
         },
         preserve: true
+      },
+      {
+        pattern: '**/*',
+        metadata: {
+          files: fileModTimes()
+        }
       }
     ]))
     .use(markdown({
