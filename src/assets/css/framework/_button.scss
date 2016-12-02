@@ -10,18 +10,23 @@ $button-contrast-enable: false;
 $button-icon-enable: false;
 
 @mixin hook-button() {
-  border-radius: ($global-height / 2);
   letter-spacing: 0.25em;
   font-size: $global-font-size-small;
   text-transform: uppercase;
   font-weight: normal;
   position: relative;
   transform-origin: center center;
-  box-shadow: 0 0 15px rgba($global-dark, 0.1);
+  box-shadow: 0 0 15px rgba($global-dark, 0.15);
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 15px rgba($global-dark, 0.3);
+    transform: translateY((-$global-whitespace--xsmall / 2));
+  }
 
   &:active {
-    transform: scale(0.95);
-    box-shadow: 0 0 30px rgba($global-dark, 0.2);
+    transform: translateY((-$global-whitespace--xsmall / 2)) scale(0.95);
+    box-shadow: 0 0 30px rgba($global-dark, 0.3);
   }
 
   &--articles,

@@ -1,21 +1,4 @@
 .Articles {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  transform: translateX(-100%);
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-  opacity: 0;
-  padding: $global-whitespace--large;
-  background: rgba($global-background, 0.95);
-  z-index: 10;
-
-  @media (min-width: $global-viewport--small) {
-    width: 320px;
-  }
-
   &-list {
     padding: 0;
     list-style: none;
@@ -74,13 +57,6 @@
     color: $global-font-color;
   }
 
-  &-close {
-    @extend .Modal-close;
-
-    top: $global-whitespace--regular;
-    right: $global-whitespace--regular;
-  }
-
   &-interiorTrigger {
     display: inline-block;
     transition: transform 0.25s easeOutBack;
@@ -89,6 +65,7 @@
       size: 60px;
       transform: scale(0.5);
       transform-origin: center center;
+      fill: $global-font-color;
     }
 
     &:hover {

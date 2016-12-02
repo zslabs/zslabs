@@ -24,11 +24,11 @@
           </a>
         </div>
         <div>
-          <button type="button" class="Button--reset Articles-interiorTrigger" data-js="articleTrigger">
+          <a href="#Articles" class="Articles-interiorTrigger" data-offcanvas>
             <svg class="Icon Icon-list">
               <use xlink:href="#list"></use>
             </svg>
-          </button>
+          </a>
         </div>
         {% endif %}
         <div>
@@ -82,14 +82,16 @@
     </div>
     {% if (title !== 'Resume') %}
       {% if articles %}
-        <aside class="Articles">
-          <button class="Button--reset Articles-close" type="button"><svg class="Icon"><title>Close Articles</title><use xlink:href="#close"></use></svg></button>
-          <h2 class="Article-title">Articles</h2>
-          <ul class="Articles-list">
-            {% for article in articles %}
-              <li><a class="u-inlineBlock" href="/{{ article.path }}/"><div class="u-textLarge Articles-title">{{ article.title }}</div><span class="u-textMuted">{{ article.date }}</span></a></li>
-            {% endfor %}
-          </ul>
+        <aside id="Articles" class="OffCanvas" tabindex="-1" role="dialog" aria-labelledby="Articles-title">
+          <div class="OffCanvas-panel">
+            <button class="Button--reset OffCanvas-close" type="button"><svg class="Icon"><title>Close Article list</title><use xlink:href="#close"></use></svg></button>
+            <h2 class="Article-title">Articles</h2>
+            <ul class="Articles-list">
+              {% for article in articles %}
+                <li><a class="u-inlineBlock" href="/{{ article.path }}/"><div class="u-textLarge Articles-title">{{ article.title }}</div><span class="u-textMuted">{{ article.date }}</span></a></li>
+              {% endfor %}
+            </ul>
+          </div>
         </aside>
       {% endif %}
     {% endif %}

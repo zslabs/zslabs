@@ -22,7 +22,7 @@ module.exports = {
           path.resolve(__dirname, 'src/assets/js'),
           path.resolve(__dirname, 'node_modules/float')
         ],
-        loader: 'babel',
+        loader: 'babel-loader',
         query: {
           presets: [
             ['es2015', { 'modules': false }]
@@ -39,8 +39,6 @@ module.exports = {
       output: { comments: false },
       sourceMap: true
     }),
-    // Deduplication
-    new webpack.optimize.DedupePlugin(),
     // env plugin
     new webpack.DefinePlugin({
       'proccess.env': { NODE_ENV: JSON.stringify(nodeEnv)}
