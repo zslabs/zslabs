@@ -43,6 +43,8 @@ gulp.task('browser-sync', getTask('browser-sync'));
 gulp.task('stylelint', getTask('stylelint'));
 // Styles
 gulp.task('styles', ['svg-sprite', 'media', 'stylelint'], getTask('styles'));
+// Media
+gulp.task('fonts', getTask('fonts'));
 // Scripts
 gulp.task('scripts', getTask('scripts'));
 // Media
@@ -60,6 +62,7 @@ gulp.task('default', [
   'stylelint',
   'media',
   'styles',
+  'fonts',
   'pages'
 ]);
 
