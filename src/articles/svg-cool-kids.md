@@ -96,7 +96,7 @@ I'm able to now write my SVG icons like so:
 <i class="bt-icon" data-bt-icon="facebook"></i>
 ```
 
-The above CoffeeScript translates this to:
+The above translates this to:
 
 ```markup
 <svg class="bt-icon">
