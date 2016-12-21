@@ -7,18 +7,14 @@
       <div class="u-textMuted u-mb--large">{{ date }}</div>
       {{ contents | safe }}
       <hr class="u-mv--large">
-      <div id="disqus_thread"></div>
+      <div id="disqus_thread">
+        <button type="button" class="Button Button--comments Button--fullWidth" data-js="loadComments">View Comments</button>
+      </div>
       <script type="text/javascript">
         var disqus_shortname  = 'zslabs';
         var disqus_title      = '{{ title }}';
         var disqus_identifier = '/{{ path }}';
         var disqus_url        = 'https://zslabs.com/{{ path }}';
-
-        (function() {
-          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-          dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
       </script>
       <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>

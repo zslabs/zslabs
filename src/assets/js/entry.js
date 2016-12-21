@@ -5,6 +5,7 @@ import 'prismjs/components/prism-php';
 import 'prismjs/components/prism-less';
 import imageDefer from './modules/image-defer';
 import './modules/intros';
+import './modules/comments';
 
 // Init Modal component
 new Modal();
