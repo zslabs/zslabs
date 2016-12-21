@@ -25,7 +25,6 @@ $button-icon-enable: false;
   }
 
   &:active {
-    transform: translateY((-$global-whitespace--xsmall / 2)) scale(0.95);
     box-shadow: 0 0 30px rgba($global-dark, 0.3);
   }
 
