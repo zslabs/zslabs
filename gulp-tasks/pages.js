@@ -13,6 +13,13 @@ import dateFormatter from 'metalsmith-date-formatter';
 import filemetadata from 'metalsmith-filemetadata';
 //import htmlMinifier from 'metalsmith-html-minifier';
 import browserSync from 'browser-sync';
+import nunjucks from 'nunjucks';
+
+// https://github.com/superwolff/metalsmith-layouts/issues/43
+nunjucks.configure(['./src/templates', './dist/assets/icons', './dist/assets/media'], {
+  watch: false,
+  noCache: true
+});
 
 const reload = browserSync.reload;
 const built = {};
@@ -124,6 +131,7 @@ module.exports = () => {
       {
         pattern: '**/*',
         metadata: {
+          currentYear: new Date().getFullYear(),
           files: fileModTimes()
         }
       }

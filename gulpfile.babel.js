@@ -2,7 +2,6 @@ import gulp from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import browserSync from 'browser-sync';
 import paths from './gulp-tasks/paths.json';
-import nunjucks from 'nunjucks';
 import merge from 'lodash.merge';
 
 const packages = merge(
@@ -15,12 +14,6 @@ const $ = gulpLoadPlugins({
   config: packages
 });
 const reload = browserSync.reload;
-
-// https://github.com/superwolff/metalsmith-layouts/issues/43
-nunjucks.configure(['./src/templates', './dist/assets/icons', './dist/assets/media'], {
-  watch: false,
-  noCache: true
-});
 
 /**
  * Reusable function for including tasks in subfolders

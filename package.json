@@ -8,7 +8,7 @@
   "dependencies": {
     "babel-loader": "6.2.8",
     "del": "2.2.2",
-    "float": "git+ssh://github.internal.digitalocean.com/design/float.git#0.10.1",
+    "float": "git+https://github.internal.digitalocean.com/design/float.git#0.10.1",
     "gulp": "3.9.1",
     "gulp-imagemin": "3.1.1",
     "gulp-load-plugins": "1.4.0",
