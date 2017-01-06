@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>New Guts</title>
+    <title>GSAP&#39;in</title>
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,matchMedia,fetch,Element.prototype.placeholder"></script>
     <link rel="stylesheet" href="/assets/css/site.css?1483672232000">
     <link rel="alternate" type="application/rss+xml" name="Zach Schnackel" title="ZS Labs" href="/rss.xml">
@@ -93,38 +93,29 @@
       
   <main class="Section Article-content">
     <div class="Container Container--small">
-      <h1 class="Article-title">New Guts</h1>
-      <div class="u-textMuted u-mb--large">Jan 20th, 2014</div>
-      <p>I thought it was time for a change; not design, but my backend development tools. While this site may look nearly identical to the previous version, there&#39;s lots that went on under the hood. I thought a quick run-through of the current doodads were in order.</p>
-<h3 id="grunt">Grunt</h3>
-<p>I was and will always be a huge advocate for <a href="http://incident57.com/codekit/">Codekit</a>. It&#39;s a fantastic tool that gets you up and running without all of the setup nonsense that it can take to build a site with modern dev tools. That being said, I wanted 2014 to be a year of new exploration; new languages, methods, etc. and <a href="http://gruntjs.com">Grunt</a> has definitely fit the bill. I found not only the setup, but the configuration to be pretty easy and like Codekit once was, is now an indispensable tool. My reason for moving to Grunt wasn&#39;t purely to make my setup more difficult, it was of necessity when I found Codekit didn&#39;t allow me to do what I wanted with project assets. <a href="http://24ways.org/2013/grunt-is-not-weird-and-hard/">Here is a great article</a> to get you up and running with Grunt quickly.</p>
-<h3 id="bower">Bower</h3>
-<p>Like Gems are to Ruby and Composer is to PHP, frontend asset management with <a href="http://bower.io">Bower</a> makes your projects that much easier to setup and maintain. Before Bower, frontend assets were always a bit of a mixed bag for me. Let&#39;s describe my previous workflow.</p>
-<ol>
-<li>Find something amazeballs on Github, <a href="https://github.com/guillaumepotier/Parsley.js/">Parsley.JS</a> possibly</li>
-<li>Download latest release</li>
-<li>Add it to my project manually</li>
-<li>If I ever want to update to newer features/bug fixes, repeat steps 1-3 again</li>
-</ol>
-<p>This might not be that big of an issue for a library or two, but in much bigger applications, this can be a bear. Bower localizes components per project, neat and tidy. And again, setup/configuration is a breeze.</p>
-<h3 id="foundation-5">Foundation 5</h3>
-<p>The latest <a href="http://foundation.zurb.com">Foundation</a> release is what actually pushed me into learning about Grunt and Bower (since that&#39;s what it uses). F5 is much faster and feels like a much more polished version than its predecessors. Don&#39;t know what Foundation 5 offers? <a href="http://zurb.com/article/1280/foundation-5-blasts-off--2">Here ya go</a>.</p>
-<h3 id="vagrant">Vagrant</h3>
-<p>The basic idea of <a href="http://vagrant.io">Vagrant</a> is to create a localized server on your computer contained within a virtual machine. Why would you want this? Take all of the items I&#39;ve mentioned above. Here&#39;s a few of the packages that I had installed on my computer:</p>
+      <h1 class="Article-title">GSAP&#39;in</h1>
+      <div class="u-textMuted u-mb--large">Jan 5th, 2017</div>
+      <p>It&#39;s hard to believe it&#39;s been a year and a half since I first started playing around with GSAP. And unlike that new JavaScript framework that just came out yesterday (yes this statement applies no matter when you&#39;re reading this), I still find it to be an indispensable tool for building smooth and succinct user experiences.</p>
+<p>I&#39;ve given talks about it, built CSS/JS frameworks utilizing it, and helped tell brand stories with it. Rather than go through the ins-and-outs as you&#39;d find in most any other blog post about it, here&#39;s a few good resources that I used when I was getting started and still use to this day.</p>
 <ul>
-<li>Ruby</li>
-<li>SASS</li>
-<li>Compass</li>
-<li>Foundation</li>
-<li>NodeJS</li>
-<li>Bower</li>
-<li>MAMP</li>
-<li>Composer</li>
-<li>and half-a-dozen more</li>
+<li><a href="https://greensock.com/docs/#/">GreenSock docs</a>: The official go-to. Unlike some reference-guides, this provides detailed write-ups and clear examples.</li>
+<li><a href="https://ihatetomatoes.net/greensock-cheat-sheet/">I Hate Tomatoes</a>: If you&#39;ve been mulling around the GSAP community, then no-doubt have you come across the name Petr Tichy. He&#39;s got a real knack for putting things in layman terms. I&#39;ve also found him to be incredibly insightful in tearing apart real world examples to find their inner-workings.</li>
+<li><a href="https://gannon.tv">Chris Gannon</a>: Not only is Chris also great at stepping through his work on <a href="https://www.youtube.com/user/framespark">his YouTube channel</a>, but his mastery of SVG filters is really something else. Don&#39;t let him tell you any different.</li>
+<li><a href="http://codepen.io/search/pens?q=GSAP&amp;limit=all&amp;type=type-pens">CodePen</a>: The perfect place to take something cool, fork it, and make it your own. A great way to journey into breaking things and fixing them again. In-fact, if you ask for support on GSAP&#39;s forums, they&#39;ll ask you to create a CodePen so they can see things in action.</li>
 </ul>
-<p>The issue is my computer had become a fragile development machine. I was afraid of ever updating or modifying system files since so much was dependent on it. And what if my 4 year-old laptop decided to keel-over? I&#39;d have quite a bit of work ahead of me to get everything setup again. Vagrant allows me to create a bare-bones server and install only the components I need. Best of all, this isn&#39;t necessarily attached to your computer, again - just localized to the project. It runs through <a href="https://www.virtualbox.org/">VirtualBox</a>. Want to get up and running with Vagrant? Check out <a href="https://github.com/fideloper/Vaprobash">Vaprobash</a>.</p>
-<h3 id="conclusion">Conclusion</h3>
-<p>I&#39;m excited to continue to perfect my base project setup with these new tools which have tremendously sped up my dev workflow. If you haven&#39;t heard of any of these, check &#39;em out!</p>
+<p>I thought I&#39;d also take this opportunity to highlight some of the cool experiments I&#39;ve had the opportunity of working on that included GSAP. Who knows, this might spur some follow-up articles on digging into each implementation.</p>
+<p data-height="900" data-theme-id="23494" data-slug-hash="oLzJmR" data-default-tab="result" data-user="digitalocean" data-embed-version="2" data-pen-title="Droplet animation" data-preview="true" class="codepen">See the Pen <a href="http://codepen.io/team/digitalocean/pen/oLzJmR/">Droplet animation</a> by DigitalOcean (<a href="http://codepen.io/digitalocean">@digitalocean</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+
+<p><br></p>
+<p data-height="400" data-theme-id="23494" data-slug-hash="BzWapm" data-default-tab="result" data-user="digitalocean" data-embed-version="2" data-pen-title="Exponential growth animation" data-preview="true" class="codepen">See the Pen <a href="http://codepen.io/team/digitalocean/pen/BzWapm/">Exponential growth animation</a> by DigitalOcean (<a href="http://codepen.io/digitalocean">@digitalocean</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+
+<p><br></p>
+<p data-height="700" data-theme-id="23494" data-slug-hash="Wxmpjb" data-default-tab="result" data-user="digitalocean" data-embed-version="2" data-pen-title="The Wave" data-preview="true" class="codepen">See the Pen <a href="http://codepen.io/team/digitalocean/pen/Wxmpjb/">The Wave</a> by DigitalOcean (<a href="http://codepen.io/digitalocean">@digitalocean</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+
+<p><br></p>
+<p data-height="650" data-theme-id="23494" data-slug-hash="YwygoQ" data-default-tab="result" data-user="zslabs" data-embed-version="2" data-pen-title="SVG Loaders" data-preview="true" class="codepen">See the Pen <a href="http://codepen.io/zslabs/pen/YwygoQ/">SVG Loaders</a> by Zach Schnackel (<a href="http://codepen.io/zslabs">@zslabs</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
       <hr class="u-mv--large">
       <div id="disqus_thread">
@@ -132,9 +123,9 @@
       </div>
       <script type="text/javascript">
         var disqus_shortname  = 'zslabs';
-        var disqus_title      = 'New Guts';
-        var disqus_identifier = '/articles/new-guts';
-        var disqus_url        = 'https://zslabs.com/articles/new-guts';
+        var disqus_title      = 'GSAP&#39;in';
+        var disqus_identifier = '/articles/gsap';
+        var disqus_url        = 'https://zslabs.com/articles/gsap';
       </script>
       <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
