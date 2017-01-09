@@ -9,7 +9,7 @@ Venture back a few days ago where I introduced some of [my favorite GSAP project
 Let's take a look at the illustration I was given:
 
 <div class="u-textCenter">
-  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="/assets/media/posts/round-n-round/illustration.png" alt="Illustration" style="max-width: 400px">
+  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="/assets/media/posts/round-n-round/illustration.png" alt="Illustration" style="width: 400px">
 </div>
 
 I love getting illustrations from DO designers as there's no shortage of hand-movements and "swoosh" sounds between us as we construct how best to bring illustrations to life. Yes, we are professionals. No, we don't have any shame.
