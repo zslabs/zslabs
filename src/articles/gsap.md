@@ -15,7 +15,7 @@ I've given talks about it, built CSS/JS frameworks utilizing it, and helped tell
 
 I thought I'd also take this opportunity to highlight some of the cool experiments I've had the opportunity of working on that included GSAP. Who knows, this might spur some follow-up articles on digging into each implementation.
 
-<p data-height="900" data-theme-id="23494" data-slug-hash="oLzJmR" data-default-tab="result" data-user="digitalocean" data-embed-version="2" data-pen-title="Droplet animation" data-preview="true" class="codepen">See the Pen <a href="http://codepen.io/team/digitalocean/pen/oLzJmR/">Droplet animation</a> by DigitalOcean (<a href="http://codepen.io/digitalocean">@digitalocean</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<p data-height="600" data-theme-id="23494" data-slug-hash="oLzJmR" data-default-tab="result" data-user="digitalocean" data-embed-version="2" data-pen-title="Droplet animation" data-preview="true" class="codepen">See the Pen <a href="http://codepen.io/team/digitalocean/pen/oLzJmR/">Droplet animation</a> by DigitalOcean (<a href="http://codepen.io/digitalocean">@digitalocean</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 
 <br>
 
