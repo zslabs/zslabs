@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Accessing external WordPress data</title>
+    <title>Onward and upward</title>
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,matchMedia,fetch,Element.prototype.placeholder"></script>
     <link rel="stylesheet" href="/assets/css/site.css?1484401592000">
     <link rel="alternate" type="application/rss+xml" name="Zach Schnackel" title="ZS Labs" href="/rss.xml">
@@ -93,47 +93,80 @@
       
   <main class="Section Article-content">
     <div class="Container Container--small">
-      <h1 class="Article-title">Accessing external WordPress data</h1>
-      <div class="u-textMuted u-mb--large">Jun 30th, 2013</div>
-      <p>As much as I love treating WordPress as a true application framework; bringing simplicity into the vast craziness that is the web, it can still be a bit of a heavy hammer for an entire site. If all you want is a blog and the rest of your site has no need to be controlled via an admin, or more importantly, the complexity of your page layouts seem counter-intuitive to separate into a CMS file -- that you then still have to hook up to a page in the admin anyway, then it&#39;s possible that a &quot;fusion&quot; site might be better in your case.</p>
-<p>This seems pretty straight-forward at first, create your static pages and then install WordPress in a <code>/blog</code> directory and you&#39;re all set. The problem comes when you&#39;d want to do something simple like pull-in various bits of information from your blog into your static pages. It may seem a bit tricky, but accessing WordPress data outside of WordPress isn&#39;t that complicated. Wouldn&#39;t it be great if there were a way to &quot;start&quot; WordPress and have access to the API without having to be in it? Low and behold:</p>
-<pre><code class="language-php">define( &#39;WP_USE_THEMES&#39;, false );
-require_once( $_SERVER[&#39;DOCUMENT_ROOT&#39;] . &#39;/blog/wp-blog-header.php&#39; );
-</code></pre>
-<p>There you go. Enjoy.</p>
-<p>Just kidding, let&#39;s break it down. First, we&#39;re defining a constant <code>WP_USE_THEMES</code>. What this does is determine is determine whether WordPress should load a theme file. Okay, so I guess that makes sense, right? Not in context yet, no. Take a look in the root of your WordPress install for a file called <code>wp-blog-header.php</code>.</p>
-<pre><code class="language-php">/**
- * Loads the WordPress environment and template.
- *
- * @package WordPress
- */
-if ( !isset($wp_did_header) ) {
-  $wp_did_header = true;
-  require_once( dirname(__FILE__) . &#39;/wp-load.php&#39; );
-  wp();
-  require_once( ABSPATH . WPINC . &#39;/template-loader.php&#39; );
-}
-</code></pre>
-<p>This file loads the WordPress environment (aka what we want). The reason we wouldn&#39;t want to load just the alluring <code>wp-load.php</code> is because <code>wp-blog-header.php</code> also runs the <code>wp()</code> function, which actually sets up the global query. The <code>template-loader.php</code> file is in essense ignored since there is a check to see if <code>WP_USE_THEMES</code> has been defined or not.</p>
-<p>So, we&#39;re loading the WordPress environment on a static PHP without loading a theme wrapper. Great, so now what? Now what not now what?! <em>Just as an appendage, I know that last sentence made no sense.</em></p>
-<p>We can now run WordPress functions as we see fit. Here&#39;s one to grab the latest 3 posts:</p>
-<pre><code class="language-php">$args =  array(
-  &#39;numberposts&#39; =&gt;  3
-);
-$posts = get_posts( $args );
+      <h1 class="Article-title">Onward and upward</h1>
+      <div class="u-textMuted u-mb--large">Jan 13th, 2017</div>
+      <div class="Alert Alert--primary u-contrast Article-series">
+  <a href="/articles/gsap/" class="u-link u-inlineBlock">
+    <span class="u-textLarge u-pr--small">👋</span> This is part of my GSAP deep-dive series!
+  </a>
+</div>
 
-// Make sure we&#39;re returning something
-if ( $posts ) {
-  foreach ( $posts as $post ) {
-    setup_postdata( $post );
+<p>Today&#39;s GSAP deep-dive will be into another animation I did for <a href="https://www.digitalocean.com">DigitalOcean</a>. The goal was to illustrate the growth of the company since its infancy.</p>
+<p>Let&#39;s take a look at the illustration I was given:</p>
+<div class="u-textCenter">
+  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="/assets/media/posts/onward-n-upward/illustration.png" alt="Illustration">
+</div>
 
-    the_title();
-  }
-  wp_reset_postdata();
-}
+<p>Breaking this down, there were a few different pieces to this animation:</p>
+<ol>
+<li>Different layers to the body of the graph that we&#39;ll want to animate in at different intervals.</li>
+<li>Dotted-lines with Droplets that will stagger in and have the Droplets pop-in when each completes.</li>
+<li>Smaller dots that will follow the upper-portion of the graph, fade away, and start over again.</li>
+</ol>
+<p>It&#39;s rare that you&#39;ll receive an SVG that is constructed in the exact way needed to manipulate it.</p>
+<h3 id="task-1">Task 1</h3>
+<p>I started by creating two separate TweenMax iterations. With the Droplet, we&#39;re impacting the y-axis to travel up by <code>15px</code> with the <code>yoyo</code> property to automatically return to the starting position&mdash;repeating indefinitely.</p>
+<p>For the bottom-shadow, we want to give the illusion of the Droplet getting closer to the imaginary floor we&#39;re setting in our scene.  We&#39;ll still use the <code>yoyo</code> and <code>repeat</code> properties as we did for the Droplet, but instead of impacting the <code>y-axis</code>, we&#39;ll change the <code>scale</code>.</p>
+<pre><code class="language-js">// Droplet bounce
+TweenMax.to(&#39;#Droplet-boundingShape&#39;, 3, {
+  y: -15,
+  yoyo: true,
+  repeat: -1
+});
+
+// Droplet shadow
+TweenMax.to(&#39;.Droplet-shadow&#39;, 3, {
+  scale: 0.85,
+  yoyo: true,
+  repeat: -1,
+  transformOrigin: &#39;center center&#39;
+});
 </code></pre>
-<p>We&#39;re running WordPress functions outside of WordPress - simple, yet so. damn. useful.</p>
-<p>I&#39;ll end by deflecting the hecklers by saying at a certain point, the level of your integration lends to the idea of just creating the whole damn site in WordPress, but for simpler implementations; like a blog feed, this is the bees knees.</p>
+<h3 id="task-2">Task 2</h3>
+<p>I decided to use the <a href="https://greensock.com/BezierPlugin-JS">Bezier Plugin</a> which accepts an array of points/values and <code>type</code> to determine the strength of the curve, taking your target element and translating based on the aforementioned attributes. Since the dotted-lines were two separate paths (more on that later), I decided against using the <a href="https://greensock.com/forums/topic/13581-animate-svg-object-along-motion-path/">suggestion from this post</a> and mapped out what I called each &quot;hard-stop&quot;.</p>
+<div class="u-textCenter">
+  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="/assets/media/posts/round-n-round/hard-stops.png" alt="Hard stops">
+</div>
+
+<p>By finding each position relative to the <code>[0, 0]</code> point I had each dot start at&mdash;the lower center&mdash; I was able to create a pretty reliable coordinate system that ended up back at the beginning. The first for example, was:</p>
+<pre><code class="language-js">// Coordinates of first dot
+{x: 46, y: -8},
+{x: 0, y: -16},
+{x: -46, y: -8},
+{x: 0, y: 0}
+</code></pre>
+<p>Then, with the <code>type</code> attribute the Bezier plugin provides, I was able to adjust the curviness of the path it would follow based on the imperfect nature of each dotted circle.</p>
+<h3 id="task-3">Task 3</h3>
+<p>Oof - let&#39;s start out this task with one of those. As I quickly ran through ways of tackling #1 and #2 in my head with <a href="https://dribbble.com/masamikubo">Masami</a>, I suddenly came to the realization we were dealing with some sort of layered effect that would take a dot and shove it to the background behind the main Droplet.</p>
+<p>As I struggled through a few different options, it suddenly dawned on me to look at the illustration itself. Each dotted circle was actually two paths; with one on top of the Droplet layer, and the other behind it. As I looked at the Droplet at its simplest, I knew the visual effect we were going for was more opaque when it reached the Droplet threshold. So, that&#39;s exactly what I did.</p>
+<p>Now this was tedious to say the least, but determining the timing in which the dot would reach the edge (and come out the other side) I was able to stub-in an opacity update within that interval. With the power of GSAP and timelines, combining each of those tweens with specific delays was pretty easy:</p>
+<pre><code class="language-js">// Timeline for each dot going behind the Droplet
+timeline
+.to(dot, 0.25, {
+  delay: 1.85,
+  opacity: 0.15,
+  ease: Power0.easeNone
+}, &#39;droplet-path&#39;)
+.to(dot, 0.25, {
+  delay: 2.85,
+  opacity: 1,
+  ease: Power0.easeNone
+}, &#39;droplet-path&#39;);
+</code></pre>
+<p>I ran with that idea and figured out the timings, delays, and offsets for each dot. With some more JavaScript trickery, creating an object with each configuration, looping through them, and even setting a random start position for each was a breeze.</p>
+<p>What you see below is the finished product. Let me know what you think!</p>
+<p><p data-height="400" data-theme-id="23494" data-slug-hash="BzWapm" data-default-tab="result" data-user="digitalocean" data-embed-version="2" data-pen-title="Exponential growth animation" data-preview="true" class="codepen">See the Pen <a href="http://codepen.io/team/digitalocean/pen/BzWapm/">Exponential growth animation</a> by DigitalOcean (<a href="http://codepen.io/digitalocean">@digitalocean</a>) on <a href="http://codepen.io">CodePen</a>.</p></p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
       <hr class="u-mv--large">
       <div id="disqus_thread">
@@ -141,9 +174,9 @@ if ( $posts ) {
       </div>
       <script type="text/javascript">
         var disqus_shortname  = 'zslabs';
-        var disqus_title      = 'Accessing external WordPress data';
-        var disqus_identifier = '/articles/accessing-external-wordpress-data';
-        var disqus_url        = 'https://zslabs.com/articles/accessing-external-wordpress-data';
+        var disqus_title      = 'Onward and upward';
+        var disqus_identifier = '/articles/onward-and-upward';
+        var disqus_url        = 'https://zslabs.com/articles/onward-and-upward';
       </script>
       <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
