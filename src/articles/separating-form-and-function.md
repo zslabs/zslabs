@@ -1,5 +1,5 @@
 ---
-title: Separating Form and Function
+title: Separating form and function
 date: 2013-02-20
 excerpt: "Bundling template logic together for easier maintenance"
 ---

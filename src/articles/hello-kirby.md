@@ -10,11 +10,11 @@ But when it came time to rebuild this site with the premise of blogging, WordPre
 
 Developers alike have refocused their efforts on a platform that fits their needs instead of conforming to a single, one-size-fits-all solution. [Jason Schuller](http://jason.sc/life-beyond-wordpress/), [Ben Balter](http://ben.balter.com/2012/10/01/welcome-to-the-post-cms-world/) and [Scribu](http://scribu.net/blog/switched-to-jekyll.html) are just a few examples - and without a doubt that decision has made their publishing experience more enjoyable. My decision was to use a file-based CMS called [Kirby](http://getkirby.com/). Why?
 
-### Version Control
+### Version control
 
 Since Kirby is file-based, I was able to host my entire site via a Git repository on [Beanstalk](http://bnst.lk/Uw3GHO) and deploy with [DeployHQ](http://deployhq.com). So what does this mean? What I see locally is **exactly** what I see online - something that with other Content Management Systems has been a bit of a struggle. Previewing new features, posts, etc. has never been easier and I can't imagine going back.
 
-### No Databases
+### No databases
 
 Not having a database can have its limitations, but for my needs this has been a godsend. The utter simplicity and unconscious familiarity of a file-based system, that takes me back to my Geocities days, is a welcomed addition into my workflow. No corrupt tables, collation issues or complex configurations across multiple servers. Upload files, write, publish.
 
@@ -28,7 +28,7 @@ I'm a sucker for nicely documented code, but am far from a PHP-guru. Luckily Kir
 
 ### Templating
 
-Every tool has its crutch and more often than not, it comes down to theming. Luckily, I never felt constricted with how I organized my content or files with Kirby. Separating logic/presentation (which I am a strong advocate for) was a welcomed addition to how Kirby has created its tutorials and examples. Another great thing, asset control. Since Kirby doesn't impose any base CSS/JS, I was free to build this site as I saw fit. This site was built with [Codekit](http://incident57.com/codekit/), taking advantage of its compiler to minify/concatenate my SASS and JS files. What this means is a more organized local environment with all the benefits of serving my assets quickly to readers.
+Every tool has its crutch and more often than not, it comes down to theming. Luckily, I never felt constricted with how I organized my content or files with Kirby. Separating logic/presentation (which I am a strong advocate for) was a welcomed addition to how Kirby has created its tutorials and examples. Another great thing, asset control. Since Kirby doesn't impose any base CSS/JS, I was free to build this site as I saw fit. This site was built with [Codekit](http://incident57.com/codekit/), taking advantage of its compiler to minify/concatenate my Sass and JS files. What this means is a more organized local environment with all the benefits of serving my assets quickly to readers.
 
 ### Conclusion
 

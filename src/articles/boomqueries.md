@@ -1,5 +1,5 @@
 ---
-title: BoomQueries - Element Queries, Today
+title: BoomQueries - Element Queries, today
 date: 2015-04-24
 excerpt: "Rejoice! Element Queries are available now!"
 ---

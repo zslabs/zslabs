@@ -131,7 +131,7 @@ Sure, we get what the end-goal is, but you're still putting extra weight on your
 
 ### Don't create unnecessary complexity
 
-Now my example for this is a double-edged sword; as it does require an additional setup step; but once setup, you're done. [Compass](http://compass-style.org/) is a very popular mixin library for SASS that takes away the headache of browser prefixes for older browsers that don't support their native counterparts. For example, border-radius can be handled by doing the following:
+Now my example for this is a double-edged sword; as it does require an additional setup step; but once setup, you're done. [Compass](http://compass-style.org/) is a very popular mixin library for Sass that takes away the headache of browser prefixes for older browsers that don't support their native counterparts. For example, border-radius can be handled by doing the following:
 
 ```scss
 .button {
@@ -153,6 +153,6 @@ The problem here is learning (what I realize is pretty straight-forward) syntax 
 
 ### Conclusion
 
-Whether it be SASS, LESS, Coffeescript, etc – there are plenty of tools out there to help you build things quicker and better; just be mindful of their pros and pitfalls.
+Whether it be Sass, Less, Coffeescript, etc – there are plenty of tools out there to help you build things quicker and better; just be mindful of their pros and pitfalls.
 
 [Original Article](http://blog.blueion.com/2014/05/20/sass-tips-wise-extremely-good-looking/)

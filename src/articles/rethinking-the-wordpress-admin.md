@@ -1,5 +1,5 @@
 ---
-title: Rethinking the WordPress Admin
+title: Rethinking the WordPress admin
 date: 2013-03-16
 excerpt: "Thoughts about how to push WordPress to the next level"
 ---
@@ -21,10 +21,10 @@ As much as I swore not to bring up this comparison, one thing Joomla got right w
 
 ![Foundation 4](/assets/media/posts/foundation-4.png)
 
-I strongly believe that [Foundation](http://foundation.zurb.com/) is the answer for WordPress. With its recent 4.0 release, Foundation has switched to a "mobile-first" approach and has further strengthened its core values of extensibility and customization. Being built with the latest and greatest HTML5, [SASS](http://sass-lang.com/) and jQuery, Foundation comes with a [plethora of options](http://foundation.zurb.com/docs/sass.html) that would make customizing WordPress that much easier. Being a community-driven project, Foundation is used by thousand and continuously updated (just like WordPress)!
+I strongly believe that [Foundation](http://foundation.zurb.com/) is the answer for WordPress. With its recent 4.0 release, Foundation has switched to a "mobile-first" approach and has further strengthened its core values of extensibility and customization. Being built with the latest and greatest HTML5, [Sass](http://sass-lang.com/) and jQuery, Foundation comes with a [plethora of options](http://foundation.zurb.com/docs/sass.html) that would make customizing WordPress that much easier. Being a community-driven project, Foundation is used by thousand and continuously updated (just like WordPress)!
 
 Is using a pre-built framework a bad thing? Not in my mind - it's all about "how" you use it. The site you're on right now is built off of Foundation and is customized to suite my needs - the same could be said about what could be done with the WordPress admin.
 
-Think if it was as easy as recompiling the SASS dependencies of the WordPress admin with pluggable settings and providing a simple filter that would load your styles instead of the core? And by settings, I don't just mean colors and fonts - utilizing the power of SASS (and more importantly [Compass](http://compass-style.org/)), the limits are endless. We'd finally be able to alter the structure of WordPress based on our needs without having to hack the output. Plus, Foundation comes with all of the [goodies](http://foundation.zurb.com/docs/) that would fill in the gaps that other developers have had to conjure-up on their own. And most importantly, with consistent output, means providing a true mobile-ready admin would now be possible.
+Think if it was as easy as recompiling the Sass dependencies of the WordPress admin with pluggable settings and providing a simple filter that would load your styles instead of the core? And by settings, I don't just mean colors and fonts - utilizing the power of Sass (and more importantly [Compass](http://compass-style.org/)), the limits are endless. We'd finally be able to alter the structure of WordPress based on our needs without having to hack the output. Plus, Foundation comes with all of the [goodies](http://foundation.zurb.com/docs/) that would fill in the gaps that other developers have had to conjure-up on their own. And most importantly, with consistent output, means providing a true mobile-ready admin would now be possible.
 
 My ideal scenario is being able to design the admin with a more defined purpose. A purpose that speaks to the audience/client that would use my product. Not a generic backend that lacks focus and consideration for those that use it, but an interface that is tailor-made for their needs. If it takes a mock-up of what I envision the WordPress admin could be to get a bit more attention to this topic, I'm game.

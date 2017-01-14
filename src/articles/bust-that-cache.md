@@ -1,10 +1,10 @@
 ---
-title: Bust That Cache
+title: Bust that cache
 date: 2013-06-08
 excerpt: "Did you refresh? Don't worry about it anymore!"
 ---
 
-Let's setup a typical development scenario. You're being good lad/lass and developing locally. You're using a preprocessor like [SASS](http://sass-lang.com) or [LESS](http://lesscss.org) and [Codekit](http://incident57.com/codekit/) or [Guard](https://github.com/guard/guard) to compile your assets. You're even using version control and deploying to a staging server. First, _virtual high-five_. Having a development process like this is extremely helpful for making changes quickly and having an audit trail as your product/project matures.
+Let's setup a typical development scenario. You're being good lad/lass and developing locally. You're using a preprocessor like [Sass](http://sass-lang.com) or [Less](http://lesscss.org) and [Codekit](http://incident57.com/codekit/) or [Guard](https://github.com/guard/guard) to compile your assets. You're even using version control and deploying to a staging server. First, _virtual high-five_. Having a development process like this is extremely helpful for making changes quickly and having an audit trail as your product/project matures.
 
 Let's take it a step further and move to server optimizations. You've been searching around the web and come across [HTML5 Boilerplate's server config](https://github.com/h5bp/server-configs) drop-in. Awesome. You're now delivering your site to customers/clients while using modern-day compression techniques and all the other goodness it gives. Here's the problem. The client asks you to make a quick color change and while you see the change on your end - they don't. Now the typical response would be,
 
@@ -26,7 +26,7 @@ This approach does have a drawback though: according to Google, [most proxies do
 
 > Most proxies, most notably Squid up through version 3.0, do not cache resources with a "?" in their URL even if a Cache-control: public header is present in the response. To enable proxy caching for these resources, remove query strings from references to static resources, and instead encode the parameters into the file names themselves.
 
-### URL Rewrites
+### URL rewrites
 
 From what we learned above, the next best option would be to rewrite the asset URL as something like `/assets/css/app.20130608103339.css`
 

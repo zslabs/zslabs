@@ -1,5 +1,5 @@
 ---
-title: Versioned Dependencies with Compass
+title: Versioned dependencies with Compass
 date: 2013-03-31
 excerpt: "Working with Foundation and Compass"
 ---

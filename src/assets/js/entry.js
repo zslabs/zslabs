@@ -6,6 +6,7 @@ import 'prismjs/components/prism-less';
 import imageDefer from './modules/image-defer';
 import './modules/intros';
 import './modules/comments';
+import './modules/article-series';
 
 // Init Modal component
 new Modal();

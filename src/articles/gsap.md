@@ -13,11 +13,13 @@ I've given talks about it, built CSS/JS frameworks utilizing it, and helped tell
 * [Chris Gannon](https://gannon.tv): Not only is Chris also great at stepping through his work on [his YouTube channel](https://www.youtube.com/user/framespark), but his mastery of SVG filters is really something else. Don't let him tell you any different.
 * [CodePen](http://codepen.io/search/pens?q=GSAP&limit=all&type=type-pens): The perfect place to take something cool, fork it, and make it your own. A great way to journey into breaking things and fixing them again. In-fact, if you ask for support on GSAP's forums, they'll ask you to create a CodePen so they can see things in action.
 
-I thought I'd also take this opportunity to highlight some of the cool experiments I've had the opportunity of working on that included GSAP. Who knows, this might spur some follow-up articles on digging into each implementation.
+I thought I'd also take this opportunity to highlight some of the cool experiments I've had the opportunity of working on that included GSAP.
 
 <p data-height="600" data-theme-id="23494" data-slug-hash="oLzJmR" data-default-tab="result" data-user="digitalocean" data-embed-version="2" data-pen-title="Droplet animation" data-preview="true" class="codepen">See the Pen <a href="http://codepen.io/team/digitalocean/pen/oLzJmR/">Droplet animation</a> by DigitalOcean (<a href="http://codepen.io/digitalocean">@digitalocean</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 
-<br>
+<div class="u-textCenter u-mt--regular u-mb--xlarge">
+  <a href="/articles/round-n-round/" class="Button Button--primary">Case Study</a>
+</div>
 
 <p data-height="400" data-theme-id="23494" data-slug-hash="BzWapm" data-default-tab="result" data-user="digitalocean" data-embed-version="2" data-pen-title="Exponential growth animation" data-preview="true" class="codepen">See the Pen <a href="http://codepen.io/team/digitalocean/pen/BzWapm/">Exponential growth animation</a> by DigitalOcean (<a href="http://codepen.io/digitalocean">@digitalocean</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 

@@ -1,5 +1,5 @@
 ---
-title: Grunt All The Things
+title: Grunt all the things
 date: 2014-04-21
 excerpt: "A task-runner that really brings the heat!"
 ---
@@ -87,7 +87,7 @@ autoprefixer: {
 }
 ```
 
-**[grunt-contrib-sass](https://github.com/gruntjs/grunt-contrib-sass)** - What's the fun of writing [SASS](http://sass-lang.com/) if you don't have a way to compile it quickly? This plugin sits on-top of Ruby (and the SASS gem) on your system to handle the dirty work. Yes, I'm fully aware that [libsass](https://github.com/hcatlin/libsass) is out there, but I'm not going to give up [@extend](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#extend)... so there.
+**[grunt-contrib-sass](https://github.com/gruntjs/grunt-contrib-sass)** - What's the fun of writing [Sass](http://sass-lang.com/) if you don't have a way to compile it quickly? This plugin sits on-top of Ruby (and the Sass gem) on your system to handle the dirty work. Yes, I'm fully aware that [libsass](https://github.com/hcatlin/libsass) is out there, but I'm not going to give up [@extend](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#extend)... so there.
 
 ```js
 sass: {

@@ -4,7 +4,13 @@ date: 2017-01-08
 excerpt: "I keep my Droplets spinnin'"
 ---
 
-Venture back a few days ago where I introduced some of [my favorite GSAP projects](/articles/gsap) I've had the opportunity of working on as of late. Today's deep-dive will be into the first, a Droplet animation I did for [DigitalOcean](https://www.digitalocean.com). This was a branding experiment to test out future initiatives for the company.
+<div class="Alert Alert--primary u-contrast Article-series">
+  <a href="/articles/gsap/" class="u-link u-inlineBlock">
+    <span class="u-textLarge u-pr--small">👋</span> This is part of my GSAP deep-dive series!
+  </a>
+</div>
+
+Today's deep-dive will be a Droplet animation I did for [DigitalOcean](https://www.digitalocean.com). This was a branding experiment to test out future initiatives for the company.
 
 Let's take a look at the illustration I was given:
 

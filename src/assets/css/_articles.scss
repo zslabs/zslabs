@@ -90,6 +90,11 @@
       font-size: ($base-h1-font-size * 1.25);
     }
   }
+
+  &-series {
+    opacity: 0;
+    transform: translateY($global-whitespace--large);
+  }
 }
 
 @supports (-webkit-background-clip: text) {

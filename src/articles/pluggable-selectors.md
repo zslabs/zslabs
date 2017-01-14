@@ -1,12 +1,12 @@
 ---
-title: Pluggable Selectors - SASS vs LESS
+title: Pluggable selectors - Sass vs Less
 date: 2013-09-01
 excerpt: "A comparison between a common feature I use in both Sass and Less"
 ---
 
-There's been enough to comparison articles about SASS vs LESS, so... I figured one more couldn't hurt. This article isn't going to give you a side-by-side comparison of every feature we're all aware of, but a closer look at an inheritance difference I've seen with each.
+There's been enough to comparison articles about Sass vs Less, so... I figured one more couldn't hurt. This article isn't going to give you a side-by-side comparison of every feature we're all aware of, but a closer look at an inheritance difference I've seen with each.
 
-I recently came across [UiKit](http://getuikit.com), the new kid on the block for CSS/JS frameworks - built with LESS. One feature that really stood out to me was UiKit's use of what they call, "hooks". Hooks can be interpreted as pluggable mixins within a selector that makes it easy for developers to extend it without creating additional markup. Take the following example in LESS:
+I recently came across [UiKit](http://getuikit.com), the new kid on the block for CSS/JS frameworks - built with Less. One feature that really stood out to me was UiKit's use of what they call, "hooks". Hooks can be interpreted as pluggable mixins within a selector that makes it easy for developers to extend it without creating additional markup. Take the following example in Less:
 
 ```less
 .panel {
@@ -36,7 +36,7 @@ The following compiles to:
 }
 ```
 
-So what we've done is call a mixin before it is defined and allow those mixins to be plugged-in to. Let's try the same thing in SASS:
+So what we've done is call a mixin before it is defined and allow those mixins to be plugged-in to. Let's try the same thing in Sass:
 
 ```scss
 .panel {
@@ -59,7 +59,7 @@ What do we get? Not what you'd expect:
 Syntax error: Undefined mixin 'hook-panel-badge'.
 ```
 
-The problem? We're trying to include a mixin before it is defined. And if you think about it, that does in theory make sense. How/why should we be able to include something that isn't defined yet? SASS does however include an [@extend](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#extend) function (as does LESS). So let's try that again:
+The problem? We're trying to include a mixin before it is defined. And if you think about it, that does in theory make sense. How/why should we be able to include something that isn't defined yet? Sass does however include an [@extend](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#extend) function (as does Less). So let's try that again:
 
 ```less
 .panel {
@@ -107,7 +107,7 @@ The problem? Duplication. I want to "extend" the `.panel` element, not create a 
 }
 ```
 
-Yet again, the problem. Now you would need to keep your selector extensions separate (before) from your normal markup (after) that may also interact with the framework. So, at the end of the day it's a matter of inheritance and how the pre-processor handles it. I find LESS's implementation of how this is handled a bit more flexible, but SASS's is more familiar to how other server-side languages work. So, part informative, part a call for help/action, but it's something that's stood out to me as a fundamental difference.
+Yet again, the problem. Now you would need to keep your selector extensions separate (before) from your normal markup (after) that may also interact with the framework. So, at the end of the day it's a matter of inheritance and how the pre-processor handles it. I find Less's implementation of how this is handled a bit more flexible, but Sass's is more familiar to how other server-side languages work. So, part informative, part a call for help/action, but it's something that's stood out to me as a fundamental difference.
 
 ### Update
 

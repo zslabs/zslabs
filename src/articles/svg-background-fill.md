@@ -1,5 +1,5 @@
 ---
-title: Modifying SVG Background Fills
+title: Modifying SVG background fills
 date: 2014-09-29
 sprite: 'svg-background-fills'
 excerpt: "SVG is just an image, right? Wrong!"
@@ -64,7 +64,7 @@ Within the function, we are:
   </div>
 </div>
 
-### New Fills
+### New fills
 
 Depending on "how" you're using SVGs, you may be working with paths that do not have fills in them. This would come into play when you're referencing an external sprite, but still want to be able to use things like `fill: currentColor` within your styles. Here's a mixin that handles just that:
 

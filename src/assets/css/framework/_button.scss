@@ -1,7 +1,6 @@
 //
 // Variables
 //
-$button-primary-enable: false;
 $button-secondary-enable: false;
 $button-secondary-enable: false;
 $button-danger-enable: false;
@@ -17,6 +16,15 @@ $button-icon-enable: false;
   position: relative;
   transform-origin: center center;
   box-shadow: 0 0 15px rgba($global-dark, 0.15);
+  background-image: url('../media/pattern.png') !important;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  color: $global-contrast;
+
+  &:hover,
+  &:focus {
+    color: $global-contrast;
+  }
 
   &:hover,
   &:focus {
@@ -28,18 +36,8 @@ $button-icon-enable: false;
     box-shadow: 0 0 30px rgba($global-dark, 0.3);
   }
 
-  &--articles,
-  &--resume,
-  &--comments {
-    background-image: url('../media/pattern.png') !important;
-    background-color: transparent;
-    background-repeat: no-repeat;
-    color: $global-contrast;
-
-    &:hover,
-    &:focus {
-      color: $global-contrast;
-    }
+  &--primary {
+    background-position: 55% 10% !important;
   }
 
   &--articles {

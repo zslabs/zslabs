@@ -1,5 +1,5 @@
 ---
-title: Reference SVGs Like the Cool Kids
+title: Reference SVGs like the cool kids
 date: 2014-10-14
 excerpt: "Let's cleanup that markup"
 ---

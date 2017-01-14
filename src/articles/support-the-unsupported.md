@@ -1,5 +1,5 @@
 ---
-title: Support the Unsupported
+title: Support the unsupported
 date: 2014-02-24
 excerpt: "Pushing the web forward, while not leaving anyone behind"
 ---

@@ -1,5 +1,5 @@
 ---
-title: Extendable Switch Statements
+title: Extendable switch statements
 date: 2013-02-09
 excerpt: "Switch statements that grow with your application"
 ---

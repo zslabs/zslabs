@@ -1,5 +1,5 @@
 ---
-title: Basey - WordPress Boilerplate Theme
+title: Basey - WordPress boilerplate theme
 date: 2014-03-25
 excerpt: "A developer-first WordPress theme"
 ---

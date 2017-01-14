@@ -1,5 +1,5 @@
 ---
-title: New Guts
+title: New guts
 date: 2014-01-20
 excerpt: "Pushing my tech stack further"
 ---
@@ -30,7 +30,7 @@ The latest [Foundation](http://foundation.zurb.com) release is what actually pus
 The basic idea of [Vagrant](http://vagrant.io) is to create a localized server on your computer contained within a virtual machine. Why would you want this? Take all of the items I've mentioned above. Here's a few of the packages that I had installed on my computer:
 
 * Ruby
-* SASS
+* Sass
 * Compass
 * Foundation
 * NodeJS

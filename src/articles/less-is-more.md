@@ -1,5 +1,5 @@
 ---
-title: Less is More
+title: Less is more
 date: 2014-03-09
 excerpt: "Tech decisions are easy when you take a step back"
 ---
@@ -19,7 +19,7 @@ In my [previous article](/articles/new-guts/), I talked about some of the backen
 
 The current iteration of this site is all about the details. While there may not be a lot of "extra fluff", I focused on subtle animations, clean lines and equal spacing throughout. There's lots of little nuggets to find throughout, so I hope everyone enjoys them.
 
-One area I've always struggled with is coming up with cohesive color palettes. I started with both a light and dark base and then used SASS's [`scale-color`](http://sass-lang.com/documentation/Sass/Script/Functions.html#scale_color-instance_method) function to keep things complimentary.
+One area I've always struggled with is coming up with cohesive color palettes. I started with both a light and dark base and then used Sass's [`scale-color`](http://sass-lang.com/documentation/Sass/Script/Functions.html#scale_color-instance_method) function to keep things complimentary.
 
 Even though I was tempted by [Jekyll](http://jekyllrb.com/), I stuck with [Kirby](http://getkirby.com) as my engine. As always, I used [Foundation](http://foundation.zurb.com) as the base CSS/JS framework, with [HighlightJS](http://highlightjs.org/) for code highlighting. Probably the most exciting part for me was finally finding a use for [Verb](http://www.fontspring.com/fonts/yellow-design-studio/verb), a @font-face I picked up a little over a year ago; definitely my favorite now after giving it a go.
 

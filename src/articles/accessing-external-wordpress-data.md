@@ -1,5 +1,5 @@
 ---
-title: Accessing External WordPress Data
+title: Accessing external WordPress data
 date: 2013-06-30
 excerpt: "Access WordPress internal functions from another application"
 ---

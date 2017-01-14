@@ -1,5 +1,5 @@
 ---
-title: Default Views for Plugins
+title: Default views for plugins
 date: 2013-03-09
 excerpt: "Provide default templates for your WordPress plugins"
 ---
