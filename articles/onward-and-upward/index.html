@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Upgraded Yeti</title>
+    <title>Onward and upward</title>
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,matchMedia,fetch,Element.prototype.placeholder"></script>
     <link rel="stylesheet" href="/assets/css/site.css?1485030699000">
     <link rel="alternate" type="application/rss+xml" name="Zach Schnackel" title="ZS Labs" href="/rss.xml">
@@ -93,32 +93,107 @@
       
   <main class="Section Article-content">
     <div class="Container Container--small">
-      <h1 class="Article-title">Upgraded Yeti</h1>
-      <div class="u-textMuted u-mb--large">Apr 21st, 2013</div>
-      <p>In my <a href="/articles/versioned-dependencies-with-compass/">previous article</a>, I went over how Foundation 3 and 4 could co-exist in your development setup, making for a happier, healthier you. While there are certainly situations where you&#39;ll need to keep &quot;legacy&quot; projects around, my use-case was more targeted on my own setup -- just being lazy about upgrading my current site.</p>
-<p>Not anymore though, I&#39;m happy to announce I am now running on Foundation&#39;s latest and greatest and couldn&#39;t be happier with the decision. Overall, the process was pretty simple. Zurb has created a handy <a href="http://foundation.zurb.com/migration.php">migration guide</a> that made the subtle HTML changes a breeze. The most challenging part of the transition was rethinking how my CSS was structured. Zurb went mobile-first, which means, you&#39;re really designing for your phone outta the box instead of the desktop. So, when nesting my media queries in Sass, I was changing how my site would react to larger devices (weird huh?)</p>
-<p>Take the following in Foundation 3:</p>
-<pre><code class="language-less">h1 {
-  color: blue;
+      <h1 class="Article-title">Onward and upward</h1>
+      <div class="u-textMuted u-mb--large">Jan 15th, 2017</div>
+      <div class="Alert Alert--primary u-contrast Article-series">
+  <a href="/articles/gsap/" class="u-link u-inlineBlock">
+    <span class="u-textLarge u-pr--small">👋</span> This is part of my GSAP deep-dive series!
+  </a>
+</div>
 
-  @include respondTo(smallScreen) {
-    color: red;
-  }
-}
-</code></pre>
-<p>So, on desktops, an <code>h1</code> will be blue and on a small screen (defined via their <a href="https://github.com/zurb/foundation/blob/3-2-stable/scss/foundation/mixins/_respond-to.scss">respondTo mixin</a>) it would be red. But, let&#39;s look at how we&#39;d accomplish the same thing in Foundation 4:</p>
-<pre><code class="language-less">h1 {
-  color: red;
+<p>Today&#39;s GSAP deep-dive will be into another animation I did for <a href="https://www.digitalocean.com">DigitalOcean</a>. The goal was to illustrate the growth of the company since its infancy.</p>
+<p>Let&#39;s take a look at the illustration I was given:</p>
+<div class="u-textCenter">
+  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="/assets/media/posts/onward-n-upward/illustration.png" alt="Illustration">
+</div>
 
-  @media #{$small} {
-    color: blue;
-  }
-}
+<p>Breaking this down, there were a few different pieces to this animation:</p>
+<ol>
+<li>A main graph stroke that we want to draw starting from the left.</li>
+<li>Dotted-lines with Droplets that will stagger in and have the Droplets pop-in when each completes.</li>
+<li>Smaller dots that will follow the upper-portion of the graph, fade away, and start over again.</li>
+</ol>
+<h3 id="task-1">Task 1</h3>
+<p>Thinking back a few years ago, drawing in a path is something that would seem like pure magic&mdash;in a lot of ways it still does. Nowadays, it&#39;s just another tool at our disposal. Chris Coyier wrote <a href="https://css-tricks.com/svg-line-animation-works/">an article</a> explaining the ins-and-outs of this phenomenon, including a great example to get you started. With the power of GSAP, we can actually make that part of intricate timelines easily with their <a href="https://greensock.com/drawSVG">DrawSVG plugin</a>.</p>
+<pre><code class="language-js">const featuresGraphTimeline = new TimelineMax();
+
+featuresGraphTimeline
+// Draw blue line
+.fromTo(&#39;#Features-blueLine .Features-blueStroke&#39;, 2.5, {
+  drawSVG: &#39;100% 100%&#39;
+}, {
+  drawSVG: &#39;0 100%&#39;,
+  ease: Power0.easeNone
+}, &#39;droplet-lines&#39;)
 </code></pre>
-<p>So, other than the a slightly-more confusing media query syntax, what&#39;s going on here? Remember when I said &quot;mobile-first&quot;? I really meant it. The media query you see in the aforementioned snippet doesn&#39;t mean, &quot;devices this width and smaller&quot;, it now means, &quot;devices this width and larger&quot;. Might seem small, but this really does change everything. What seemed like a real brain-buster at first, became an enjoyable experience.</p>
-<p>It&#39;s all about changing your comfort level. Instead of placing desktops on a pedestal, a &quot;standard&quot; that we all must follow, think of them as just another stepping stone for your layout. It&#39;s so much easier to build onto something than it is to take things away. And too often than not, mobile experiences are disjointed experiences that are really just masks to what your site was supposed to look like on a desktop -- just squeezed down to call them &quot;responsive&quot;.</p>
-<p>I really can&#39;t commend Zurb more on the decision here. It&#39;s about bridging the gap between what someone expects from a responsive site and what they actually get. There&#39;s so much more than just the new CSS structure that went into F4, so if you haven&#39;t tried it out yet, I recommend you give <a href="http://foundation.zurb.com/">Foundation</a> a gander.</p>
-<p>If you see any initial wonkiness, try clearing your cache - otherwise let me know what you think!</p>
+<h3 id="task-2">Task 2</h3>
+<p>We have several &quot;background Droplets&quot; with dotted lines that we&#39;d like to stagger in to represent milestones along the way for the company. My first-pass at this was to draw these dotted lines on the graph just as the main stroke was. Unfortunately, <a href="https://greensock.com/forums/topic/13364-draw-svg-and-dashed-line-problem/?p=55538">due to how DrawSVG is calculated</a>, that&#39;s easier said than done. While there are some workarounds, our use-case was a little more involved since there wasn&#39;t a solid background. So, identifying that these milestone-markers were straight lines, I instead went the route of animating their <code>y</code> position instead; same effect - MUCH easier.</p>
+<pre><code class="language-js">featuresGraphTimeline
+.staggerFrom(&#39;.Features-dropletLineGroup&#39;, .5, {
+  delay: .5,
+  y: &#39;100%&#39;
+}, 0.25, &#39;droplet-lines&#39;);
+</code></pre>
+<p>For the Droplets located at &quot;the end of the road&quot; for each milestone, I used a combination of <a href="https://greensock.com/position-parameter">GSAP labels</a> and delays to get the timing just right.</p>
+<pre><code class="language-js">featuresGraphTimeline
+.staggerFrom(&#39;.Features-dropletLineGroup .Features-blueStroke&#39;, .25, {
+  delay: 1.75,
+  scale: 0,
+  opacity: 0,
+  transformOrigin: &#39;center center&#39;
+}, 0.25, &#39;droplet-lines&#39;)
+</code></pre>
+<h3 id="task-3">Task 3</h3>
+<p>Similar to my <a href="/articles/round-n-round#task-3">last case study</a>, I started this with a typical &quot;deer in headlights&quot; look on how to best approach this.</p>
+<div class="u-textCenter">
+  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="/assets/media/posts/onward-n-upward/deer.gif" alt="Oooooh crap">
+</div>
+
+<p>First-off, did you know that this <a href="https://css-tricks.com/motion-along-path-in-css/">will be possible</a> in the future?! Pretty cool stuff. Now, back to the reality of old browsers and pop-up ads. Unlike my other case study, this was a perfect candidate for the <a href="https://greensock.com/BezierPlugin-JS">Bezier plugin</a> to shine. With the power of <a href="https://greensock.com/morphSVG">MorphSVG</a> and its <code>pathDataToBezier()</code> function, I was able to feed it the coordinates of the main graph stroke path. Then, by determining the speed and length of time it would take for each dot to reach the end, adjusting both the delay and opacity fit perfectly. Since there were multiple dots that we&#39;d be moving at the same time, creating a mini-timeline for each required a loop.</p>
+<pre><code class="language-js">// Iterate through DOM nodes
+function forEach(array, callback, scope) {
+  for (let i = 0; i &lt; array.length; i++) {
+    callback.call(scope, i, array[i]); // passes back stuff we need
+  }
+};
+
+// Return random integer from interval
+function randomIntFromInterval(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+forEach(document.querySelectorAll(&#39;.Features-dot&#39;), (index, value) =&gt; {
+  const tl = new TimelineMax({
+    repeat: -1,
+    delay: (index + randomIntFromInterval(1, 3))
+  });
+
+  tl
+  .to(value, 1, {
+    opacity: 1
+  }, &#39;dot-path&#39;)
+  .to(value, 20, {
+    bezier: {
+      values: graphPath,
+      type: &#39;cubic&#39;
+    },
+    ease: Power0.easeNone
+  }, &#39;dot-path&#39;)
+  .to(value, 1, {
+    delay: 19,
+    opacity: 0
+  }, &#39;dot-path&#39;);
+});
+</code></pre>
+<p>Having this run on &quot;init&quot; of the animation took only wrapping the above in a function and having it called on the timeline&#39;s <code>onStart()</code> callback.</p>
+<pre><code class="language-js">const featuresGraphTimeline = new TimelineMax({
+  // Fire dot motion while blue line is being drawn
+  onStart: dotMotion()
+});
+</code></pre>
+<p>Below is the finished product. Let me know what you think!</p>
+<p><p data-height="400" data-theme-id="23494" data-slug-hash="BzWapm" data-default-tab="result" data-user="digitalocean" data-embed-version="2" data-pen-title="Exponential growth animation" data-preview="true" class="codepen">See the Pen <a href="http://codepen.io/team/digitalocean/pen/BzWapm/">Exponential growth animation</a> by DigitalOcean (<a href="http://codepen.io/digitalocean">@digitalocean</a>) on <a href="http://codepen.io">CodePen</a>.</p></p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
       <hr class="u-mv--large">
       <div id="disqus_thread">
@@ -126,9 +201,9 @@
       </div>
       <script type="text/javascript">
         var disqus_shortname  = 'zslabs';
-        var disqus_title      = 'Upgraded Yeti';
-        var disqus_identifier = '/articles/upgraded-yeti';
-        var disqus_url        = 'https://zslabs.com/articles/upgraded-yeti';
+        var disqus_title      = 'Onward and upward';
+        var disqus_identifier = '/articles/onward-and-upward';
+        var disqus_url        = 'https://zslabs.com/articles/onward-and-upward';
       </script>
       <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
