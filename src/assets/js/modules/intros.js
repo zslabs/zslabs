@@ -15,9 +15,4 @@ pageTimeline
   y: 0,
   autoAlpha: 1,
   ease
-}, 'intro')
-.to('.DOLogo', 0.25, {
-  autoAlpha: 1,
-  scale: 1,
-  ease
-});
+}, 'intro');
