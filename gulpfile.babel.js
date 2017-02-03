@@ -5,7 +5,7 @@ import paths from './gulp-tasks/paths.json';
 import merge from 'lodash.merge';
 
 const packages = merge(
-  require('float/package.json'),
+  require('basey/package.json'),
   require('./package.json')
 );
 

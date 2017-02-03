@@ -20,7 +20,7 @@ module.exports = {
         test: /\.js$/,
         include: [
           path.resolve(__dirname, 'src/assets/js'),
-          path.resolve(__dirname, 'node_modules/float')
+          path.resolve(__dirname, 'node_modules/basey')
         ],
         loader: 'babel-loader',
         query: {

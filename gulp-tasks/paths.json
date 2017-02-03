@@ -13,7 +13,7 @@
   },
   "svg": {
     "baseDir": "src/assets/icons",
-    "frameworkSrc": "./node_modules/float/src/assets/icons/*.svg",
+    "frameworkSrc": "./node_modules/basey/src/assets/icons/*.svg",
     "src": "src/assets/icons/*.svg",
     "build": "./dist/assets/icons/"
   },
