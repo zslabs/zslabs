@@ -1,17 +1,17 @@
 {
   "name": "zslabs",
   "version": "2.0.0",
-  "engines" : {
-    "node" : ">=6.9.1"
+  "engines": {
+    "node": ">=6.9.1"
   },
   "description": "Portfolio site for Zach Schnackel",
   "scripts": {
     "dev": "gulp && gulp watch"
   },
   "dependencies": {
-    "babel-loader": "6.2.10",
+    "babel-loader": "6.3.2",
     "del": "2.2.2",
-    "basey": "git+https://zslabs@bitbucket.org/zslabs/basey.git#0.12.0",
+    "basey": "git+https://zslabs@bitbucket.org/zslabs/basey.git#0.13.5",
     "gulp": "3.9.1",
     "gulp-imagemin": "3.1.1",
     "gulp-load-plugins": "1.5.0",
@@ -30,6 +30,7 @@
     "metalsmith-markdown": "0.2.1",
     "metalsmith-move-up": "1.0.0",
     "metalsmith-permalinks": "0.5.0",
+    "metalsmith-rootpath": "1.0.4",
     "nunjucks": "3.0.0"
   }
 }

@@ -56,11 +56,11 @@ Within the function, we are:
 <div class="u-flex u-flexCenter u-textCenter">
   <div class="u-mr--regular">
     <h4>Original</h4>
-    <svg class="Icon Icon--xlarge"><use xlink:href="#picasa"></use></svg>
+    <svg class="icon icon--xlarge"><use xlink:href="#picasa"></use></svg>
   </div>
   <div>
     <h4>With Mixin</h4>
-    <svg class="Icon Icon--xlarge"><use xlink:href="#picasa-fill"></use></svg>
+    <svg class="icon icon--xlarge"><use xlink:href="#picasa-fill"></use></svg>
   </div>
 </div>
 
@@ -91,11 +91,11 @@ Within the function, we are:
 <div class="u-flex u-flexCenter u-textCenter">
   <div class="u-mr--regular">
     <h4>Original</h4>
-    <svg class="Icon Icon--xlarge"><use xlink:href="#twitter-default"></use></svg>
+    <svg class="icon icon--xlarge"><use xlink:href="#twitter-default"></use></svg>
   </div>
   <div>
     <h4>With Mixin</h4>
-    <svg class="Icon Icon--xlarge"><use xlink:href="#twitter-filled"></use></svg>
+    <svg class="icon icon--xlarge"><use xlink:href="#twitter-filled"></use></svg>
   </div>
 </div>
 
@@ -124,11 +124,11 @@ Within the function, we are:
 <div class="u-flex u-flexCenter u-textCenter">
   <div class="u-mr--regular">
     <h4>Original</h4>
-    <svg class="Icon Icon--xlarge"><use xlink:href="#picasa"></use></svg>
+    <svg class="icon icon--xlarge"><use xlink:href="#picasa"></use></svg>
   </div>
   <div>
     <h4>With Mixin</h4>
-    <svg class="Icon Icon--xlarge"><use xlink:href="#picasa-filled"></use></svg>
+    <svg class="icon icon--xlarge"><use xlink:href="#picasa-filled"></use></svg>
   </div>
 </div>
 

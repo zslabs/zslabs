@@ -6,12 +6,12 @@ const pageTimeline = new TimelineMax({
 });
 
 pageTimeline
-.staggerTo('.Header > *', 0.5, {
+.staggerTo('.header > *', 0.5, {
   y: 0,
   autoAlpha: 1,
   ease
 }, 0.1, 'intro')
-.to('.Intro', 0.5, {
+.to('.intro', 0.5, {
   y: 0,
   autoAlpha: 1,
   ease

@@ -1,4 +1,4 @@
-.Articles {
+.articles {
   &-list {
     padding: 0;
     list-style: none;
@@ -74,11 +74,11 @@
   }
 }
 
-.Section--articles {
+.section--articles {
   padding-top: ($global-whitespace--xlarge * 2);
 }
 
-.Article {
+.article {
   &-content {
     @media (max-width: $global-viewport--small-max) {
       padding-top: $global-whitespace--large;
@@ -98,7 +98,7 @@
 }
 
 @supports (-webkit-background-clip: text) {
-  .Article-title {
+  .article-title {
     position: relative;
     z-index: 2;
     background: url('../media/pattern.png') 85% 35% no-repeat;

@@ -1,4 +1,4 @@
-.Intro {
+.intro {
   // GSAP
   opacity: 0;
   transform: translateY($header-height);
@@ -68,13 +68,13 @@
   }
 }
 
-.Nav-list {
+.nav-list {
   @media (max-width: $global-viewport--small-max) {
     text-align: center;
   }
 }
 
-.Icon {
+.icon {
   &-logo {
     size: 120px;
 
@@ -84,14 +84,4 @@
       transform-origin: center center;
     }
   }
-}
-
-.DOLogo {
-  fill: $global-primary;
-  size: 40px;
-  margin-left: $global-whitespace--small;
-  // GSAP
-  opacity: 0;
-  transform: scale(0);
-  transform-origin: center center;
 }

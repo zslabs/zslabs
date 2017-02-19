@@ -6,12 +6,12 @@ excerpt: "Tech decisions are easy when you take a step back"
 
 In my [previous article](/articles/new-guts/), I talked about some of the backend tools that went into my site rebuild; without touching any of the design elements. Being the "creative-type", I ended up feeling like the current design just wasn't up to par with my current taste. What you see now is a good two-weekends of work that I'm pretty happy with.
 
-<div class="Row">
-  <div class="Column-6@medium">
+<div class="row">
+  <div class="column-6@medium">
     <h3>Old</h3>
     ![ZS Labs: Old](/assets/media/posts/zslabs-old.jpg)
   </div>
-  <div class="Column-6@medium">
+  <div class="column-6@medium">
     <h3>New</h3>
     ![ZS Labs: New](/assets/media/posts/zslabs-new.jpg)
   </div>

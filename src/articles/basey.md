@@ -12,7 +12,6 @@ If you look inside [`index.php`](https://github.com/zslabs/basey-theme/blob/mast
 
 ```php
 locate_template( 'templates/header.php', true, true );
-
   get_template_part('templates/page', 'header');
 
   echo '<h1 class="entry-title">';
@@ -21,7 +20,6 @@ locate_template( 'templates/header.php', true, true );
 
   // start loop
   while ( have_posts() ) : the_post();
-
     // determine if template is available
     $template_available = locate_template( 'templates/teaser/' . get_post_type() . '.php' ) ? get_post_type() : false;
 

@@ -10,7 +10,7 @@ module.exports = {
       ignoreAtRules: ["include", "mixin"]
     } ],
     "max-nesting-depth": [ 5, {
-      ignore: ["at-rules-without-declaration-blocks"]
+      ignore: ["blockless-at-rules"]
     } ]
   }
 };

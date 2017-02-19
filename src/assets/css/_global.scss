@@ -1,4 +1,4 @@
-.Header {
+.header {
   display: flex;
   margin: 0 (-$global-whitespace--regular);
   height: $header-height;
@@ -20,7 +20,7 @@
   }
 }
 
-.Logo-interior {
+.logo-interior {
   display: inline-block;
   transition: transform 0.25s easeOutBack;
   transform-origin: center center;
@@ -30,7 +30,7 @@
   }
 }
 
-.About {
+.about {
   &-trigger {
     display: inline-block;
     transition: transform 0.25s easeOutBack;
@@ -57,7 +57,7 @@
   }
 }
 
-[class^="Social-"] {
+[class^="social-"] {
   border-radius: 50%;
   size: 50px;
   line-height: 50px;
@@ -78,7 +78,7 @@
   }
 }
 
-.Social {
+.social {
   &-github {
     background-position: 45% 70%;
   }

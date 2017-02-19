@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 
 {% block body %}
-  <main class="Section Article-content">
-    <div class="Container Container--small">
-      <h1 class="Article-title">{{ title }}</h1>
+  <main class="section article-content">
+    <div class="container container--small">
+      <h1 class="article-title">{{ title }}</h1>
       <div class="u-textMuted u-mb--large">{{ date }}</div>
       {{ contents | safe }}
       <hr class="u-mv--large">
       <div id="disqus_thread">
-        <button type="button" class="Button Button--comments Button--fullWidth" data-js="loadComments">View Comments</button>
+        <button type="button" class="button button--comments button--fullWidth" data-js="loadComments">View Comments</button>
       </div>
       <script type="text/javascript">
         var disqus_shortname  = 'zslabs';

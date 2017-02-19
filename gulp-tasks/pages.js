@@ -11,6 +11,7 @@ import permalinks from 'metalsmith-permalinks';
 import collections from 'metalsmith-collections';
 import dateFormatter from 'metalsmith-date-formatter';
 import filemetadata from 'metalsmith-filemetadata';
+import rootPath from 'metalsmith-rootpath';
 //import htmlMinifier from 'metalsmith-html-minifier';
 import browserSync from 'browser-sync';
 import nunjucks from 'nunjucks';
@@ -144,6 +145,8 @@ module.exports = () => {
         match: { collection: 'articles' }
       }]
     }))
+    .use(moveUp('pages/**/*'))
+    .use(rootPath())
     .use(inPlace({
       engine: 'nunjucks'
     }))
@@ -155,7 +158,6 @@ module.exports = () => {
     .use(feed({
       collection: 'articles'
     }))
-    .use(moveUp('pages/**/*'))
     //.use(htmlMinifier())
     .destination('dist')
     //.use(debug(true))

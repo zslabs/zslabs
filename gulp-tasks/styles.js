@@ -50,7 +50,7 @@ module.exports = (gulp, $, paths) => {
       title: 'Styles:'
     }))
     .pipe(gulp.dest(paths.styles.build))
-    .pipe(browserSync.stream())
+    .pipe(browserSync.stream({match: '**/*.css'}))
     .pipe($.duration('building styles'));
   };
 };

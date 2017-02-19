@@ -4,7 +4,7 @@ date: 2017-01-08
 excerpt: "I keep my Droplets spinnin'"
 ---
 
-<div class="Alert Alert--primary u-contrast Article-series">
+<div class="alert alert--primary u-contrast article-series">
   <a href="/articles/gsap/" class="u-link u-inlineBlock">
     <span class="u-textLarge u-pr--small">👋</span> This is part of my GSAP deep-dive series!
   </a>

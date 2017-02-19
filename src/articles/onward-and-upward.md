@@ -4,7 +4,7 @@ date: 2017-01-21
 excerpt: "To infinity... and beyond!"
 ---
 
-<div class="Alert Alert--primary u-contrast Article-series">
+<div class="alert alert--primary u-contrast article-series">
   <a href="/articles/gsap/" class="u-link u-inlineBlock">
     <span class="u-textLarge u-pr--small">👋</span> This is part of my GSAP deep-dive series!
   </a>
