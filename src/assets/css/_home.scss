@@ -2,6 +2,7 @@
   // GSAP
   opacity: 0;
   transform: translateY($header-height);
+  padding: $global-whitespace--regular 0;
 
   @media (max-width: $global-viewport--small-max) {
     margin-top: $global-whitespace--large;

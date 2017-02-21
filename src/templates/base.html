@@ -7,7 +7,7 @@
     <title>{{ title }}</title>
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,matchMedia,fetch,Element.prototype.placeholder"></script>
     <link rel="stylesheet" href="{{rootPath}}assets/css/site.css?{{ files['site.css'] }}">
-    <link rel="alternate" type="application/rss+xml" name="Zach Schnackel" title="ZS Labs" href="/rss.xml">
+    <link rel="alternate" type="application/rss+xml" name="Zach Schnackel" title="ZS Labs" href="{{rootPath}}rss.xml">
   </head>
   <body>
     {% include "icons.html" %}
@@ -17,7 +17,7 @@
         <header class="header">
         {% if (title !== 'Zach Schnackel') %}
         <div>
-          <a href="/" class="button--reset logo-interior">
+          <a href="{{rootPath}}" class="button--reset logo-interior">
             <svg fill="url(#pattern)" class="icon-logo icon-logo--small">
               <use xlink:href="#logo"></use>
             </svg>
@@ -33,12 +33,12 @@
         {% endif %}
         <div>
           <a href="#aboutModal" class="button--reset about-trigger" data-modal>
-            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="/assets/media/me.png" alt="Zach Schnackel">
+            <img src="{{placeholder}}" data-src="{{rootPath}}assets/media/me.png" alt="Zach Schnackel">
           </a>
           <div id="aboutModal" class="modal" tabindex="-1" role="dialog" aria-labelledby="aboutModal-title" aria-describedby="aboutModal-desc">
             <div class="modal-dialog">
               <button class="button--reset modal-close" type="button"><svg class="icon"><title>Close Modal</title><use xlink:href="#close"></use></svg></button>
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="/assets/media/me.png" class="aboutModal-image" alt="Zach Schnackel">
+              <img src="{{placeholder}}" data-src="{{rootPath}}assets/media/me.png" class="aboutModal-image" alt="Zach Schnackel">
               <h2 id="aboutModal-title" class="u-textCenter">Hi, I'm Zach.</h2>
               <div id="aboutModal-desc">
                 <ul class="inline inline--center inline--largeAbout-social">
@@ -88,7 +88,7 @@
             <h2 class="article-title">Articles</h2>
             <ul class="articles-list">
               {% for article in articles %}
-                <li><a class="u-inlineBlock" href="/{{ article.path }}/"><div class="u-textLarge articles-title">{{ article.title }}</div><span class="u-textMuted">{{ article.date }}</span></a></li>
+                <li><a class="u-inlineBlock" href="{{rootPath}}{{ article.path }}/"><div class="u-textLarge articles-title">{{ article.title }}</div><span class="u-textMuted">{{ article.date }}</span></a></li>
               {% endfor %}
             </ul>
           </div>

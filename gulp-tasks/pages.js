@@ -72,6 +72,10 @@ function fileModTimes() {
           built[key] = Date.parse(mtime);
         });
       }
+      else {
+        // Generate a random number group in the event this is the first build
+        built[key] = Math.random().toString().slice(2, 12);
+      }
     });
 
   });
@@ -133,7 +137,8 @@ module.exports = () => {
         pattern: '**/*',
         metadata: {
           currentYear: new Date().getFullYear(),
-          files: fileModTimes()
+          files: fileModTimes(),
+          placeholder: 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
         }
       }
     ]))

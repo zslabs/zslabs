@@ -5,7 +5,7 @@ excerpt: "To infinity... and beyond!"
 ---
 
 <div class="alert alert--primary u-contrast article-series">
-  <a href="/articles/gsap/" class="u-link u-inlineBlock">
+  <a href="{{rootPath}}articles/gsap/" class="u-link u-inlineBlock">
     <span class="u-textLarge u-pr--small">👋</span> This is part of my GSAP deep-dive series!
   </a>
 </div>
@@ -15,7 +15,7 @@ Today's GSAP deep-dive will be into another animation I did for [DigitalOcean](h
 Let's take a look at the illustration I was given:
 
 <div class="u-textCenter">
-  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="/assets/media/posts/onward-n-upward/illustration.png" alt="Illustration">
+  <img src="{{placeholder}}" data-src="{{rootPath}}assets/media/posts/onward-n-upward/illustration.png" alt="Illustration">
 </div>
 
 Breaking this down, there were a few different pieces to this animation:
@@ -70,7 +70,7 @@ featuresGraphTimeline
 Similar to my [last case study](/articles/round-n-round#task-3), I started this with a typical "deer in headlights" look on how to best approach this.
 
 <div class="u-textCenter">
-  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="/assets/media/posts/onward-n-upward/deer.gif" alt="Oooooh crap">
+  <img src="{{placeholder}}" data-src="{{rootPath}}assets/media/posts/onward-n-upward/deer.gif" alt="Oooooh crap">
 </div>
 
 First-off, did you know that this [will be possible](https://css-tricks.com/motion-along-path-in-css/) in the future?! Pretty cool stuff. Now, back to the reality of old browsers and pop-up ads. Unlike my other case study, this was a perfect candidate for the [Bezier plugin](https://greensock.com/BezierPlugin-JS) to shine. With the power of [MorphSVG](https://greensock.com/morphSVG) and its `pathDataToBezier()` function, I was able to feed it the coordinates of the main graph stroke path. Then, by determining the speed and length of time it would take for each dot to reach the end, adjusting both the delay and opacity fit perfectly. Since there were multiple dots that we'd be moving at the same time, creating a mini-timeline for each required a loop.

@@ -18,13 +18,13 @@ I thought I'd also take this opportunity to highlight some of the cool experimen
 <p data-height="600" data-theme-id="23494" data-slug-hash="oLzJmR" data-default-tab="result" data-user="digitalocean" data-embed-version="2" data-pen-title="Droplet animation" data-preview="true" class="codepen">See the Pen <a href="http://codepen.io/team/digitalocean/pen/oLzJmR/">Droplet animation</a> by DigitalOcean (<a href="http://codepen.io/digitalocean">@digitalocean</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 
 <div class="u-textCenter u-mt--regular u-mb--xlarge">
-  <a href="/articles/round-n-round/" class="button button--primary">Case Study</a>
+  <a href="{{rootPath}}articles/round-n-round/" class="button button--primary">Case Study</a>
 </div>
 
 <p data-height="400" data-theme-id="23494" data-slug-hash="BzWapm" data-default-tab="result" data-user="digitalocean" data-embed-version="2" data-pen-title="Exponential growth animation" data-preview="true" class="codepen">See the Pen <a href="http://codepen.io/team/digitalocean/pen/BzWapm/">Exponential growth animation</a> by DigitalOcean (<a href="http://codepen.io/digitalocean">@digitalocean</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 
 <div class="u-textCenter u-mt--regular u-mb--xlarge">
-  <a href="/articles/onward-and-upward/" class="button button--primary">Case Study</a>
+  <a href="{{rootPath}}articles/onward-and-upward/" class="button button--primary">Case Study</a>
 </div>
 
 <p data-height="700" data-theme-id="23494" data-slug-hash="Wxmpjb" data-default-tab="result" data-user="digitalocean" data-embed-version="2" data-pen-title="The Wave" data-preview="true" class="codepen">See the Pen <a href="http://codepen.io/team/digitalocean/pen/Wxmpjb/">The Wave</a> by DigitalOcean (<a href="http://codepen.io/digitalocean">@digitalocean</a>) on <a href="http://codepen.io">CodePen</a>.</p>

@@ -5,7 +5,7 @@ excerpt: "I keep my Droplets spinnin'"
 ---
 
 <div class="alert alert--primary u-contrast article-series">
-  <a href="/articles/gsap/" class="u-link u-inlineBlock">
+  <a href="{{rootPath}}articles/gsap/" class="u-link u-inlineBlock">
     <span class="u-textLarge u-pr--small">👋</span> This is part of my GSAP deep-dive series!
   </a>
 </div>
@@ -15,7 +15,7 @@ Today's deep-dive will be a Droplet animation I did for [DigitalOcean](https://w
 Let's take a look at the illustration I was given:
 
 <div class="u-textCenter">
-  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="/assets/media/posts/round-n-round/illustration.png" alt="Illustration" style="width: 400px">
+  <img src="{{placeholder}}" data-src="{{rootPath}}assets/media/posts/round-n-round/illustration.png" alt="Illustration" style="width: 400px">
 </div>
 
 I love getting illustrations from DO designers as there's no shortage of hand-movements and "swoosh" sounds between us as we construct how best to bring illustrations to life. Yes, we are professionals. No, we don't have any shame.
@@ -54,7 +54,7 @@ TweenMax.to('.Droplet-shadow', 3, {
 I decided to use the [Bezier Plugin](https://greensock.com/BezierPlugin-JS) which accepts an array of points/values and `type` to determine the strength of the curve, taking your target element and translating based on the aforementioned attributes. Since the dotted-lines were two separate paths (more on that later), I decided against using the [suggestion from this post](https://greensock.com/forums/topic/13581-animate-svg-object-along-motion-path/) and mapped out what I called each "hard-stop".
 
 <div class="u-textCenter">
-  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="/assets/media/posts/round-n-round/hard-stops.png" alt="Hard stops">
+  <img src="{{placeholder}}" data-src="{{rootPath}}assets/media/posts/round-n-round/hard-stops.png" alt="Hard stops">
 </div>
 
 By finding each position relative to the `[0, 0]` point I had each dot start at&mdash;the lower center&mdash; I was able to create a pretty reliable coordinate system that ended up back at the beginning. The first for example, was:
