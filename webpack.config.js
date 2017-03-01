@@ -15,20 +15,14 @@ module.exports = {
     'jquery': 'jQuery'
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
         include: [
           path.resolve(__dirname, 'src/assets/js'),
           path.resolve(__dirname, 'node_modules/basey')
         ],
-        loader: 'babel-loader',
-        query: {
-          presets: [
-            ['es2015', { 'modules': false }]
-          ],
-          compact: false
-        }
+        loader: 'babel-loader'
       }
     ]
   },

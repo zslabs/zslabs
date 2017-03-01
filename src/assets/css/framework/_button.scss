@@ -1,19 +1,21 @@
 //
 // Variables
 //
+
+$button-default-enable: false;
 $button-secondary-enable: false;
 $button-secondary-enable: false;
 $button-danger-enable: false;
 $button-outline-enable: false;
 $button-contrast-enable: false;
 $button-icon-enable: false;
+$button-background-size-active-enable: false;
 
 @mixin hook-button() {
   letter-spacing: 0.25em;
   font-size: $global-font-size-small;
   text-transform: uppercase;
   font-weight: normal;
-  position: relative;
   transform-origin: center center;
   box-shadow: 0 0 15px rgba($global-dark, 0.15);
   background-image: url('../media/pattern.png') !important;
@@ -24,10 +26,6 @@ $button-icon-enable: false;
   &:hover,
   &:focus {
     color: $global-contrast;
-  }
-
-  &:hover,
-  &:focus {
     box-shadow: 0 0 15px rgba($global-dark, 0.3);
     transform: translateY((-$global-whitespace--xsmall / 2));
   }

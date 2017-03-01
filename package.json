@@ -11,7 +11,7 @@
   "dependencies": {
     "babel-loader": "6.3.2",
     "del": "2.2.2",
-    "basey": "git+https://zslabs@bitbucket.org/zslabs/basey.git#0.13.9",
+    "basey": "git+https://zslabs@bitbucket.org/zslabs/basey.git#0.15.1",
     "gulp": "3.9.1",
     "gulp-imagemin": "3.1.1",
     "gulp-load-plugins": "1.5.0",
