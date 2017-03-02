@@ -27,7 +27,7 @@ const processors  = [
 
 module.exports = (gulp, $, paths) => {
   return () => {
-    return gulp.src('src/assets/css/*')
+    return gulp.src('src/assets/scss/*')
     .pipe($.changed(paths.styles.build))
     .pipe($.plumber({
       handleError: function(err) {

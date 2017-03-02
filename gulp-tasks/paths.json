@@ -18,7 +18,7 @@
     "build": "./dist/assets/icons/"
   },
   "styles": {
-    "src": ["src/assets/css/**/*.scss"],
+    "src": ["src/assets/scss/**/*.scss"],
     "build": "./dist/assets/css/"
   },
   "pages": {

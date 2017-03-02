@@ -1,4 +1,4 @@
-import { forEach } from 'basey/src/assets/js/core/utility';
+import { forEach } from 'basey/core/utility';
 
 /**
  * Defer image loading

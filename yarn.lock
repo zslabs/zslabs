@@ -774,9 +774,9 @@ base64id@0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/base64id/-/base64id-0.1.0.tgz#02ce0fdeee0cef4f40080e1e73e834f0b1bfce3f"
 
-"basey@git+https://zslabs@bitbucket.org/zslabs/basey.git#0.15.1":
-  version "0.15.1"
-  resolved "git+https://zslabs@bitbucket.org/zslabs/basey.git#b95c4b59523d8e3e3e00ba0c378c861d0ff51774"
+"basey@git+https://zslabs@bitbucket.org/zslabs/basey.git#0.16.3":
+  version "0.16.3"
+  resolved "git+https://zslabs@bitbucket.org/zslabs/basey.git#7bf3635eae047f2b7d9d79eb1334f0c56e52d1fd"
   dependencies:
     autoprefixer "6.7.5"
     babel-core "6.23.1"

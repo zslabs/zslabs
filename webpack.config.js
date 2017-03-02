@@ -1,6 +1,7 @@
-const webpack = require('webpack');
+import webpack from 'webpack';
+import path from 'path';
+
 const nodeEnv = process.env.NODE_ENV || 'production';
-const path = require('path');
 
 module.exports = {
   devtool: 'source-map',
@@ -11,8 +12,8 @@ module.exports = {
     filename: '[name].js'
   },
   externals: {
-    'TweenLite': 'TweenLite',
-    'jquery': 'jQuery'
+    TweenLite: 'TweenLite',
+    jQuery: 'jQuery',
   },
   module: {
     rules: [
@@ -25,6 +26,11 @@ module.exports = {
         loader: 'babel-loader'
       }
     ]
+  },
+  resolve: {
+    alias: {
+      basey: path.resolve(__dirname, 'node_modules/basey/src/assets/js'),
+    },
   },
   plugins: [
     // uglify js
