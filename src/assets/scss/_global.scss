@@ -48,6 +48,12 @@
   }
 
   &Modal {
+    .modal-body {
+      @media (min-width: $global-viewport--medium) {
+        padding: $global-whitespace--large;
+      }
+    }
+
     &-image {
       border-radius: 50%;
       size: 100px;

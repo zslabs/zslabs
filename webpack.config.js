@@ -1,7 +1,7 @@
 import webpack from 'webpack';
 import path from 'path';
 
-const nodeEnv = process.env.NODE_ENV || 'production';
+const nodeEnv = process.env.NODE_ENV || 'development';
 
 module.exports = {
   devtool: 'source-map',
