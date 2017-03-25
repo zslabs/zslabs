@@ -6,11 +6,11 @@ excerpt: "To infinity... and beyond!"
 
 <div class="alert alert--primary u-contrast article-series">
   <a href="{{rootPath}}articles/gsap/" class="u-link u-inlineBlock">
-    <span class="u-textLarge u-pr--small">👋</span> This is part of my GSAP deep-dive series!
+    <span class="u-textLarge u-pr--small">👋</span> This is part of my GSAP case-study series!
   </a>
 </div>
 
-Today's GSAP deep-dive will be into another animation I did for [DigitalOcean](https://www.digitalocean.com). The goal was to illustrate the growth of the company since its infancy.
+Today's GSAP case-study will be into another animation I did for [DigitalOcean](https://www.digitalocean.com). The goal was to illustrate the growth of the company since its infancy.
 
 Let's take a look at the illustration I was given:
 

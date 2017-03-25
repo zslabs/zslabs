@@ -6,7 +6,7 @@ excerpt: "I keep my Droplets spinnin'"
 
 <div class="alert alert--primary u-contrast article-series">
   <a href="{{rootPath}}articles/gsap/" class="u-link u-inlineBlock">
-    <span class="u-textLarge u-pr--small">👋</span> This is part of my GSAP deep-dive series!
+    <span class="u-textLarge u-pr--small">👋</span> This is part of my GSAP case-study series!
   </a>
 </div>
 

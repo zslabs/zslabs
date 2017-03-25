@@ -33,4 +33,8 @@ I thought I'd also take this opportunity to highlight some of the cool experimen
 
 <p data-height="650" data-theme-id="23494" data-slug-hash="YwygoQ" data-default-tab="result" data-user="zslabs" data-embed-version="2" data-pen-title="SVG Loaders" data-preview="true" class="codepen">See the Pen <a href="http://codepen.io/zslabs/pen/YwygoQ/">SVG Loaders</a> by Zach Schnackel (<a href="http://codepen.io/zslabs">@zslabs</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 
+<div class="u-textCenter u-mt--regular u-mb--xlarge">
+  <a href="{{rootPath}}articles/i-❤️-loaders/" class="button button--primary">Case Study</a>
+</div>
+
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
