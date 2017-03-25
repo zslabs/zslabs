@@ -1,4 +1,5 @@
 import fs from 'fs';
+import path from 'path';
 import util from 'util';
 import metalsmith from 'metalsmith';
 import feed from 'metalsmith-feed';
@@ -16,6 +17,8 @@ import htmlMinifier from 'metalsmith-html-minifier';
 import browserSync from 'browser-sync';
 import nunjucks from 'nunjucks';
 
+import config from './config';
+
 // https://github.com/superwolff/metalsmith-layouts/issues/43
 nunjucks.configure(['./src/templates', './dist/assets/icons', './dist/assets/media'], {
   watch: false,
@@ -24,10 +27,29 @@ nunjucks.configure(['./src/templates', './dist/assets/icons', './dist/assets/med
 
 const reload = browserSync.reload;
 const built = {};
-const builtFiles = [
-  './dist/assets/css/site.css',
-  './dist/assets/js/entry.js'
-];
+const builtFiles = config.metalsmith.built;
+
+// Get source directories
+const srcDirectories = getDirectories(config.metalsmith.src).filter(item => !item.match('articles|pages'));
+// Will hold final, mutated directories
+const ignoreDirectories = [];
+// Loop through source directories and adjust paths based on `metalsmith-ignore` needs
+srcDirectories.forEach((item) => {
+  ignoreDirectories.push(
+    `${item}/**/*`,
+    `${item}/**/.*`
+  );
+});
+
+/**
+ * Get top-level directories
+ * @param  {string} srcPath
+ * @return array
+ */
+function getDirectories(srcPath) {
+  return fs.readdirSync(srcPath)
+    .filter(file => fs.statSync(path.join(srcPath, file)).isDirectory());
+}
 
 /**
  * Middleman data output
@@ -77,102 +99,96 @@ function fileModTimes() {
         built[key] = Math.random().toString().slice(2, 12);
       }
     });
-
   });
 
   return built;
 }
 
-module.exports = () => {
-  return () => {
-    return metalsmith(process.cwd())
-    .source('src')
-    .clean(false)
-    .metadata({
-      site: {
-        title: 'ZS Labs',
-        url: 'https://zslabs.com',
-        author: 'Zach Schnackel'
-      }
-    })
-    .use(ignore([
-      'assets/**/*',
-      'templates/*'
-    ]))
-    .use(collections({
-      pages: {
-        pattern: 'pages/**/*.html'
-      },
-      articles: {
-        pattern: 'articles/*.md',
-        sortBy: 'date',
-        reverse: true
-      }
-    }))
-    .use(dateFormatter({
-      dates: [
-        {
-          key: 'date',
-          format: 'MMM Do, YYYY'
-        }
-      ]
-    }))
-    // Automatically pass data to file patterns
-    .use(filemetadata([
+export default function pages() {
+  return metalsmith(process.cwd())
+  .source(config.metalsmith.src)
+  .clean(false)
+  .metadata({
+    site: {
+      title: config.global.title,
+      url: config.global.url,
+      author: config.global.author
+    }
+  })
+  .use(ignore(ignoreDirectories))
+  .use(collections({
+    pages: {
+      pattern: 'pages/**/*.html'
+    },
+    articles: {
+      pattern: 'articles/*.md',
+      sortBy: 'date',
+      reverse: true
+    }
+  }))
+  .use(dateFormatter({
+    dates: [
       {
-        pattern: 'articles/*.md',
-        metadata: {
-          'layout': 'post.html'
-        },
-        preserve: true
+        key: 'date',
+        format: 'MMM Do, YYYY'
+      }
+    ]
+  }))
+  // Automatically pass data to file patterns
+  .use(filemetadata([
+    {
+      pattern: 'articles/*.md',
+      metadata: {
+        'layout': 'post.html'
       },
-      {
-        pattern: 'pages/*.html',
-        metadata: {
-          'layout': 'default.html'
-        },
-        preserve: true
+      preserve: true
+    },
+    {
+      pattern: 'pages/*.html',
+      metadata: {
+        'layout': 'default.html'
       },
-      {
-        pattern: '**/*',
-        metadata: {
-          currentYear: new Date().getFullYear(),
-          files: fileModTimes(),
-          placeholder: 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
-        }
+      preserve: true
+    },
+    {
+      pattern: '**/*',
+      metadata: {
+        currentYear: new Date().getFullYear(),
+        files: fileModTimes(),
+        placeholder: 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
       }
-    ]))
-    .use(markdown({
-      langPrefix: 'language-'
-    }))
-    .use(permalinks({
-      linksets: [{
-        match: { collection: 'articles' }
-      }]
-    }))
-    .use(moveUp('pages/**/*'))
-    .use(rootPath())
-    .use(inPlace({
-      engine: 'nunjucks'
-    }))
-    .use(layouts({
-      engine: 'nunjucks',
-      directory: 'src/templates',
-      default: 'default.html'
-    }))
-    .use(feed({
-      collection: 'articles'
-    }))
-    .use(htmlMinifier())
-    .destination('dist')
-    //.use(debug(true))
-    .build((err) => {
-      if (err) {
-        console.log(err);
-      }
-      else {
-        reload();
-      }
-    });
-  };
-};
+    }
+  ]))
+  .use(markdown({
+    langPrefix: 'language-'
+  }))
+  .use(permalinks({
+    linksets: [{
+      match: { collection: 'articles' }
+    }]
+  }))
+  .use(moveUp('pages/**/*'))
+  .use(rootPath())
+  .use(inPlace({
+    engine: 'nunjucks'
+  }))
+  .use(layouts({
+    engine: 'nunjucks',
+    directory: 'src/templates',
+    default: 'default.html'
+  }))
+  .use(feed({
+    collection: 'articles'
+  }))
+  .use(htmlMinifier())
+  .destination('dist')
+  //.use(debug(true))
+  .build((err) => {
+    if (err) {
+      console.log(err);
+    }
+    else {
+      reload();
+    }
+  });
+}

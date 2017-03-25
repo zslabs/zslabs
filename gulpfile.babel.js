@@ -1,74 +1,41 @@
 import gulp from 'gulp';
-import gulpLoadPlugins from 'gulp-load-plugins';
-import browserSync from 'browser-sync';
-import paths from './gulp-tasks/paths.json';
-import merge from 'lodash.merge';
 
-const packages = merge(
-  require('basey/package.json'),
-  require('./package.json')
-);
+// Import tasks
+import clean from './gulp-tasks/clean';
+import copy from './gulp-tasks/copy';
+import fonts from './gulp-tasks/fonts';
+import deploy from './gulp-tasks/deploy';
+import server from './gulp-tasks/server';
+import linter from './gulp-tasks/linter';
+import styles from './gulp-tasks/styles';
+import scripts from './gulp-tasks/scripts';
+import media from './gulp-tasks/media';
+import svgSprite from './gulp-tasks/svg-sprite';
+import pages from './gulp-tasks/pages';
+import watch from './gulp-tasks/watch';
 
-// Utilities
-const $ = gulpLoadPlugins({
-  config: packages
-});
-const reload = browserSync.reload;
-
-/**
- * Reusable function for including tasks in subfolders
- * @param  {string} task
- * @return {task}
- */
-function getTask(task) {
-  return require(`./gulp-tasks/${task}`)(gulp, $, paths);
-}
-
-// Clean
-gulp.task('clean', getTask('clean'));
-// Copy
-gulp.task('copy', getTask('copy'));
-// Deploy
-gulp.task('deploy', getTask('deploy'));
-// BrowserSync
-gulp.task('browser-sync', getTask('browser-sync'));
-// Styles lint
-gulp.task('stylelint', getTask('stylelint'));
-// Styles
-gulp.task('styles', ['svg-sprite', 'media', 'stylelint'], getTask('styles'));
-// Media
-gulp.task('fonts', getTask('fonts'));
-// Scripts
-gulp.task('scripts', getTask('scripts'));
-// Media
-gulp.task('media', getTask('media'));
-// SVG Sprite
-gulp.task('svg-sprite', getTask('svg-sprite'));
-// Pages
-gulp.task('pages', ['svg-sprite'], getTask('pages'));
+// Instantiate tasks
+gulp.task('clean', clean);
+gulp.task('copy', copy);
+gulp.task('fonts', fonts);
+gulp.task('deploy', deploy);
+gulp.task('server', server);
+gulp.task('linter', linter);
+gulp.task('styles', ['svg-sprite', 'media', 'linter'], styles);
+gulp.task('scripts', scripts);
+gulp.task('media', media);
+gulp.task('svg-sprite', svgSprite);
+gulp.task('pages', ['svg-sprite'], pages);
+gulp.task('watch', ['server'], watch);
 
 // Bundled Tasks
 gulp.task('default', [
-  'copy',
   'svg-sprite',
   'scripts',
-  'stylelint',
+  'linter',
   'media',
   'styles',
   'fonts',
+  'copy',
   'pages'
 ]);
-
-// Watch
-gulp.task('watch', ['browser-sync'], () => {
-  // Styles
-  gulp.watch(paths.styles.src, ['styles']);
-  // Scripts
-  gulp.watch(paths.scripts.src, ['scripts', reload]);
-  // Media
-  gulp.watch(paths.media.src, ['media', reload]);
-  // SVG Sprite
-  gulp.watch(paths.svg.src, ['svg-sprite', reload]);
-  // Pages
-  gulp.watch(paths.pages.src, ['pages']);
-});

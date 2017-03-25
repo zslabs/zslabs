@@ -1,3 +1,4 @@
+import 'what-input';
 import Modal from 'basey/core/modal';
 import OffCanvas from 'basey/core/offcanvas';
 import 'basey/components/prism';

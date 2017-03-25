@@ -1,7 +1,7 @@
 import del from 'del';
 
-module.exports = (gulp, $, paths) => {
-  return () => {
-    return del(paths.pages.build);
-  };
-};
+import paths from './paths';
+
+export default function clean() {
+  return del(paths.pages.build);
+}
