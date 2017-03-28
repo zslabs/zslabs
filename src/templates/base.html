@@ -4,18 +4,18 @@
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{{ title }}</title>
+    <title>{% if slug === 'home' %}Zach Schnackel{% else %}{{ title }} - Zach Schnackel{% endif %}</title>
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,matchMedia,fetch,Element.prototype.placeholder"></script>
     <link rel="stylesheet" href="{{rootPath}}assets/css/site.css?{{ files['site.css'] }}">
     <link rel="alternate" type="application/rss+xml" name="Zach Schnackel" title="ZS Labs" href="{{rootPath}}rss.xml">
   </head>
-  <body>
+  <body class="page-{{slug}}">
     {% include "icons.html" %}
 
     <div class="container u-posRelative" style="overflow: hidden">
-      {% if (title !== 'Resume') %}
+      {% if (slug !== 'resume') %}
         <header class="header">
-        {% if (title !== 'Zach Schnackel') %}
+        {% if (slug !== 'home') %}
         <div>
           <a href="{{rootPath}}" class="button--reset logo-interior">
             <svg fill="url(#pattern)" class="icon-logo icon-logo--small">
@@ -84,7 +84,7 @@
       {% endif %}
       {% block body %}{% endblock %}
     </div>
-    {% if (title !== 'Resume') %}
+    {% if (slug !== 'resume') %}
       {% if articles %}
         <aside id="articles" class="offCanvas" tabindex="-1" role="dialog" aria-labelledby="articles-title">
           <div class="offCanvas-panel">

@@ -8,6 +8,34 @@ $base-h4-font-weight: $global-font-weight-bold;
 
 @mixin hook-base-body() {
   letter-spacing: -0.0125em;
+
+  @supports (-webkit-mask-image: url()) {
+    body:not(.page-resume) {
+      position: relative;
+      overflow: hidden;
+
+      &::before {
+        content: '';
+        size: 100% 200px;
+        position: absolute;
+        top: -$global-whitespace--large;
+        left: 0;
+        background: url('../media/pattern.png');
+        mask-image: url('../media/bubbles.svg');
+        z-index: -2;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        size: 100% 200px;
+        background: linear-gradient(rgba($global-background, 0.85), $global-background);
+        z-index: -1;
+      }
+    }
+  }
 }
 
 @mixin hook-base-h() {

@@ -12,6 +12,7 @@ import permalinks from 'metalsmith-permalinks';
 import collections from 'metalsmith-collections';
 import dateFormatter from 'metalsmith-date-formatter';
 import filemetadata from 'metalsmith-filemetadata';
+import slug from 'metalsmith-slug';
 import rootPath from 'metalsmith-rootpath';
 import htmlMinifier from 'metalsmith-html-minifier';
 import browserSync from 'browser-sync';
@@ -133,6 +134,9 @@ export default function pages() {
         format: 'MMM Do, YYYY'
       }
     ]
+  }))
+  .use(slug({
+    lower: true
   }))
   // Automatically pass data to file patterns
   .use(filemetadata([
