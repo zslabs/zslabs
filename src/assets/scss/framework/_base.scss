@@ -12,7 +12,6 @@ $base-h4-font-weight: $global-font-weight-bold;
   @supports (-webkit-mask-image: url()) {
     body:not(.page-resume) {
       position: relative;
-      overflow: hidden;
 
       &::before {
         content: '';
