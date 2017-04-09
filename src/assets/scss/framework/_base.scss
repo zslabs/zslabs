@@ -9,7 +9,7 @@ $base-h4-font-weight: $global-font-weight-bold;
 @mixin hook-base-body() {
   letter-spacing: -0.0125em;
 
-  @supports (-webkit-mask-image: url()) {
+  @supports (mask-image: url()) {
     body:not(.page-resume) {
       position: relative;
 

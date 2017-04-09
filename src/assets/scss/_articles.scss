@@ -97,7 +97,7 @@
   }
 }
 
-@supports (-webkit-background-clip: text) {
+@supports (background-clip: text) {
   .article-title {
     position: relative;
     z-index: 2;
