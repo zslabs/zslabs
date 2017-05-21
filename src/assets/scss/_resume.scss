@@ -1,6 +1,6 @@
 .resume {
   &-back {
-    padding: $global-whitespace--regular 0;
+    padding: $global-whitespace-regular 0;
 
     a {
       position: relative;
@@ -25,7 +25,7 @@
   }
 
   &-header {
-    @media (min-width: $global-viewport--medium) {
+    @media (min-width: $global-viewport-medium) {
       display: flex;
       align-items: center;
       width: 100%;
@@ -35,34 +35,34 @@
       }
     }
 
-    @media (max-width: $global-viewport--small-max) {
+    @media (max-width: $global-viewport-small-max) {
       &Right {
-        margin-top: $global-whitespace--large;
+        margin-top: $global-whitespace-large;
       }
     }
 
     &Right {
       font-family: $base-code-font-family;
 
-      @media (min-width: $global-viewport--medium) {
+      @media (min-width: $global-viewport-medium) {
         margin-left: auto;
       }
 
-      @media (max-width: $global-viewport--small-max) {
-        margin-top: $global-whitespace--large;
+      @media (max-width: $global-viewport-small-max) {
+        margin-top: $global-whitespace-large;
       }
     }
   }
 
   &-intro {
     &Container {
-      @media (min-width: $global-viewport--medium) {
+      @media (min-width: $global-viewport-medium) {
         display: flex;
         align-items: center;
         width: 100%;
       }
 
-      @media (max-width: $global-viewport--small-max) {
+      @media (max-width: $global-viewport-small-max) {
         text-align: center;
       }
     }
@@ -74,13 +74,13 @@
         border-radius: 50%;
       }
 
-      @media (min-width: $global-viewport--medium) {
+      @media (min-width: $global-viewport-medium) {
         flex-shrink: 0;
-        margin-right: $global-whitespace--large;
+        margin-right: $global-whitespace-large;
       }
 
-      @media (max-width: $global-viewport--small-max) {
-        margin: 0 auto $global-whitespace--large;
+      @media (max-width: $global-viewport-small-max) {
+        margin: 0 auto $global-whitespace-large;
       }
     }
   }

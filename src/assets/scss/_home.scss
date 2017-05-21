@@ -2,13 +2,13 @@
   // GSAP
   opacity: 0;
   transform: translateY($header-height);
-  padding: $global-whitespace--regular 0;
+  padding: $global-whitespace-regular 0;
 
-  @media (max-width: $global-viewport--small-max) {
-    margin-top: $global-whitespace--large;
+  @media (max-width: $global-viewport-small-max) {
+    margin-top: $global-whitespace-large;
   }
 
-  @media (min-width: $global-viewport--medium) {
+  @media (min-width: $global-viewport-medium) {
     display: flex;
     min-height: calc(100vh - #{$header-height});
     align-items: center;
@@ -21,11 +21,11 @@
   }
 
   &-textContent {
-    @media (max-width: $global-viewport--small-max) {
+    @media (max-width: $global-viewport-small-max) {
       text-align: center;
     }
 
-    @media (min-width: $global-viewport--medium) {
+    @media (min-width: $global-viewport-medium) {
       display: flex;
       align-items: center;
       flex-direction: row;
@@ -35,12 +35,12 @@
   }
 
   &-media {
-    @media (max-width: $global-viewport--small-max) {
-      margin-bottom: $global-whitespace--large;
+    @media (max-width: $global-viewport-small-max) {
+      margin-bottom: $global-whitespace-large;
     }
 
-    @media (min-width: $global-viewport--medium) {
-      margin-right: $global-whitespace--regular;
+    @media (min-width: $global-viewport-medium) {
+      margin-right: $global-whitespace-regular;
     }
   }
 
@@ -49,7 +49,7 @@
   }
 
   &-header {
-    @media (min-width: $global-viewport--medium) {
+    @media (min-width: $global-viewport-medium) {
       font-size: ($base-h1-font-size * 1.25);
     }
   }
@@ -59,18 +59,18 @@
     display: flex;
     align-items: center;
 
-    @media (max-width: $global-viewport--small-max) {
+    @media (max-width: $global-viewport-small-max) {
       justify-content: center;
     }
 
-    @media (min-width: $global-viewport--medium) {
+    @media (min-width: $global-viewport-medium) {
       font-size: $base-h3-font-size;
     }
   }
 }
 
 .nav-list {
-  @media (max-width: $global-viewport--small-max) {
+  @media (max-width: $global-viewport-small-max) {
     text-align: center;
   }
 }

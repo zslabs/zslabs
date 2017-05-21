@@ -6,7 +6,7 @@ const nodeEnv = process.env.NODE_ENV || 'development';
 module.exports = {
   devtool: 'source-map',
   entry: {
-    entry: './src/assets/js/entry'
+    site: './src/assets/js/entry'
   },
   output: {
     filename: '[name].js'

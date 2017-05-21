@@ -17,7 +17,7 @@ $base-h4-font-weight: $global-font-weight-bold;
         content: '';
         size: 100% 200px;
         position: absolute;
-        top: -$global-whitespace--large;
+        top: -$global-whitespace-large;
         left: 0;
         background: url('../media/pattern.png');
         mask-image: url('../media/bubbles.svg');

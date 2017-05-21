@@ -9,6 +9,8 @@ $button-danger-enable: false;
 $button-outline-enable: false;
 $button-contrast-enable: false;
 $button-icon-enable: false;
+$button-small-enable: false;
+$button-link-enable: false;
 $button-background-size-active-enable: false;
 
 @mixin hook-button() {
@@ -27,7 +29,7 @@ $button-background-size-active-enable: false;
   &:focus {
     color: $global-contrast;
     box-shadow: 0 0 15px rgba($global-dark, 0.3);
-    transform: translateY((-$global-whitespace--xsmall / 2));
+    transform: translateY((-$global-whitespace-xsmall / 2));
   }
 
   &:active {
@@ -50,8 +52,4 @@ $button-background-size-active-enable: false;
   &--comments {
     background-position: 50% 30% !important;
   }
-}
-
-button {
-  outline: 0;
 }

@@ -1,6 +1,6 @@
 .header {
   display: flex;
-  margin: 0 (-$global-whitespace--regular);
+  margin: 0 (-$global-whitespace-regular);
   height: $header-height;
   justify-content: space-between;
   align-items: center;
@@ -49,8 +49,8 @@
 
   &Modal {
     .modal-body {
-      @media (min-width: $global-viewport--medium) {
-        padding: $global-whitespace--large;
+      @media (min-width: $global-viewport-medium) {
+        padding: $global-whitespace-large;
       }
     }
 
@@ -58,7 +58,7 @@
       border-radius: 50%;
       size: 100px;
       display: block;
-      margin: $global-whitespace--regular auto 0 auto;
+      margin: $global-whitespace-regular auto 0 auto;
     }
   }
 }
