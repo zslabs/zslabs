@@ -107,92 +107,92 @@ function fileModTimes() {
 
 export default function pages() {
   return metalsmith(process.cwd())
-  .source(config.metalsmith.src)
-  .clean(false)
-  .metadata({
-    site: {
-      title: config.global.title,
-      url: config.global.url,
-      author: config.global.author
-    }
-  })
-  .use(ignore(ignoreDirectories))
-  .use(collections({
-    pages: {
-      pattern: 'pages/**/*.html'
-    },
-    articles: {
-      pattern: 'articles/*.md',
-      sortBy: 'date',
-      reverse: true
-    }
-  }))
-  .use(dateFormatter({
-    dates: [
+    .source(config.metalsmith.src)
+    .clean(false)
+    .metadata({
+      site: {
+        title: config.global.title,
+        url: config.global.url,
+        author: config.global.author
+      }
+    })
+    .use(ignore(ignoreDirectories))
+    .use(collections({
+      pages: {
+        pattern: 'pages/**/*.html'
+      },
+      articles: {
+        pattern: 'articles/*.md',
+        sortBy: 'date',
+        reverse: true
+      }
+    }))
+    .use(dateFormatter({
+      dates: [
+        {
+          key: 'date',
+          format: 'MMM Do, YYYY'
+        }
+      ]
+    }))
+    .use(slug({
+      lower: true
+    }))
+    // Automatically pass data to file patterns
+    .use(filemetadata([
       {
-        key: 'date',
-        format: 'MMM Do, YYYY'
-      }
-    ]
-  }))
-  .use(slug({
-    lower: true
-  }))
-  // Automatically pass data to file patterns
-  .use(filemetadata([
-    {
-      pattern: 'articles/*.md',
-      metadata: {
-        'layout': 'post.html'
+        pattern: 'articles/*.md',
+        metadata: {
+          'layout': 'post.html'
+        },
+        preserve: true
       },
-      preserve: true
-    },
-    {
-      pattern: 'pages/*.html',
-      metadata: {
-        'layout': 'default.html'
+      {
+        pattern: 'pages/*.html',
+        metadata: {
+          'layout': 'default.html'
+        },
+        preserve: true
       },
-      preserve: true
-    },
-    {
-      pattern: '**/*',
-      metadata: {
-        currentYear: new Date().getFullYear(),
-        files: fileModTimes(),
-        placeholder: 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
+      {
+        pattern: '**/*',
+        metadata: {
+          currentYear: new Date().getFullYear(),
+          files: fileModTimes(),
+          placeholder: 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
+        }
       }
-    }
-  ]))
-  .use(markdown({
-    langPrefix: 'language-'
-  }))
-  .use(permalinks({
-    linksets: [{
-      match: { collection: 'articles' }
-    }]
-  }))
-  .use(moveUp('pages/**/*'))
-  .use(rootPath())
-  .use(inPlace({
-    engine: 'nunjucks'
-  }))
-  .use(layouts({
-    engine: 'nunjucks',
-    directory: 'src/templates',
-    default: 'default.html'
-  }))
-  .use(feed({
-    collection: 'articles'
-  }))
-  .use(htmlMinifier())
-  .destination('dist')
-  //.use(debug(true))
-  .build((err) => {
-    if (err) {
-      console.log(err);
-    }
-    else {
-      reload();
-    }
-  });
+    ]))
+    .use(markdown({
+      langPrefix: 'language-'
+    }))
+    .use(permalinks({
+      linksets: [{
+        match: { collection: 'articles' }
+      }]
+    }))
+    .use(moveUp('pages/**/*'))
+    .use(rootPath())
+    .use(inPlace({
+      engine: 'nunjucks'
+    }))
+    .use(layouts({
+      engine: 'nunjucks',
+      directory: 'src/templates',
+      default: 'default.html'
+    }))
+    .use(feed({
+      collection: 'articles'
+    }))
+    .use(htmlMinifier())
+    .destination('dist')
+    //.use(debug(true))
+    .build((err) => {
+      if (err) {
+        console.log(err);
+      }
+      else {
+        reload();
+      }
+    });
 }

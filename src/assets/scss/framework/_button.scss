@@ -23,6 +23,7 @@ $button-background-size-active-enable: false;
   background-image: url('../media/pattern.png') !important;
   background-color: transparent;
   background-repeat: no-repeat;
+  background-size: auto;
   color: $global-contrast;
 
   &:hover,

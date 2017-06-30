@@ -31,25 +31,25 @@ export default function svgSprite() {
   const globalIcons =
     // Combine SVGs from global folder in site and from framework src folder
     gulp.src([paths.svg.baseDir + '/global/*.svg', paths.svg.frameworkSrc])
-    .pipe($.changed(paths.svg.build))
-    .pipe($.svgSprite({
-      'svg': {
-        'xmlDeclaration': false,
-        'doctypeDeclaration': false,
-        'dimensionAttributes': false
-      },
-      'mode': {
-        'symbol': {
-          'dest': '',
-          'sprite': 'global.svg'
+      .pipe($.changed(paths.svg.build))
+      .pipe($.svgSprite({
+        'svg': {
+          'xmlDeclaration': false,
+          'doctypeDeclaration': false,
+          'dimensionAttributes': false
+        },
+        'mode': {
+          'symbol': {
+            'dest': '',
+            'sprite': 'global.svg'
+          }
         }
-      }
-    }))
-    .pipe($.size({
-      showFiles: true,
-      title: 'SVG Sprite:'
-    }))
-    .pipe(gulp.dest(paths.svg.build));
+      }))
+      .pipe($.size({
+        showFiles: true,
+        title: 'SVG Sprite:'
+      }))
+      .pipe(gulp.dest(paths.svg.build));
 
   // Grab all folders from src directory
   const folders = getFolders(paths.svg.baseDir);
@@ -62,7 +62,7 @@ export default function svgSprite() {
       return false;
     }
     return true; }).map((folder) => {
-      return gulp.src(path.join(paths.svg.baseDir, folder, '/*.svg'))
+    return gulp.src(path.join(paths.svg.baseDir, folder, '/*.svg'))
       .pipe($.changed(paths.svg.build))
       .pipe($.svgSprite({
         'svg': {
@@ -82,7 +82,7 @@ export default function svgSprite() {
         title: folder + ' SVG Sprite:'
       }))
       .pipe(gulp.dest(paths.svg.build));
-    });
+  });
 
   return mergeStream(globalIcons, pageIcons);
 }

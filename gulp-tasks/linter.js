@@ -17,14 +17,14 @@ const $ = gulpLoadPlugins({
 
 export default function linter() {
   return gulp.src(paths.styles.src)
-  .pipe($.postcss(
-    [
-      stylelint(),
-      reporter({ clearMessages: true })
-    ],
-    {
-      syntax: scss
-    }
-  ))
-  .pipe($.duration('linting styles'));
+    .pipe($.postcss(
+      [
+        stylelint(),
+        reporter({ clearMessages: true })
+      ],
+      {
+        syntax: scss
+      }
+    ))
+    .pipe($.duration('linting styles'));
 }

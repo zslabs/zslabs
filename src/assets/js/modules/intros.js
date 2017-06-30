@@ -6,13 +6,13 @@ const pageTimeline = new TimelineMax({
 });
 
 pageTimeline
-.staggerTo('.header > *', 0.5, {
-  y: 0,
-  autoAlpha: 1,
-  ease
-}, 0.1, 'intro')
-.to('.intro', 0.5, {
-  y: 0,
-  autoAlpha: 1,
-  ease
-}, 'intro');
+  .staggerTo('.header > *', 0.5, {
+    y: 0,
+    autoAlpha: 1,
+    ease
+  }, 0.1, 'intro')
+  .to('.intro', 0.5, {
+    y: 0,
+    autoAlpha: 1,
+    ease
+  }, 'intro');

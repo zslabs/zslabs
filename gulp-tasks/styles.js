@@ -22,9 +22,7 @@ const packages = merge(
 const $ = gulpLoadPlugins({
   config: packages
 });
-const autoprefixerInit = autoprefixer({
-  browsers: ['last 2 versions']
-});
+const autoprefixerInit = autoprefixer();
 const processors  = [
   pImport,
   flexboxFixes,
@@ -38,29 +36,29 @@ const processors  = [
 
 export default function styles() {
   return gulp.src('src/assets/scss/*')
-  .pipe($.changed(paths.styles.build))
-  .pipe($.sourcemaps.init())
-  .pipe($.sass().on('error', function(err) {
-    // Show error in console
-    console.error(err.message);
-    // Display error in the browser
-    browserSync.notify(err.message, 3000);
-    // Prevent gulp from catching the error and exiting the watch process
-    this.emit('end');
-  }))
-  .pipe($.postcss(processors))
-  .pipe($.cssnano({
-    discardUnused: false,
-    zindex: false,
-    reduceIdents: false,
-    mergeIdents: false
-  }))
-  .pipe($.sourcemaps.write('./'))
-  .pipe($.size({
-    showFiles: true,
-    title: 'Styles:'
-  }))
-  .pipe(gulp.dest(paths.styles.build))
-  .pipe(browserSync.stream({match: '**/*.css'}))
-  .pipe($.duration('building styles'));
+    .pipe($.changed(paths.styles.build))
+    .pipe($.sourcemaps.init())
+    .pipe($.sass().on('error', function(err) {
+      // Show error in console
+      console.error(err.message);
+      // Display error in the browser
+      browserSync.notify(err.message, 3000);
+      // Prevent gulp from catching the error and exiting the watch process
+      this.emit('end');
+    }))
+    .pipe($.postcss(processors))
+    .pipe($.cssnano({
+      discardUnused: false,
+      zindex: false,
+      reduceIdents: false,
+      mergeIdents: false
+    }))
+    .pipe($.sourcemaps.write('./'))
+    .pipe($.size({
+      showFiles: true,
+      title: 'Styles:'
+    }))
+    .pipe(gulp.dest(paths.styles.build))
+    .pipe(browserSync.stream({match: '**/*.css'}))
+    .pipe($.duration('building styles'));
 }

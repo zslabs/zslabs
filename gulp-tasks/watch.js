@@ -12,5 +12,5 @@ export default function watch() {
   gulp.watch(paths.svg.src, ['svg-sprite', reload]);
   gulp.watch(paths.pages.src, ['pages']);
   // Stop old version of gulp watch from running when modified
-  gulp.watch(['gulpfile.babel.js', './gulp-tasks/*']).on('change', () => process.exit(0));
+  gulp.watch(['gulpfile.babel.js', './gulp-tasks/*', 'webpack.config.js']).on('change', () => process.exit(0));
 }

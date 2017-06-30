@@ -17,7 +17,7 @@ const $ = gulpLoadPlugins({
 
 export default function scripts() {
   return $.eslint()
-  .pipe($.eslint.format())
-  .pipe(webpackStream(require('../webpack.config.js'), webpack))
-  .pipe(gulp.dest(paths.scripts.build));
+    .pipe($.eslint.format())
+    .pipe(webpackStream(require('../webpack.config.js'), webpack))
+    .pipe(gulp.dest(paths.scripts.build));
 }

@@ -13,7 +13,6 @@ module.exports = {
   },
   externals: {
     TweenLite: 'TweenLite',
-    jQuery: 'jQuery',
   },
   module: {
     rules: [
@@ -33,6 +32,8 @@ module.exports = {
     },
   },
   plugins: [
+    // modules
+    new webpack.optimize.ModuleConcatenationPlugin(),
     // uglify js
     new webpack.optimize.UglifyJsPlugin({
       compress: { warnings: false },

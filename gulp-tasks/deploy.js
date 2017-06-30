@@ -14,7 +14,7 @@ const $ = gulpLoadPlugins({
 
 export default function deploy() {
   return gulp.src(`${paths.pages.build}**/*`)
-  .pipe($.ghPages({
-    'remoteUrl': 'git@github.com:zslabs/zslabs.github.io.git'
-  }));
+    .pipe($.ghPages({
+      'remoteUrl': 'git@github.com:zslabs/zslabs.github.io.git'
+    }));
 }

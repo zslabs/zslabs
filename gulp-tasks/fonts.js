@@ -14,6 +14,6 @@ const $ = gulpLoadPlugins({
 
 export default function fonts() {
   return gulp.src(paths.fonts.src)
-  .pipe(gulp.dest(paths.fonts.build))
-  .pipe($.duration('moving fonts'));
+    .pipe(gulp.dest(paths.fonts.build))
+    .pipe($.duration('moving fonts'));
 }
