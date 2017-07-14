@@ -36,7 +36,7 @@ export default function svgSprite() {
         'svg': {
           'xmlDeclaration': false,
           'doctypeDeclaration': false,
-          'dimensionAttributes': false
+          'dimensionAttributes': false,
         },
         'mode': {
           'symbol': {
