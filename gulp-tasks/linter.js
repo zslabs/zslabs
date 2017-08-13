@@ -20,7 +20,7 @@ export default function linter() {
     .pipe($.postcss(
       [
         stylelint(),
-        reporter({ clearMessages: true })
+        reporter({ clearReportedMessages: true })
       ],
       {
         syntax: scss

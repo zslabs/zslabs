@@ -22,7 +22,13 @@ module.exports = {
           path.resolve(__dirname, 'src/assets/js'),
           path.resolve(__dirname, 'node_modules/basey')
         ],
-        loader: 'babel-loader'
+        loader: 'babel-loader',
+        options: {
+          // This is a feature of `babel-loader` for webpack (not Babel itself).
+          // It enables caching results in ./node_modules/.cache/babel-loader/
+          // directory for faster rebuilds.
+          cacheDirectory: true,
+        },
       }
     ]
   },

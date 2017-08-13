@@ -39,7 +39,7 @@
             <div class="modal-dialog">
               <div class="modal-body">
                 <div class="u-flex u-flexEnd">
-                  <button class="button--reset modal-close" type="button"><svg class="icon"><title>Close Modal</title><use xlink:href="#close"></use></svg></button>
+                  <button class="button--reset modal-close" type="button" data-modal-close><svg class="icon"><title>Close Modal</title><use xlink:href="#close"></use></svg></button>
                 </div>
                 <img src="{{placeholder}}" data-src="{{rootPath}}assets/media/me.png" class="aboutModal-image" alt="Zach Schnackel">
                 <h2 id="aboutModal-title" class="u-textCenter">Hi, I'm Zach.</h2>
@@ -88,7 +88,7 @@
       {% if articles %}
         <aside id="articles" class="offCanvas" tabindex="-1" role="dialog" aria-labelledby="articles-title">
           <div class="offCanvas-panel">
-            <button class="button--reset offCanvas-close" type="button"><svg class="icon"><title>Close Article list</title><use xlink:href="#close"></use></svg></button>
+            <button class="button--reset offCanvas-close" type="button" data-offcanvas-close><svg class="icon"><title>Close Article list</title><use xlink:href="#close"></use></svg></button>
             <h2 class="article-title">Articles</h2>
             <ul class="articles-list">
               {% for article in articles %}

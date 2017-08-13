@@ -1,6 +1,21 @@
 module.exports = {
   "extends": "stylelint-config-standard",
   "rules": {
+    "at-rule-no-unknown": [ true, {
+      "ignoreAtRules": [
+        "if",
+        "else",
+        "each",
+        "include",
+        "mixin",
+        "for",
+        "content",
+        "return",
+        "function",
+        "at-root",
+        "extend"
+      ]
+    } ],
     "at-rule-empty-line-before": [ "always", {
       except: [
         "blockless-after-same-name-blockless",
