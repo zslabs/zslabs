@@ -5,9 +5,7 @@ excerpt: "I keep my Droplets spinnin'"
 ---
 
 <div class="alert alert--primary article-series">
-  <a href="{{rootPath}}articles/gsap/" class="u-link u-inlineBlock">
-    <span class="u-textLarge u-pr--small">👋</span> This is part of my GSAP case-study series!
-  </a>
+  <div class="alert-content"><span class="u-textLarge u-pr--small">👋</span> This is part of my <a href="{{rootPath}}articles/gsap/">GSAP case-study series!</a></div>
 </div>
 
 Today's deep-dive will be a Droplet animation I did for [DigitalOcean](https://www.digitalocean.com). This was a branding experiment to test out future initiatives for the company.

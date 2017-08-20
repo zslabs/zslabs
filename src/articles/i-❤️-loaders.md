@@ -5,9 +5,7 @@ excerpt: "Waiting never looked so good."
 ---
 
 <div class="alert alert--primary article-series">
-  <a href="{{rootPath}}articles/gsap/" class="u-link u-inlineBlock">
-    <span class="u-textLarge u-pr--small">👋</span> This is part of my GSAP case-study series!
-  </a>
+  <div class="alert-content"><span class="u-textLarge u-pr--small">👋</span> This is part of my <a href="{{rootPath}}articles/gsap/">GSAP case-study series!</a></div>
 </div>
 
 Like many others, I've always found [Dribbble](http://dribbble.com) as an excellent resource for design inspiration. When [CodePen](http://codepen.io) came onto the scene, it brought a new avenue for developers to share their work and gather feedback.
