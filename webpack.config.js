@@ -1,15 +1,16 @@
 import webpack from 'webpack';
 import path from 'path';
 
+import paths from './gulp-tasks/paths';
+
 const nodeEnv = process.env.NODE_ENV || 'development';
 
 module.exports = {
-  devtool: 'source-map',
-  entry: {
-    site: './src/assets/js/entry'
-  },
+  devtool: nodeEnv === 'production' ? 'source-map' : 'eval',
+  entry: paths.scripts.entry,
   output: {
-    filename: '[name].js'
+    filename: '[name].js',
+    path: path.resolve(__dirname, paths.scripts.build)
   },
   externals: {
     TweenLite: 'TweenLite',
@@ -22,13 +23,20 @@ module.exports = {
           path.resolve(__dirname, 'src/assets/js'),
           path.resolve(__dirname, 'node_modules/basey')
         ],
-        loader: 'babel-loader',
-        options: {
-          // This is a feature of `babel-loader` for webpack (not Babel itself).
-          // It enables caching results in ./node_modules/.cache/babel-loader/
-          // directory for faster rebuilds.
-          cacheDirectory: true,
-        },
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              // This is a feature of `babel-loader` for webpack (not Babel itself).
+              // It enables caching results in ./node_modules/.cache/babel-loader/
+              // directory for faster rebuilds.
+              cacheDirectory: true,
+            }
+          },
+          {
+            loader: 'eslint-loader'
+          }
+        ]
       }
     ]
   },
@@ -48,7 +56,7 @@ module.exports = {
     }),
     // env plugin
     new webpack.DefinePlugin({
-      'proccess.env': { NODE_ENV: JSON.stringify(nodeEnv)}
+      'process.env': { NODE_ENV: JSON.stringify(nodeEnv)}
     })
   ]
 };

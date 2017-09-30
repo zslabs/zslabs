@@ -9,11 +9,12 @@
     "last 2 versions"
   ],
   "scripts": {
-    "dev": "gulp && gulp watch"
+    "dev": "gulp && gulp watch",
+    "build": "NODE_ENV=production gulp"
   },
   "dependencies": {
     "babel-loader": "7.1.2",
-    "basey": "git+https://zslabs@bitbucket.org/zslabs/basey.git#0.21.26",
+    "basey": "git+https://zslabs@bitbucket.org/zslabs/basey.git#0.22.1",
     "del": "3.0.0",
     "gulp": "3.9.1",
     "gulp-imagemin": "3.3.0",

@@ -1,4 +1,4 @@
-import { TimelineMax } from 'gsap';
+import { TimelineMax, Back } from 'gsap';
 
 const ease = Back.easeOut.config(1.7);
 const pageTimeline = new TimelineMax({

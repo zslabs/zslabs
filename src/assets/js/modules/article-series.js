@@ -1,4 +1,4 @@
-import { TweenMax } from 'gsap';
+import { TweenMax, Back } from 'gsap';
 
 TweenMax
   .to('.article-series', 0.5, {

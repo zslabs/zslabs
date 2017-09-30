@@ -1,11 +1,8 @@
-import gulp from 'gulp';
-// Pull-in specific version of webpack
 import webpack from 'webpack';
-import webpackStream from 'webpack-stream';
 import merge from 'lodash.merge';
 import gulpLoadPlugins from 'gulp-load-plugins';
 
-import paths from './paths';
+import webpackConfig from '../webpack.config.js';
 
 const packages = merge(
   require('basey/package.json'),
@@ -15,9 +12,23 @@ const $ = gulpLoadPlugins({
   config: packages
 });
 
-export default function scripts() {
-  return $.eslint()
-    .pipe($.eslint.format())
-    .pipe(webpackStream(require('../webpack.config.js'), webpack))
-    .pipe(gulp.dest(paths.scripts.build));
+export default function scripts(callback) {
+  webpack(webpackConfig, (err, stats) => {
+    if (err) {
+      throw new $.util.PluginError('[webpack:build]', err);
+    }
+
+    $.util.log('[webpack:build] Completed\n' + stats.toString({
+      assets: true,
+      chunks: false,
+      modules: false,
+      chunkModules: false,
+      colors: true,
+      hash: false,
+      timings: false,
+      version: false
+    }));
+
+    callback();
+  });
 }
