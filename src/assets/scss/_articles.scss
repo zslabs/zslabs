@@ -33,7 +33,8 @@
       padding-left: $global-whitespace-large;
       transition: transform 0.25s easeOutBack;
 
-      &:hover {
+      &:hover,
+      &:focus {
         transform: translateX($global-whitespace-regular);
       }
 
@@ -68,7 +69,8 @@
       fill: $global-font-color;
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       transform: scale(1.25);
     }
   }
