@@ -6,11 +6,13 @@ $base-h2-font-weight: $global-font-weight-bold;
 $base-h3-font-weight: $global-font-weight-bold;
 $base-h4-font-weight: $global-font-weight-bold;
 
-@mixin hook-base-body() {
+@mixin hook-basey-html() {
   letter-spacing: -0.0125em;
+}
 
+@mixin hook-base-body() {
   @supports (mask-image: url()) {
-    body:not(.page-resume) {
+    &:not(.page-resume) {
       position: relative;
 
       &::before {
