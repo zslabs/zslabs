@@ -6,10 +6,11 @@ import webpackConfig from '../webpack.config.js';
 
 const packages = merge(
   require('basey/package.json'),
-  require('../package.json')
+  require('../package.json'),
 );
+
 const $ = gulpLoadPlugins({
-  config: packages
+  config: packages,
 });
 
 export default function scripts(callback) {
@@ -18,7 +19,7 @@ export default function scripts(callback) {
       throw new $.util.PluginError('[webpack:build]', err);
     }
 
-    $.util.log('[webpack:build] Completed\n' + stats.toString({
+    $.util.log(`[webpack:build] Completed\n${stats.toString({
       assets: true,
       chunks: false,
       modules: false,
@@ -26,8 +27,8 @@ export default function scripts(callback) {
       colors: true,
       hash: false,
       timings: false,
-      version: false
-    }));
+      version: false,
+    })}`);
 
     callback();
   });

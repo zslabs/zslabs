@@ -37,5 +37,5 @@ gulp.task('default', [
   'styles',
   'fonts',
   'copy',
-  'pages'
+  'pages',
 ]);

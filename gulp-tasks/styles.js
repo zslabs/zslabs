@@ -17,13 +17,14 @@ import paths from './paths';
 
 const packages = merge(
   require('basey/package.json'),
-  require('../package.json')
+  require('../package.json'),
 );
+
 const $ = gulpLoadPlugins({
-  config: packages
+  config: packages,
 });
 const autoprefixerInit = autoprefixer();
-const processors  = [
+const processors = [
   pImport,
   flexboxFixes,
   autoprefixerInit,
@@ -31,16 +32,16 @@ const processors  = [
   easings,
   svgFragments,
   assets,
-  sorting
+  sorting,
 ];
 
 export default function styles() {
   return gulp.src('src/assets/scss/*')
     .pipe($.changed(paths.styles.build))
     .pipe($.sourcemaps.init())
-    .pipe($.sass().on('error', function(err) {
+    .pipe($.sass().on('error', function (err) { // eslint-disable-line func-names
       // Show error in console
-      console.error(err.message);
+      console.error(err.message); // eslint-disable-line no-console
       // Display error in the browser
       browserSync.notify(err.message, 3000);
       // Prevent gulp from catching the error and exiting the watch process
@@ -51,14 +52,14 @@ export default function styles() {
       discardUnused: false,
       zindex: false,
       reduceIdents: false,
-      mergeIdents: false
+      mergeIdents: false,
     }))
     .pipe($.sourcemaps.write('./'))
     .pipe($.size({
       showFiles: true,
-      title: 'Styles:'
+      title: 'Styles:',
     }))
     .pipe(gulp.dest(paths.styles.build))
-    .pipe(browserSync.stream({match: '**/*.css'}))
+    .pipe(browserSync.stream({ match: '**/*.css' }))
     .pipe($.duration('building styles'));
 }

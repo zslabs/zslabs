@@ -9,10 +9,11 @@ import paths from './paths';
 
 const packages = merge(
   require('basey/package.json'),
-  require('../package.json')
+  require('../package.json'),
 );
+
 const $ = gulpLoadPlugins({
-  config: packages
+  config: packages,
 });
 
 /**
@@ -22,32 +23,30 @@ const $ = gulpLoadPlugins({
  */
 function getFolders(dir) {
   return fs.readdirSync(dir)
-    .filter((file) => {
-      return fs.statSync(path.join(dir, file)).isDirectory();
-    });
+    .filter(file => fs.statSync(path.join(dir, file)).isDirectory());
 }
 
 export default function svgSprite() {
   const globalIcons =
     // Combine SVGs from global folder in site and from framework src folder
-    gulp.src([paths.svg.baseDir + '/global/*.svg', paths.svg.frameworkSrc])
+    gulp.src([`${paths.svg.baseDir}/global/*.svg`, paths.svg.frameworkSrc])
       .pipe($.changed(paths.svg.build))
       .pipe($.svgSprite({
-        'svg': {
-          'xmlDeclaration': false,
-          'doctypeDeclaration': false,
-          'dimensionAttributes': false,
+        svg: {
+          xmlDeclaration: false,
+          doctypeDeclaration: false,
+          dimensionAttributes: false,
         },
-        'mode': {
-          'symbol': {
-            'dest': '',
-            'sprite': 'global.svg'
-          }
-        }
+        mode: {
+          symbol: {
+            dest: '',
+            sprite: 'global.svg',
+          },
+        },
       }))
       .pipe($.size({
         showFiles: true,
-        title: 'SVG Sprite:'
+        title: 'SVG Sprite:',
       }))
       .pipe(gulp.dest(paths.svg.build));
 
@@ -61,28 +60,27 @@ export default function svgSprite() {
     if (folder === 'global') {
       return false;
     }
-    return true; }).map((folder) => {
-    return gulp.src(path.join(paths.svg.baseDir, folder, '/*.svg'))
-      .pipe($.changed(paths.svg.build))
-      .pipe($.svgSprite({
-        'svg': {
-          'xmlDeclaration': false,
-          'doctypeDeclaration': false,
-          'dimensionAttributes': false
+    return true;
+  }).map(folder => gulp.src(path.join(paths.svg.baseDir, folder, '/*.svg'))
+    .pipe($.changed(paths.svg.build))
+    .pipe($.svgSprite({
+      svg: {
+        xmlDeclaration: false,
+        doctypeDeclaration: false,
+        dimensionAttributes: false,
+      },
+      mode: {
+        symbol: {
+          dest: '',
+          sprite: `${folder}-sprite.svg`,
         },
-        'mode': {
-          'symbol': {
-            'dest': '',
-            'sprite': folder + '-sprite.svg'
-          }
-        }
-      }))
-      .pipe($.size({
-        showFiles: true,
-        title: folder + ' SVG Sprite:'
-      }))
-      .pipe(gulp.dest(paths.svg.build));
-  });
+      },
+    }))
+    .pipe($.size({
+      showFiles: true,
+      title: `${folder} SVG Sprite:`,
+    }))
+    .pipe(gulp.dest(paths.svg.build)));
 
   return mergeStream(globalIcons, pageIcons);
 }

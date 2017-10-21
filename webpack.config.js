@@ -10,7 +10,7 @@ module.exports = {
   entry: paths.scripts.entry,
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, paths.scripts.build)
+    path: path.resolve(__dirname, paths.scripts.build),
   },
   externals: {
     TweenLite: 'TweenLite',
@@ -21,7 +21,7 @@ module.exports = {
         test: /\.js$/,
         include: [
           path.resolve(__dirname, 'src/assets/js'),
-          path.resolve(__dirname, 'node_modules/basey')
+          path.resolve(__dirname, 'node_modules/basey'),
         ],
         use: [
           {
@@ -31,14 +31,14 @@ module.exports = {
               // It enables caching results in ./node_modules/.cache/babel-loader/
               // directory for faster rebuilds.
               cacheDirectory: true,
-            }
+            },
           },
           {
-            loader: 'eslint-loader'
-          }
-        ]
-      }
-    ]
+            loader: 'eslint-loader',
+          },
+        ],
+      },
+    ],
   },
   resolve: {
     alias: {
@@ -52,11 +52,11 @@ module.exports = {
     new webpack.optimize.UglifyJsPlugin({
       compress: { warnings: false },
       output: { comments: false },
-      sourceMap: true
+      sourceMap: true,
     }),
     // env plugin
     new webpack.DefinePlugin({
-      'process.env': { NODE_ENV: JSON.stringify(nodeEnv)}
-    })
-  ]
+      'process.env': { NODE_ENV: JSON.stringify(nodeEnv) },
+    }),
+  ],
 };

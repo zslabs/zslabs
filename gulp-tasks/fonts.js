@@ -6,10 +6,11 @@ import paths from './paths';
 
 const packages = merge(
   require('basey/package.json'),
-  require('../package.json')
+  require('../package.json'),
 );
+
 const $ = gulpLoadPlugins({
-  config: packages
+  config: packages,
 });
 
 export default function fonts() {

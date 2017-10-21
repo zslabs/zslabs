@@ -9,10 +9,11 @@ import paths from './paths';
 
 const packages = merge(
   require('basey/package.json'),
-  require('../package.json')
+  require('../package.json'),
 );
+
 const $ = gulpLoadPlugins({
-  config: packages
+  config: packages,
 });
 
 export default function linter() {
@@ -20,11 +21,11 @@ export default function linter() {
     .pipe($.postcss(
       [
         stylelint(),
-        reporter({ clearReportedMessages: true })
+        reporter({ clearReportedMessages: true }),
       ],
       {
-        syntax: scss
-      }
+        syntax: scss,
+      },
     ))
     .pipe($.duration('linting styles'));
 }

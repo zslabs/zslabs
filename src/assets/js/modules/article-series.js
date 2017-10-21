@@ -5,5 +5,5 @@ TweenMax
     delay: 0.5,
     y: 0,
     opacity: 1,
-    ease: Back.easeOut.config(1.7)
+    ease: Back.easeOut.config(1.7),
   });

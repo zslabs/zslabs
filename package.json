@@ -10,11 +10,12 @@
   ],
   "scripts": {
     "dev": "gulp && gulp watch",
-    "build": "NODE_ENV=production gulp"
+    "build": "NODE_ENV=production gulp",
+    "eslint": "eslint --fix webpack.config.js"
   },
   "dependencies": {
     "babel-loader": "7.1.2",
-    "basey": "git+https://zslabs@bitbucket.org/zslabs/basey.git#0.23.1",
+    "basey": "git+https://zslabs@bitbucket.org/zslabs/basey.git#0.24.3",
     "del": "3.0.0",
     "gulp": "3.9.1",
     "gulp-load-plugins": "1.5.0",

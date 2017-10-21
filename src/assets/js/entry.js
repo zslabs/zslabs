@@ -9,11 +9,10 @@ import './modules/intros';
 import './modules/comments';
 import './modules/article-series';
 
-// Init Modal component
-new Modal();
-
-// Init OffCanvas component
-new OffCanvas();
+/* eslint-disable no-unused-vars */
+const modal = new Modal();
+const offcanvas = new OffCanvas();
+/* eslint-enable no-unused-vars */
 
 // imageDefer
 window.onload = imageDefer;

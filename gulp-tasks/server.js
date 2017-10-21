@@ -5,7 +5,7 @@ import paths from './paths';
 export default function server() {
   browserSync.init({
     server: {
-      baseDir: paths.pages.build
-    }
+      baseDir: paths.pages.build,
+    },
   });
 }
