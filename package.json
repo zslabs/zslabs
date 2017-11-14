@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "dev": "gulp && gulp watch",
-    "build": "NODE_ENV=production gulp",
+    "build": "NODE_ENV=production gulp"
   },
   "dependencies": {
     "babel-loader": "7.1.2",
