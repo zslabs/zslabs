@@ -20,6 +20,10 @@
   }
 }
 
+.icon-logo {
+  fill: url('./#pattern');
+}
+
 .logo-interior {
   display: inline-block;
   transition: transform 0.25s easeOutBack;
@@ -82,8 +86,11 @@
   }
 
   svg {
-    fill: $global-contrast;
     size: 1.25em;
+  }
+
+  .icon-fill {
+    color: $global-contrast;
   }
 }
 

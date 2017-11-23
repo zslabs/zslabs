@@ -20,12 +20,6 @@ import nunjucks from 'nunjucks';
 
 import config from './config';
 
-// https://github.com/superwolff/metalsmith-layouts/issues/43
-nunjucks.configure(['./src/templates', './dist/assets/icons', './dist/assets/media'], {
-  watch: false,
-  noCache: true,
-});
-
 const { reload } = browserSync;
 const built = {};
 const builtFiles = config.metalsmith.built;
@@ -60,18 +54,6 @@ function getDirectories(srcPath) {
   };
 } */
 
-// Get source directories
-const srcDirectories = getDirectories(config.metalsmith.src).filter(item => !item.match('articles|pages'));
-// Will hold final, mutated directories
-const ignoreDirectories = [];
-// Loop through source directories and adjust paths based on `metalsmith-ignore` needs
-srcDirectories.forEach((item) => {
-  ignoreDirectories.push(
-    `${item}/**/*`,
-    `${item}/**/.*`,
-  );
-});
-
 /**
  * Get built file modification times
  * @return {object}
@@ -103,6 +85,24 @@ function fileModTimes() {
 
   return built;
 }
+
+// https://github.com/superwolff/metalsmith-layouts/issues/43
+nunjucks.configure(['./src/templates', './dist/assets/icons', './dist/assets/media'], {
+  watch: false,
+  noCache: true,
+});
+
+// Get source directories
+const srcDirectories = getDirectories(config.metalsmith.src).filter(item => !item.match('articles|pages'));
+// Will hold final, mutated directories
+const ignoreDirectories = [];
+// Loop through source directories and adjust paths based on `metalsmith-ignore` needs
+srcDirectories.forEach((item) => {
+  ignoreDirectories.push(
+    `${item}/**/*`,
+    `${item}/**/.*`,
+  );
+});
 
 export default function pages() {
   return metalsmith(process.cwd())

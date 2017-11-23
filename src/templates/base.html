@@ -5,7 +5,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{% if slug === 'home' %}Zach Schnackel{% else %}{{ title }} - Zach Schnackel{% endif %}</title>
-    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,matchMedia,fetch,Element.prototype.placeholder"></script>
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=default,fetch,Number.isInteger"></script>
     <link rel="stylesheet" href="{{rootPath}}assets/css/site.css?{{ files['site.css'] }}">
     <link rel="alternate" type="application/rss+xml" name="Zach Schnackel" title="ZS Labs" href="{{rootPath}}rss.xml">
   </head>
@@ -18,16 +18,12 @@
         {% if (slug !== 'home') %}
         <div>
           <a href="{{rootPath}}" class="button--reset logo-interior">
-            <svg fill="url(#pattern)" class="icon-logo icon-logo--small">
-              <use xlink:href="#logo"></use>
-            </svg>
+            <i data-icon="logo" class="icon-logo--small"></i>
           </a>
         </div>
         <div>
           <a href="#articles" class="articles-interiorTrigger" data-offcanvas>
-            <svg class="icon icon-list">
-              <use xlink:href="#list"></use>
-            </svg>
+            <i data-icon="list"></i>
           </a>
         </div>
         {% endif %}
@@ -39,26 +35,22 @@
             <div class="modal-dialog">
               <div class="modal-body">
                 <div class="u-flex u-flexEnd">
-                  <button class="button--reset modal-close" type="button" data-modal-close><svg class="icon"><title>Close Modal</title><use xlink:href="#close"></use></svg></button>
+                  <button class="button--reset modal-close" type="button" data-modal-close>
+                    <i data-icon="close"></i>
+                  </button>
                 </div>
                 <img src="{{placeholder}}" data-src="{{rootPath}}assets/media/me.png" class="aboutModal-image" alt="Zach Schnackel">
                 <h2 id="aboutModal-title" class="u-textCenter">Hi, I'm Zach.</h2>
                 <div id="aboutModal-desc">
                   <ul class="inline inline--center inline--largeAbout-social">
                     <li><a class="social-codepen" href="https://codepen.io/zslabs">
-                        <svg class="icon">
-                          <use xlink:href="#codepen"></use>
-                        </svg>
+                        <i data-icon="codepen"></i>
                       </a></li>
                     <li><a class="social-github" href="https://github.com/zslabs">
-                        <svg class="icon">
-                          <use xlink:href="#github"></use>
-                        </svg>
+                        <i data-icon="github"></i>
                       </a></li>
                     <li><a class="social-twitter" href="https://twitter.com/zslabs">
-                        <svg class="icon">
-                          <use xlink:href="#twitter"></use>
-                        </svg>
+                        <i data-icon="twitter"></i>
                       </a></li>
                   </ul>
                   <p class="u-mv--large">I create buttons, borders, and other groovy things at <a href="http://www.rhinogram.com" class="u-textUnderline u-textDefault">Rhinogram</a>. My background involves pushing the limits of of what we can build on the backend and how we can experience it on the frontend. My passions are perfecting process and educating those around me.</p>
@@ -88,7 +80,9 @@
       {% if articles %}
         <aside id="articles" class="offCanvas" tabindex="-1" role="dialog" aria-labelledby="articles-title">
           <div class="offCanvas-panel">
-            <button class="button--reset offCanvas-close" type="button" data-offcanvas-close><svg class="icon"><title>Close Article list</title><use xlink:href="#close"></use></svg></button>
+            <button class="button--reset offCanvas-close" type="button" data-offcanvas-close>
+              <i data-icon="close"></i>
+            </button>
             <h2 class="article-title">Articles</h2>
             <ul class="articles-list">
               {% for article in articles %}

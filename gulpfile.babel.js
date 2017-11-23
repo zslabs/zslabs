@@ -10,6 +10,7 @@ import linter from './gulp-tasks/linter';
 import styles from './gulp-tasks/styles';
 import scripts from './gulp-tasks/scripts';
 import media from './gulp-tasks/media';
+import icons from './gulp-tasks/icons';
 import svgSprite from './gulp-tasks/svg-sprite';
 import pages from './gulp-tasks/pages';
 import watch from './gulp-tasks/watch';
@@ -22,14 +23,16 @@ gulp.task('deploy', deploy);
 gulp.task('server', server);
 gulp.task('linter', linter);
 gulp.task('styles', ['svg-sprite', 'media', 'linter'], styles);
-gulp.task('scripts', scripts);
+gulp.task('scripts', ['icons'], scripts);
 gulp.task('media', media);
+gulp.task('icons', icons);
 gulp.task('svg-sprite', svgSprite);
-gulp.task('pages', ['svg-sprite'], pages);
+gulp.task('pages', pages);
 gulp.task('watch', ['server'], watch);
 
 // Bundled Tasks
 gulp.task('default', [
+  'icons',
   'svg-sprite',
   'scripts',
   'linter',
