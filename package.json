@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "babel-loader": "7.1.2",
-    "basey": "git+https://bitbucket.org/zslabs/basey.git#0.25.3",
+    "basey": "git+https://bitbucket.org/zslabs/basey.git#0.25.6",
     "del": "3.0.0",
     "gulp": "3.9.1",
     "gulp-load-plugins": "1.5.0",

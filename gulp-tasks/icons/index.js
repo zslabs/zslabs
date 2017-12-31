@@ -1,3 +1,7 @@
 import { buildIconsFile } from './build-json';
+import paths from '../paths';
 
-buildIconsFile();
+buildIconsFile(
+  paths.svg.src,
+  'icons',
+);

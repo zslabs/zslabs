@@ -374,15 +374,15 @@ attempt-x@^1.1.0, attempt-x@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/attempt-x/-/attempt-x-1.1.1.tgz#fba64e96ce03c3e0bd92c92622061c4df387cb76"
 
-autoprefixer@7.1.6:
-  version "7.1.6"
-  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-7.1.6.tgz#fb933039f74af74a83e71225ce78d9fd58ba84d7"
+autoprefixer@7.2.3:
+  version "7.2.3"
+  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-7.2.3.tgz#c2841e38b7940c2d0a9bbffd72c75f33637854f8"
   dependencies:
-    browserslist "^2.5.1"
-    caniuse-lite "^1.0.30000748"
+    browserslist "^2.10.0"
+    caniuse-lite "^1.0.30000783"
     normalize-range "^0.1.2"
     num2fraction "^1.2.2"
-    postcss "^6.0.13"
+    postcss "^6.0.14"
     postcss-value-parser "^3.2.3"
 
 autoprefixer@^6.3.1:
@@ -1003,11 +1003,11 @@ base64id@0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/base64id/-/base64id-0.1.0.tgz#02ce0fdeee0cef4f40080e1e73e834f0b1bfce3f"
 
-"basey@git+https://bitbucket.org/zslabs/basey.git#0.25.3":
-  version "0.25.3"
-  resolved "git+https://bitbucket.org/zslabs/basey.git#1cdf91d2d8eb4c9294c2fc463a071fa4de11839e"
+"basey@git+https://bitbucket.org/zslabs/basey.git#0.25.6":
+  version "0.25.6"
+  resolved "git+https://bitbucket.org/zslabs/basey.git#a7498bca85d1e85edcd8b32f2cfbe9a392ff3f0a"
   dependencies:
-    autoprefixer "7.1.6"
+    autoprefixer "7.2.3"
     autosize "4.0.0"
     babel-cli "6.26.0"
     babel-core "6.26.0"
@@ -1016,8 +1016,8 @@ base64id@0.1.0:
     browser-sync "2.18.13"
     choices.js "3.0.2"
     del "3.0.0"
-    dompurify "1.0.2"
-    eslint "4.11.0"
+    dompurify "1.0.3"
+    eslint "4.13.1"
     eslint-config-airbnb-base "12.1.0"
     eslint-loader "1.9.0"
     eslint-plugin-import "2.8.0"
@@ -1048,13 +1048,13 @@ base64id@0.1.0:
     postcss-size "2.0.0"
     postcss-sorting "3.1.0"
     postcss-svg-fragments "2.2.0"
-    prismjs "1.8.4"
+    prismjs "1.9.0"
     recursive-readdir-sync "1.0.6"
     rsvp "4.7.0"
     stylelint "8.2.0"
     stylelint-config-standard "17.0.0"
     validate-js "2.0.1"
-    webpack "3.8.1"
+    webpack "3.10.0"
     webpack-stream "4.0.0"
     what-input "5.0.3"
 
@@ -1315,12 +1315,12 @@ browserslist@^2.1.5:
     caniuse-lite "^1.0.30000684"
     electron-to-chromium "^1.3.14"
 
-browserslist@^2.5.1:
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-2.9.0.tgz#706aca15c53be15610f466e348cbfa0c00a6a379"
+browserslist@^2.10.0:
+  version "2.10.1"
+  resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-2.10.1.tgz#f9dc692b79004a78ec9ba0d012c54de44cc6d7e4"
   dependencies:
-    caniuse-lite "^1.0.30000760"
-    electron-to-chromium "^1.3.27"
+    caniuse-lite "^1.0.30000784"
+    electron-to-chromium "^1.3.30"
 
 bs-recipes@1.3.4:
   version "1.3.4"
@@ -1496,9 +1496,9 @@ caniuse-lite@^1.0.30000718:
   version "1.0.30000727"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000727.tgz#20c895768398ded5f98a4beab4a76c285def41d2"
 
-caniuse-lite@^1.0.30000748, caniuse-lite@^1.0.30000760:
-  version "1.0.30000760"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000760.tgz#ec720395742f1c7ec8947fd6dd2604e77a8f98ff"
+caniuse-lite@^1.0.30000783, caniuse-lite@^1.0.30000784:
+  version "1.0.30000784"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000784.tgz#129ced74e9a1280a441880b6cd2bce30ef59e6c0"
 
 capture-stack-trace@^1.0.0:
   version "1.0.0"
@@ -1687,13 +1687,13 @@ cli-width@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/cli-width/-/cli-width-2.1.0.tgz#b234ca209b29ef66fc518d9b98d5847b00edf00a"
 
-clipboard@^1.5.5:
-  version "1.5.16"
-  resolved "https://registry.yarnpkg.com/clipboard/-/clipboard-1.5.16.tgz#916d5e739b0064be61b0b48a535731ecaef3d367"
+clipboard@^1.7.1:
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/clipboard/-/clipboard-1.7.1.tgz#360d6d6946e99a7a1fef395e42ba92b5e9b5a16b"
   dependencies:
-    good-listener "^1.2.0"
-    select "^1.0.6"
-    tiny-emitter "^1.0.0"
+    good-listener "^1.2.2"
+    select "^1.1.2"
+    tiny-emitter "^2.0.0"
 
 cliui@^2.1.0:
   version "2.1.0"
@@ -2389,9 +2389,9 @@ delayed-stream@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/delayed-stream/-/delayed-stream-1.0.0.tgz#df3ae199acadfb7d440aaae0b29e2272b24ec619"
 
-delegate@^3.1.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/delegate/-/delegate-3.1.1.tgz#22a0e3ea8776c7f89e02d5950942ef9cdfd019cf"
+delegate@^3.1.2:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/delegate/-/delegate-3.2.0.tgz#b66b71c3158522e8ab5744f720d8ca0c2af59166"
 
 delegates@^1.0.0:
   version "1.0.0"
@@ -2451,12 +2451,11 @@ doctrine@1.5.0:
     esutils "^2.0.2"
     isarray "^1.0.0"
 
-doctrine@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/doctrine/-/doctrine-2.0.0.tgz#c73d8d2909d22291e1a007a395804da8b665fe63"
+doctrine@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/doctrine/-/doctrine-2.0.2.tgz#68f96ce8efc56cc42651f1faadb4f175273b0075"
   dependencies:
     esutils "^2.0.2"
-    isarray "^1.0.0"
 
 dom-serializer@0:
   version "0.1.0"
@@ -2483,9 +2482,9 @@ domhandler@2.2:
   dependencies:
     domelementtype "1"
 
-dompurify@1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/dompurify/-/dompurify-1.0.2.tgz#7cf47d57614324a9723a1ba69143eeb7d3c617ac"
+dompurify@1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/dompurify/-/dompurify-1.0.3.tgz#3f2f6ecb6ecd27599a506b410ff47d6eb90fd05d"
 
 domutils@1.4:
   version "1.4.3"
@@ -2580,6 +2579,10 @@ ee-first@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
 
+electron-releases@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/electron-releases/-/electron-releases-2.1.0.tgz#c5614bf811f176ce3c836e368a0625782341fd4e"
+
 electron-to-chromium@^1.2.7, electron-to-chromium@^1.3.14:
   version "1.3.15"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.15.tgz#08397934891cbcfaebbd18b82a95b5a481138369"
@@ -2588,9 +2591,11 @@ electron-to-chromium@^1.3.18:
   version "1.3.21"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.21.tgz#a967ebdcfe8ed0083fc244d1894022a8e8113ea2"
 
-electron-to-chromium@^1.3.27:
-  version "1.3.27"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.27.tgz#78ecb8a399066187bb374eede35d9c70565a803d"
+electron-to-chromium@^1.3.30:
+  version "1.3.30"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.30.tgz#9666f532a64586651fc56a72513692e820d06a80"
+  dependencies:
+    electron-releases "^2.1.0"
 
 elliptic@^6.0.0:
   version "6.3.2"
@@ -2861,9 +2866,9 @@ eslint-scope@^3.7.1:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
-eslint@4.11.0:
-  version "4.11.0"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.11.0.tgz#39a8c82bc0a3783adf5a39fa27fdd9d36fac9a34"
+eslint@4.13.1:
+  version "4.13.1"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.13.1.tgz#0055e0014464c7eb7878caf549ef2941992b444f"
   dependencies:
     ajv "^5.3.0"
     babel-code-frame "^6.22.0"
@@ -2871,7 +2876,7 @@ eslint@4.11.0:
     concat-stream "^1.6.0"
     cross-spawn "^5.1.0"
     debug "^3.0.1"
-    doctrine "^2.0.0"
+    doctrine "^2.0.2"
     eslint-scope "^3.7.1"
     espree "^3.5.2"
     esquery "^1.0.0"
@@ -2880,7 +2885,7 @@ eslint@4.11.0:
     file-entry-cache "^2.0.0"
     functional-red-black-tree "^1.0.1"
     glob "^7.1.2"
-    globals "^9.17.0"
+    globals "^11.0.1"
     ignore "^3.3.3"
     imurmurhash "^0.1.4"
     inquirer "^3.0.6"
@@ -3594,11 +3599,15 @@ global-prefix@^0.1.4:
     osenv "^0.1.3"
     which "^1.2.10"
 
+globals@^11.0.1:
+  version "11.1.0"
+  resolved "https://registry.yarnpkg.com/globals/-/globals-11.1.0.tgz#632644457f5f0e3ae711807183700ebf2e4633e4"
+
 globals@^9.0.0:
   version "9.12.0"
   resolved "https://registry.yarnpkg.com/globals/-/globals-9.12.0.tgz#992ce90828c3a55fa8f16fada177adb64664cf9d"
 
-globals@^9.17.0, globals@^9.18.0:
+globals@^9.18.0:
   version "9.18.0"
   resolved "https://registry.yarnpkg.com/globals/-/globals-9.18.0.tgz#aa3896b3e69b487f17e31ed2143d69a8e30c2d8a"
 
@@ -3649,11 +3658,11 @@ glogg@^1.0.0:
   dependencies:
     sparkles "^1.0.0"
 
-good-listener@^1.2.0:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/good-listener/-/good-listener-1.2.1.tgz#4c5b4681a3e8c91b00f1cb12d89a23b32473547b"
+good-listener@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/good-listener/-/good-listener-1.2.2.tgz#d53b30cdf9313dffb7dc9a0d477096aa6d145c50"
   dependencies:
-    delegate "^3.1.1"
+    delegate "^3.1.2"
 
 got@^5.0.0:
   version "5.7.1"
@@ -6940,11 +6949,11 @@ prettysize@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/prettysize/-/prettysize-0.1.0.tgz#38ee534e2d298bc945fb7243203dd873cefc9679"
 
-prismjs@1.8.4:
-  version "1.8.4"
-  resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.8.4.tgz#573cc7a14c2c06566e1eca20d813f5ae55db80d2"
+prismjs@1.9.0:
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.9.0.tgz#fa3e2d9edc3c3887c1f1f3095d41f1f9b4200f0f"
   optionalDependencies:
-    clipboard "^1.5.5"
+    clipboard "^1.7.1"
 
 private@^0.1.6:
   version "0.1.6"
@@ -7523,9 +7532,9 @@ seek-bzip@^1.0.3:
   dependencies:
     commander "~2.8.1"
 
-select@^1.0.6:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/select/-/select-1.1.0.tgz#a6c520cd9ab919ad81c7d1a273e0452f504dd7a2"
+select@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/select/-/select-1.1.2.tgz#0e7350acdec80b1108528786ec1d4418d11b396d"
 
 semver-regex@^1.0.0:
   version "1.0.0"
@@ -8365,9 +8374,9 @@ timers-ext@0.1:
     es5-ext "~0.10.14"
     next-tick "1"
 
-tiny-emitter@^1.0.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/tiny-emitter/-/tiny-emitter-1.1.0.tgz#ab405a21ffed814a76c19739648093d70654fecb"
+tiny-emitter@^2.0.0:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/tiny-emitter/-/tiny-emitter-2.0.2.tgz#82d27468aca5ade8e5fd1e6d22b57dd43ebdfb7c"
 
 title-case@^2.1.0:
   version "2.1.0"
@@ -8908,9 +8917,9 @@ webpack-stream@4.0.0:
     vinyl "^2.1.0"
     webpack "^3.4.1"
 
-webpack@3.8.1:
-  version "3.8.1"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-3.8.1.tgz#b16968a81100abe61608b0153c9159ef8bb2bd83"
+webpack@3.10.0:
+  version "3.10.0"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-3.10.0.tgz#5291b875078cf2abf42bdd23afe3f8f96c17d725"
   dependencies:
     acorn "^5.0.0"
     acorn-dynamic-import "^2.0.0"

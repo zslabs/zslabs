@@ -42,12 +42,13 @@ function getSvgContent(svg) {
 /**
  * Build an icons object in the format: `{ <icon name>: <svg content> }`.
  *
+ * @param  {string} src
  * @return {RSVP.Promise<Object>}
  */
-export function buildIconsObject() {
+export function buildIconsObject(src) {
   const icons = {};
 
-  paths.svg.src.forEach((value) => {
+  src.forEach((value) => {
     // Strip off wildcard (used in gulp watch)
     const cleanPath = path.join('../../', value.replace('**/*.svg', '').replace('/*.svg', ''));
 
@@ -67,13 +68,13 @@ export function buildIconsObject() {
   return RSVP.hash(icons);
 }
 
-export function buildIconsFile() {
-  buildIconsObject()
+export function buildIconsFile(src, exportFile) {
+  buildIconsObject(src)
     .then((icons) => {
       const jsonPath = path.join('../../', paths.svg.json);
 
       fs.writeFile(
-        path.resolve(__dirname, `${jsonPath}/icons.json`),
+        path.resolve(__dirname, `${jsonPath}/${exportFile}.json`),
         JSON.stringify(icons),
         (err) => {
           if (err) return err;
