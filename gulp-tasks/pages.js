@@ -1,6 +1,3 @@
-import fs from 'fs';
-import path from 'path';
-import util from 'util';
 import metalsmith from 'metalsmith';
 import feed from 'metalsmith-feed';
 import moveUp from 'metalsmith-move-up';
@@ -11,28 +8,17 @@ import markdown from 'metalsmith-markdown';
 import permalinks from 'metalsmith-permalinks';
 import collections from 'metalsmith-collections';
 import dateFormatter from 'metalsmith-date-formatter';
-import filemetadata from 'metalsmith-filemetadata';
 import slug from 'metalsmith-slug';
+import filemetadata from 'metalsmith-filemetadata';
 import rootPath from 'metalsmith-rootpath';
 import htmlMinifier from 'metalsmith-html-minifier';
 import browserSync from 'browser-sync';
 import nunjucks from 'nunjucks';
 
 import config from './config';
+import * as Utilities from './utilities';
 
 const { reload } = browserSync;
-const built = {};
-const builtFiles = config.metalsmith.built;
-
-/**
- * Get top-level directories
- * @param  {string} srcPath
- * @return array
- */
-function getDirectories(srcPath) {
-  return fs.readdirSync(srcPath)
-    .filter(file => fs.statSync(path.join(srcPath, file)).isDirectory());
-}
 
 /**
  * Middleman data output
@@ -54,38 +40,6 @@ function getDirectories(srcPath) {
   };
 } */
 
-/**
- * Get built file modification times
- * @return {object}
- */
-function fileModTimes() {
-  builtFiles.forEach((value) => {
-    // Create key based off of filename
-    const parts = value.split('/');
-    const key = parts.pop();
-
-    built[key] = '';
-
-    // Attempt to read file
-    fs.readFile(value, 'utf8', (err) => {
-      // If we find the file
-      if (!err) {
-        fs.stat(value, (error, stats) => {
-          // Get modification time of file
-          const mtime = new Date(util.inspect(stats.mtime));
-
-          built[key] = Date.parse(mtime);
-        });
-      } else {
-        // Generate a random number group in the event this is the first build
-        built[key] = Math.random().toString().slice(2, 12);
-      }
-    });
-  });
-
-  return built;
-}
-
 // https://github.com/superwolff/metalsmith-layouts/issues/43
 nunjucks.configure(['./src/templates', './dist/assets/icons', './dist/assets/media'], {
   watch: false,
@@ -93,7 +47,7 @@ nunjucks.configure(['./src/templates', './dist/assets/icons', './dist/assets/med
 });
 
 // Get source directories
-const srcDirectories = getDirectories(config.metalsmith.src).filter(item => !item.match('articles|pages'));
+const srcDirectories = Utilities.getDirectories(config.metalsmith.src).filter(item => !item.match('articles|pages'));
 // Will hold final, mutated directories
 const ignoreDirectories = [];
 // Loop through source directories and adjust paths based on `metalsmith-ignore` needs
@@ -157,7 +111,7 @@ export default function pages() {
         pattern: '**/*',
         metadata: {
           currentYear: new Date().getFullYear(),
-          files: fileModTimes(),
+          files: Utilities.fileModTimes(config.metalsmith.built),
           placeholder: 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7',
         },
       },

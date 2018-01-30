@@ -36,7 +36,7 @@ const processors = [
 ];
 
 export default function styles() {
-  return gulp.src('src/assets/scss/*')
+  return gulp.src(paths.styles.entry)
     .pipe($.changed(paths.styles.build))
     .pipe($.sourcemaps.init())
     .pipe($.sass().on('error', function (err) { // eslint-disable-line func-names

@@ -20,6 +20,7 @@ const paths = {
     build: './dist/assets/icons/',
   },
   styles: {
+    entry: ['./src/assets/scss/*'],
     src: './src/assets/scss/**/*.scss',
     build: './dist/assets/css/',
   },
