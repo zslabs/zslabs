@@ -1060,9 +1060,9 @@ base64id@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/base64id/-/base64id-1.0.0.tgz#47688cb99bb6804f0e06d3e763b1c32e57d8e6b6"
 
-"basey@git+https://bitbucket.org/zslabs/basey.git#0.27.2":
-  version "0.27.2"
-  resolved "git+https://bitbucket.org/zslabs/basey.git#1dfe3ee3609856b771933c011f84bf20a85eea1a"
+"basey@git+https://bitbucket.org/zslabs/basey.git#0.27.3":
+  version "0.27.3"
+  resolved "git+https://bitbucket.org/zslabs/basey.git#9773cd70d0f96674f42bbcb80049d8673029054f"
   dependencies:
     autoprefixer "7.2.5"
     autosize "4.0.0"
@@ -1099,7 +1099,7 @@ base64id@1.0.0:
     plugin-error "1.0.1"
     postcss-assets "5.0.0"
     postcss-easings "1.0.1"
-    postcss-flexbugs-fixes "3.3.0"
+    postcss-flexbugs-fixes "3.2.0"
     postcss-import "11.0.0"
     postcss-reporter "5.0.0"
     postcss-scss "1.0.3"
@@ -6970,9 +6970,9 @@ postcss-filter-plugins@^2.0.0:
     postcss "^5.0.4"
     uniqid "^4.0.0"
 
-postcss-flexbugs-fixes@3.3.0:
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/postcss-flexbugs-fixes/-/postcss-flexbugs-fixes-3.3.0.tgz#e00849b536063749da50a0d410ba5d9ee65e27b8"
+postcss-flexbugs-fixes@3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/postcss-flexbugs-fixes/-/postcss-flexbugs-fixes-3.2.0.tgz#9b8b932c53f9cf13ba0f61875303e447c33dcc51"
   dependencies:
     postcss "^6.0.1"
 
