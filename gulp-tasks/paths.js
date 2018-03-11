@@ -16,6 +16,7 @@ const paths = {
   },
   svg: {
     src: ['./node_modules/basey/src/assets/icons/*.svg', './src/assets/icons/global/*.svg'],
+    inlineSrc: ['./node_modules/basey/src/assets/icons/', './src/assets/icons/'],
     json: './src/assets/icons',
     build: './dist/assets/icons/',
   },

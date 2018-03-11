@@ -9,7 +9,7 @@ import flexboxFixes from 'postcss-flexbugs-fixes';
 import autoprefixer from 'autoprefixer';
 import size from 'postcss-size';
 import easings from 'postcss-easings';
-import svgFragments from 'postcss-svg-fragments';
+import inlineSVG from 'postcss-inline-svg-multipath'; // Using custom package since `post-css-inline-svg` only supports one value right now https://github.com/TrySound/postcss-inline-svg/pull/38
 import assets from 'postcss-assets';
 import sorting from 'postcss-sorting';
 
@@ -27,10 +27,12 @@ const autoprefixerInit = autoprefixer();
 const processors = [
   pImport,
   flexboxFixes,
+  inlineSVG({
+    paths: paths.svg.inlineSrc,
+  }),
   autoprefixerInit,
   size,
   easings,
-  svgFragments,
   assets,
   sorting,
 ];

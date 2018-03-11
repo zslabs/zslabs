@@ -9,16 +9,16 @@
     "last 2 versions"
   ],
   "scripts": {
-    "dev": "yarn && gulp && gulp watch",
+    "start": "yarn && gulp && gulp watch",
     "build": "NODE_ENV=production gulp"
   },
   "dependencies": {
-    "babel-loader": "7.1.2",
-    "basey": "git+https://bitbucket.org/zslabs/basey.git#0.27.3",
+    "babel-loader": "7.1.4",
+    "basey": "git+https://bitbucket.org/zslabs/basey.git#0.30.2",
     "del": "3.0.0",
     "gulp": "3.9.1",
     "gulp-load-plugins": "1.5.0",
-    "lodash.merge": "4.6.0",
+    "lodash.merge": "4.6.1",
     "merge-stream": "1.0.1",
     "metalsmith": "2.3.0",
     "metalsmith-collections": "0.9.0",
@@ -35,6 +35,6 @@
     "metalsmith-permalinks": "0.5.0",
     "metalsmith-rootpath": "1.0.4",
     "metalsmith-slug": "0.2.1",
-    "nunjucks": "3.0.1"
+    "nunjucks": "3.1.2"
   }
 }
