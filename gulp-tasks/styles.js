@@ -9,9 +9,11 @@ import flexboxFixes from 'postcss-flexbugs-fixes';
 import autoprefixer from 'autoprefixer';
 import size from 'postcss-size';
 import easings from 'postcss-easings';
+import gradients from 'postcss-easing-gradients';
 import inlineSVG from 'postcss-inline-svg-multipath'; // Using custom package since `post-css-inline-svg` only supports one value right now https://github.com/TrySound/postcss-inline-svg/pull/38
 import assets from 'postcss-assets';
 import sorting from 'postcss-sorting';
+import cssnano from 'cssnano';
 
 import paths from './paths';
 
@@ -33,8 +35,15 @@ const processors = [
   autoprefixerInit,
   size,
   easings,
+  gradients,
   assets,
   sorting,
+  cssnano({
+    discardUnused: false,
+    zindex: false,
+    reduceIdents: false,
+    mergeIdents: false,
+  }),
 ];
 
 export default function styles() {
@@ -50,12 +59,6 @@ export default function styles() {
       this.emit('end');
     }))
     .pipe($.postcss(processors))
-    .pipe($.cssnano({
-      discardUnused: false,
-      zindex: false,
-      reduceIdents: false,
-      mergeIdents: false,
-    }))
     .pipe($.sourcemaps.write('./'))
     .pipe($.size({
       showFiles: true,

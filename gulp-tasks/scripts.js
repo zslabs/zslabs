@@ -30,6 +30,7 @@ export default function scripts(callback) {
       hash: false,
       timings: false,
       version: false,
+      errorDetails: true,
     })}`);
 
     callback();

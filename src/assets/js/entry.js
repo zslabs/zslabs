@@ -4,7 +4,6 @@ import Modal from 'basey/core/modal';
 import OffCanvas from 'basey/core/offcanvas';
 import Icon from 'basey/core/icon';
 import 'basey/components/prism';
-import 'prismjs/components/prism-php';
 import 'prismjs/components/prism-less';
 
 import Icons from '../icons/icons.json';

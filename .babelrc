@@ -2,8 +2,13 @@
   "presets": [
     ["env", {
       "targets": {
-        "browsers": ["last 2 versions"]
+        "browsers": [">0.25%", "not op_mini all"]
       }
-    }]
+    }],
+    "stage-0",
+    "react"
+  ],
+  "plugins": [
+    "transform-strict-mode"
   ]
 }
