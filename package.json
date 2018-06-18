@@ -11,11 +11,12 @@
   ],
   "scripts": {
     "start": "yarn && gulp && gulp watch",
-    "build": "NODE_ENV=production gulp"
+    "build": "NODE_ENV=production gulp",
+    "deploy": "yarn build && gulp deploy"
   },
   "dependencies": {
     "babel-loader": "7.1.4",
-    "basey": "git+https://bitbucket.org/zslabs/basey.git#0.31.5",
+    "basey": "ssh://git@bitbucket.org/zslabs/basey.git#0.40.1",
     "del": "3.0.0",
     "gulp": "3.9.1",
     "gulp-load-plugins": "1.5.0",
@@ -36,6 +37,6 @@
     "metalsmith-permalinks": "0.5.0",
     "metalsmith-rootpath": "1.0.4",
     "metalsmith-slug": "0.2.1",
-    "nunjucks": "3.1.2"
+    "nunjucks": "3.1.3"
   }
 }
