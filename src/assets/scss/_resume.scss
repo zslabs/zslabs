@@ -15,7 +15,7 @@
 
       &:hover,
       &:focus {
-        transform: scale(1.25);
+        transform: scale(1.15);
       }
     }
 
@@ -60,10 +60,6 @@
         display: flex;
         align-items: center;
         width: 100%;
-      }
-
-      @media (max-width: $global-viewport-small-max) {
-        text-align: center;
       }
     }
 

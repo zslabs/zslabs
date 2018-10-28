@@ -3,8 +3,10 @@
 {% block body %}
   <main class="section article-content">
     <div class="container container--small">
-      <h1 class="article-title">{{ title }}</h1>
-      <div class="u-textMuted u-mb--large">{{ date }}</div>
+      <div class="article-header u-textCenter u-mb--large">
+        <h1 class="article-title u-mb--small">{{ title }}</h1>
+        <div class="u-textMuted">{{ date }}</div>
+      </div>
       {{ contents | safe }}
       <hr class="u-mv--large">
       <div id="disqus_thread">

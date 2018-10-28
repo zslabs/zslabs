@@ -49,22 +49,15 @@
   }
 
   &-header {
-    @media (min-width: $global-viewport-medium) {
-      font-size: ($base-h1-font-size * 1.25);
-    }
+    @include fluid-type(40px, 50px);
   }
 
   &-sub {
-    font-size: ($base-h3-font-size / 1.25);
     display: flex;
     align-items: center;
 
     @media (max-width: $global-viewport-small-max) {
       justify-content: center;
-    }
-
-    @media (min-width: $global-viewport-medium) {
-      font-size: $base-h3-font-size;
     }
   }
 }
