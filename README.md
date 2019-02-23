@@ -1,3 +1,3 @@
-# ZS Labs
+# DEPRECATED
 
-Personal site
+[New repo](https://github.com/zslabs/zslabs.com)
